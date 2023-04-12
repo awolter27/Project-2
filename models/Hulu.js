@@ -41,5 +41,7 @@ const huluSchema = new mongoose.Schema(
 );
 
 const Hulu = mongoose.model('Hulu', huluSchema);
+
+module.exports = Hulu;
 //an option for a user to add as many episodes as needed since every show has its own amount of episodes in every season.
 // require('mongoose').model('Hulu').schema.add({episode: String});
