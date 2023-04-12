@@ -1,4 +1,4 @@
-disney = [
+module.exports = [
     {
         name: "The Mandalorian",
         synopsis: "After the fall of the Empire, a lone Mandalorian makes his way through the lawless galaxy with his foundling, Grogu.",
