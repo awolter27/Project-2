@@ -41,6 +41,8 @@ const netflixSchema = new mongoose.Schema(
 );
 
 const Netflix = mongoose.model('Netflix', netflixSchema);
+
+module.exports = Netflix;
 //an option for a user to add as many episodes as needed since every show has its own amount of episodes in every season.
 // require('mongoose').model('Netflix').schema.add({episode: String});
 

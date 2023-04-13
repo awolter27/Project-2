@@ -41,5 +41,7 @@ const disneySchema = new mongoose.Schema(
 );
 
 const Disney = mongoose.model('Disney', disneySchema);
+
+module.exports = Disney;
 //an option for a user to add as many episodes as needed since every show has its own amount of episodes in every season.
 // require('mongoose').model('Disney').schema.add({episode: String});
