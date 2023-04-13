@@ -24,15 +24,10 @@ router.get('/new', (req, res) => {
     res.render('disney/new.ejs')
 })
 
-router.post('', async (req, res, next) => {
-    try {
-        const newShow = await Disney.create(req.body);
+router.post('', (req, res) => {
+        const newShow = Disney.create(req.body);
         console.log(newShow);
-        res.redirect('/shows')
-    } catch(err) {
-        console.log(err) 
-        next();
-    }
+        res.redirect('/disney/index.ejs');
 })
 
 //new episode
@@ -44,13 +39,49 @@ router.get('/:id/new', (req, res) => {
 router.get('/:id/edit', async (req, res, next) => {
     try {
         const showToBeEdited = await Disney.findById(req.params.id);
-        console.log(showToBeEdited )
+        console.log(showToBeEdited);
+        res.render('Disney/edit.ejs', {Disney: showToBeEdited})
+    } catch(err) {
+        console.log(err);
+        next()
+    }
+})
+
+router.put('/:id', async (req, res, next) => {
+    try {
+        const updatedShow = await Disney.findByIdAndUpdate(req.params.id, req.body);
+        res.redirect(`/disney/${req.params.id}`)
+    } catch(err) {
+        console.log(err);
+        next();
     }
 })
 
 //delete show
+router.get('/disney/:id/delete', async (req, res, next) => {
+    try {
+        const showToBeDeleted = await Disney.findById(req.params.id);
+        res.render('delete.ejs' , {Disney: showToBeDeleted})
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+})
+
+router.delete('/disney/:id', async (req, res, next) => {
+    try{
+        Disney.splice(req.params.id, 1)
+        res.redirect('/disney/index.ejs')
+    }catch (err) {
+        console.log(err);
+        next();
+    }
+})
 
 //index show page
+router.get('/disney', (req, res,) => {
+    res.render('/disney/views.ejs')
+})
 
 //show episodes page
 
