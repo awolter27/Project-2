@@ -1,0 +1,29 @@
+<%- include('./partials/header.ejs') %>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <h1>Add a TV Show to Netflix</h1>
+    <form action="/netflix" method="POST">
+        <label for="name">Name</label>
+        <input required type="text" placeholder="You">
+        <label for="synopsis">Synopsis</label>
+        <input type="text" placeholder="A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by.">
+        <label for="image">Image</label>
+        <input required type="text" placeholder="https://static.tvtropes.org/pmwiki/pub/images/you_7.png">
+        <label for="genre">Genre</label>
+        <input required type="text" placeholder="Drama, Psychological Thriller">
+        <label for="season">Season</label>
+        <input type="text" placeholder="One">
+        <label for="year">Year</label>
+        <input type="number" placeholder="2018">
+        <label for="episode">Episode</label>
+        <input required type="text" placeholder="Pilot">
+        <input type="submit" value="Add TV Show">
+    </form>
+    <input type="button" class="new-back-input" value="Back" onclick="goBack()">
+
+<%- include('./partials/footer.ejs') %>

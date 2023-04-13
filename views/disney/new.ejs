@@ -1,0 +1,29 @@
+<%- include('./partials/header.ejs') %>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <h1>Add a TV Show to Disney</h1>
+    <form action="/disney" method="POST">
+        <label for="name">Name</label>
+        <input required type="text" placeholder="Hannah Montana">
+        <label for="synopsis">Synopsis</label>
+        <input type="text" placeholder="Adventures of a teenage pop star who keeps her identity secret from even her closest friends by using a disguise on-stage.">
+        <label for="image">Image</label>
+        <input required type="text" placeholder="https://pbs.twimg.com/media/FqQZb7KWAAQCF6q.jpg">
+        <label for="genre">Genre</label>
+        <input required type="text" placeholder="Comedy, Sitcom">
+        <label for="season">Season</label>
+        <input type="text" placeholder="One">
+        <label for="year">Year</label>
+        <input type="number" placeholder="2006">
+        <label for="episode">Episode</label>
+        <input required type="text" placeholder="Lilly, Do You Want to Know a Secret?">
+        <input type="submit" value="Add TV Show">
+    </form>
+    <input type="button" value="Back" onclick="goBack()">
+
+<%- include('./partials/footer.ejs') %>
