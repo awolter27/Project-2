@@ -8,16 +8,7 @@ router.get('', (req, res) => {
 })
 
 //home page
-router.get('/home', async (req, res, next) => {
-    try{
-        console.log(req.session)
-        let myDisneys;
-            myDisneys = await Disney.find({});
-    } catch (err) {
-        console.log(err);
-        next();
-    }
-})
+//I think maybe this should go in the server since it will be all three?
 
 //new show
 router.get('/new', (req, res) => {
@@ -35,7 +26,7 @@ router.get('/:id/new', (req, res) => {
     res.render('new.ejs')
 })
 
-//edit show page
+//edit a show page
 router.get('/:id/edit', async (req, res, next) => {
     try {
         const showToBeEdited = await Disney.findById(req.params.id);
@@ -57,7 +48,7 @@ router.put('/:id', async (req, res, next) => {
     }
 })
 
-//delete show
+//delete a show
 router.get('/disney/:id/delete', async (req, res, next) => {
     try {
         const showToBeDeleted = await Disney.findById(req.params.id);
@@ -80,7 +71,13 @@ router.delete('/disney/:id', async (req, res, next) => {
 
 //index show page
 router.get('/disney', (req, res,) => {
-    res.render('/disney/views.ejs')
+    res.render('/views/disney/index.ejs')
+})
+
+//single show page
+router.get('disney/:id', (req, res) => {
+    const singleShow = Disney[req.params.id];
+    res.render('views/disney/show.ejs', {singleShow, idx: req.params.id})
 })
 
 //show episodes page
