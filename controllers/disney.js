@@ -3,15 +3,21 @@ const router = express.Router();
 const { Disney } = require('../models');
 
 //login page
-router.get('', (req, res) => {
+router.get('/login', (req, res) => {
     res.render('login.ejs')
 })
 
 //home page
 //I think maybe this should go in the server since it will be all three?
 
+//index show page
+router.get('/disney', (req, res,) => {
+    res.render('/disney/index.ejs')
+})
+
+
 //new show
-router.get('/new', (req, res) => {
+router.get('/disney/new', (req, res) => {
     res.render('disney/new.ejs')
 })
 
@@ -69,10 +75,6 @@ router.delete('/disney/:id', async (req, res, next) => {
     }
 })
 
-//index show page
-router.get('/disney', (req, res,) => {
-    res.render('/views/disney/index.ejs')
-})
 
 //single show page
 router.get('disney/:id', (req, res) => {
