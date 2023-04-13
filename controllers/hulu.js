@@ -1,12 +1,11 @@
 const express = require('express');
 const router = express.Router();
-
-let { hulu } = require('../models');
+const { seedHulu, Hulu } = require('../models');
 
 router.get('', async (req, res, next) => {
     try {
-        const myHulus = await hulu.find({});
-        res.render('hulu/index.ejs', { hulu: myHulus });
+        const myHulus = await Hulu.find({});
+        res.render('hulu/index.ejs', { Hulu: myHulus });
     } catch (err) {
         next();
         console.log(err);
@@ -19,8 +18,9 @@ router.get('/new', (req, res) => {
 
 router.get('/seed', async (req, res, next) => {
     try {
-        await hulu.deleteMany({});
-        await hulu.insertMany(seedHulu);
+        console.log('hello');
+        await Hulu.deleteMany({});
+        await Hulu.insertMany(seedHulu);
         res.redirect('/hulu');
     } catch (err) {
         next();
@@ -30,8 +30,8 @@ router.get('/seed', async (req, res, next) => {
 
 router.get('/:id', async (req, res, next) => {
     try {
-        const myHulu = await hulu.findById(req.params.id);
-        res.render('hulu/show.ejs', { hulu: myHulu });
+        const myHulu = await Hulu.findById(req.params.id);
+        res.render('hulu/show.ejs', { Hulu: myHulu });
     } catch (err) {
         next();
         console.log(err);
@@ -40,8 +40,8 @@ router.get('/:id', async (req, res, next) => {
 
 router.get('/:id/edit', async (req, res, next) => {
     try {
-        const huluToBeEdited = await hulu.findById(req.params.id);
-        res.render('hulu/edit.ejs', { hulu: huluToBeEdited });
+        const huluToBeEdited = await Hulu.findById(req.params.id);
+        res.render('hulu/edit.ejs', { Hulu: huluToBeEdited });
     } catch (err) {
         next();
         console.log(err);
@@ -50,8 +50,8 @@ router.get('/:id/edit', async (req, res, next) => {
 
 router.get('/:id/delete', async (req, res, next) => {
     try {
-        const huluToBeDeleted = await hulu.findById(req.params.id);
-        res.render('hulu/delete.ejs', { hulu: huluToBeDeleted });
+        const huluToBeDeleted = await Hulu.findById(req.params.id);
+        res.render('hulu/delete.ejs', { Hulu: huluToBeDeleted });
     } catch (err) {
         next();
         console.log(err);
@@ -60,7 +60,7 @@ router.get('/:id/delete', async (req, res, next) => {
 
 router.post('', async (req, res, next) => {
     try {
-        const newHulu = await hulu.create(req.body);
+        const newHulu = await Hulu.create(req.body);
         res.redirect('/hulu');
     } catch (err) {
         next();
@@ -70,7 +70,7 @@ router.post('', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
     try {
-        const updatedHulu = await hulu.findByIdAndUpdate(req.params.id, req.body);
+        const updatedHulu = await Hulu.findByIdAndUpdate(req.params.id, req.body);
         res.redirect(`/hulu/${req.params.id}`);
     } catch (err) {
         next();
@@ -80,7 +80,7 @@ router.put('/:id', async (req, res, next) => {
 
 router.delete('/:id', async (req, res, next) => {
     try {
-        const deletedHulu = await hulu.findByIdAndDelete(req.params.id);
+        const deletedHulu = await Hulu.findByIdAndDelete(req.params.id);
         res.redirect('/hulu');
     } catch (err) {
         next();
