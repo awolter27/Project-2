@@ -17,23 +17,23 @@ const netflixSchema = new mongoose.Schema(
         genre: {
             type: [String],
             required: [true, 'Please enter the genre!']
-        }
-        // seasons: {
-        //     name: String,
-        //     year: Number,
-        //         episodes: {
-        //             one: String,
-        //             two: String,
-        //             three: String,
-        //             four: String,
-        //             five: String,
-        //             six: String,
-        //             seven: String,
-        //             eight: String,
-        //             nine: String,
-        //             ten: String
-        //         }
-        //     } 
+        },
+        seasons: {
+            name: String,
+            year: Number,
+                episodes: {
+                    one: String,
+                    two: String,
+                    three: String,
+                    four: String,
+                    five: String,
+                    six: String,
+                    seven: String,
+                    eight: String,
+                    nine: String,
+                    ten: String
+                }
+            } 
     },
     {
         timestamps: true
