@@ -1,17 +1,17 @@
 const express = require('express');
 const router = express.Router();
-const { Disney } = require('../models');
+const { seedDisney,Disney } = require('../models');
 
 //login page
-router.get('/', (req, res) => {
-    res.render('login.ejs')
-})
+// router.get('/', (req, res) => {
+//     res.render('login.ejs')
+// })
 
 //home page
 //I think maybe this should go in the server since it will be all three?
 
 //index show page
-router.get('/disney', (req, res,) => {
+router.get('/', (req, res,) => {
     res.render('disney/index.ejs')
 })
 
