@@ -11,10 +11,9 @@ const { seedDisney,Disney } = require('../models');
 //I think maybe this should go in the server since it will be all three?
 
 //index show page
-router.get('/', (req, res,) => {
+router.get('', (req, res,) => {
     res.render('disney/index.ejs')
 })
-
 
 //new show
 router.get('/new', (req, res) => {

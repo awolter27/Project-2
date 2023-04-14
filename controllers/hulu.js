@@ -18,7 +18,6 @@ router.get('/new', (req, res) => {
 
 router.get('/seed', async (req, res, next) => {
     try {
-        console.log('hello');
         await Hulu.deleteMany({});
         await Hulu.insertMany(seedHulu);
         res.redirect('/hulu');

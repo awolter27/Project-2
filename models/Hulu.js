@@ -21,19 +21,19 @@ const huluSchema = new mongoose.Schema(
         seasons: {
             name: String,
             year: Number,
-                episodes: {
-                    one: String,
-                    two: String,
-                    three: String,
-                    four: String,
-                    five: String,
-                    six: String,
-                    seven: String,
-                    eight: String,
-                    nine: String,
-                    ten: String
-                }
-            } 
+            episodes: {
+                one: String,
+                two: String,
+                three: String,
+                four: String,
+                five: String,
+                six: String,
+                seven: String,
+                eight: String,
+                nine: String,
+                ten: String
+            }
+        }
     },
     {
         timestamps: true
