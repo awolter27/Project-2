@@ -116,7 +116,7 @@ module.exports = [
     {
         name: "Snowfall",
         synopsis: "A storm is coming and it's name is crack. Set on the rise of the crack epidemic in Los Angeles in the early 1980s and its ultimate radical impact on the culture as we know it, the story follows numerous characters on a violent collision course.",
-        img: "https://static.wikia.nocookie.net/snowfall/images/2/28/Snowfall_Season_4_poster.jpg/revision/latest?cb=20210327204336",
+        img: "https://static.displate.com/857x1200/displate/2020-06-24/f2d6c819f3e2bbb51b62dc3d43879001_4e33b365c92cfddcec96112a3a48147f.jpg",
         genre: ["drama", "crime"],
         seasons: {
             one: {

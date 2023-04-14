@@ -1,5 +1,14 @@
 <%- include('../partials/header.ejs') %>
 
-
+    <h1>TV Shows on Netflix</h1>
+    <% for (let i = 0; i < Netflix.length; i++) { %>
+        <a href="netflix/<%= Netflix[i]._id %>">
+            <h1><%= Netflix[i].name %></h1>
+            <p><%= Netflix[i].synopsis %></p>
+            <img src=<%= Netflix[i].img %> alt="Image of <%= Netflix[i].name %> Poster">
+            <p><%= Netflix[i].genre %></p>
+        </a>
+    <% } %>
+    <a href="/netflix/new">Add A TV Show</a>
 
 <%- include('../partials/footer.ejs') %>
