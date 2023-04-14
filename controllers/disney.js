@@ -3,7 +3,7 @@ const router = express.Router();
 const { Disney } = require('../models');
 
 //login page
-router.get('/login', (req, res) => {
+router.get('/', (req, res) => {
     res.render('login.ejs')
 })
 
@@ -12,12 +12,12 @@ router.get('/login', (req, res) => {
 
 //index show page
 router.get('/disney', (req, res,) => {
-    res.render('/disney/index.ejs')
+    res.render('disney/index.ejs')
 })
 
 
 //new show
-router.get('/disney/new', (req, res) => {
+router.get('/new', (req, res) => {
     res.render('disney/new.ejs')
 })
 
@@ -55,7 +55,7 @@ router.put('/:id', async (req, res, next) => {
 })
 
 //delete a show
-router.get('/disney/:id/delete', async (req, res, next) => {
+router.get('/:id/delete', async (req, res, next) => {
     try {
         const showToBeDeleted = await Disney.findById(req.params.id);
         res.render('delete.ejs' , {Disney: showToBeDeleted})
@@ -77,7 +77,7 @@ router.delete('/disney/:id', async (req, res, next) => {
 
 
 //single show page
-router.get('disney/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     const singleShow = Disney[req.params.id];
     res.render('views/disney/show.ejs', {singleShow, idx: req.params.id})
 })
