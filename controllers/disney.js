@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
-const { seedDisney,Disney } = require('../models');
+const { seedDisney, Disney } = require('../models');
 
 //login page
-// router.get('/', (req, res) => {
+// router.get('/login', (req, res) => {
 //     res.render('login.ejs')
 // })
 
@@ -11,8 +11,14 @@ const { seedDisney,Disney } = require('../models');
 //I think maybe this should go in the server since it will be all three?
 
 //index show page
-router.get('', (req, res,) => {
-    res.render('disney/index.ejs')
+router.get('', async (req, res, next) => {
+    try {
+        const myDisneys = await Disney.find({});
+        res.render('disney/index.ejs', { Disney: myDisneys });
+    } catch (err) {
+        next();
+        console.log(err);
+    }
 })
 
 //new show
@@ -85,11 +91,11 @@ router.get('/:id', (req, res) => {
 
 
 //seeded
-router.get('/seedDisney', async (req, res, next) => {
+router.get('/seed', async (req, res, next) => {
     try{
         await Disney.deleteMany({});
         await Disney.insertMany(seedDisney);
-        res.redirect('/shows');
+        res.redirect('/disney');
     }catch(err) {
         console.log(err);
         next();
