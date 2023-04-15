@@ -79,7 +79,7 @@ module.exports = [
 
         name: "Miraculous - Tales of Ladybug & Cat Noir",
         synopsis: "Marinette seems to be a normal teenage girl -- she dreams of becoming a fashion designer, is a bit awkward and has a crush on a classmate. But she has a secret other teenagers dont have -- she lives a double life as a crime-fighting superhero known as Ladybug. She uses her superpowers to help protect her native Paris from supervillain Hawk Moth. She is assisted, reluctantly, by fellow hero Cat Noir, even though she insists she doesnt need him -- a stance she might not take if she knew his alter ego is her crush, Adrien. Together, Ladybug and Cat Noir help keep Paris safe from Hawk Moth and other villains.",
-        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtFF4k6rkLJIfQWiH_CLN2HyR67voTOi09sQ&usqp=CAU",
+        img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2cw9WCgsE1iKvh8emHW2p66PDIOue2xSong&usqp=CAU",
         genre: ["Romance", "Animation", "Fantasy", "Super Hero", "Action-Adventure"],
         seasons: {
             one: {

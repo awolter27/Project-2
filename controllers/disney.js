@@ -2,13 +2,8 @@ const express = require('express');
 const router = express.Router();
 const { seedDisney, Disney } = require('../models');
 
-//login page
-// router.get('/login', (req, res) => {
-//     res.render('login.ejs')
-// })
-
-//home page
-//I think maybe this should go in the server since it will be all three?
+//home page & login page
+//I think maybe this should go in the server since it will be the same for all three?
 
 //index show page
 router.get('', async (req, res, next) => {
@@ -30,6 +25,17 @@ router.get('/seed', async (req, res, next) => {
     }catch(err) {
         console.log(err);
         next();
+    }
+})
+
+//single show page
+router.get('/:id', async (req, res, next) => {
+    try {
+        const myDisney = await Disney.findById(req.params.id);
+        res.render('disney/show.ejs', { myDisney });
+    } catch (err) {
+        next();
+        console.log(err);
     }
 })
 
@@ -95,11 +101,6 @@ router.delete('/disney/:id', async (req, res, next) => {
 })
 
 
-//single show page
-router.get('/:id', (req, res) => {
-    const singleShow = Disney[req.params.id];
-    res.render('views/disney/show.ejs', {singleShow, idx: req.params.id})
-})
 
 //show episodes page
 
