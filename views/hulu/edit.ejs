@@ -1,33 +1,17 @@
 <%- include('../partials/header.ejs') %>
 
-<!-- still in progress -->
-
     <h1>Edit <%= Hulu.name %></h1>
     <form action="/hulu/<%= Hulu._id %>?_method=PUT" method="POST">
         <label for="name">Name</label>
-        <input required type="text" name="name" id="name" value="<%= Hulu.name %>">
+        <input type="text" name="name" id="name" value="<%= Hulu.name %>">
         <label for="synopsis">Synopsis</label>
         <input type="text" name="synopsis" id="synopsis" value="<%= Hulu.synopsis %>">
-        <label for="image">Image</label>
-        <input required type="text" name="image" id="image" value="<%= Hulu.img %>">
+        <label for="img">Image</label>
+        <input type="text" name="img" id="img" value="<%= Hulu.img %>">
         <label for="genre">Genre</label>
-        <input required type="text" name="genre" id="genre" value="<%= Hulu.genre %>">
-        
-        <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
-            <label for="season">Season</label>
-            <input type="text" name="season" id="season" value="<%= Hulu.seasons.name %>">
-        <% } %>
-        
-        <label for="year">Year</label>
-        <input type="number" value="<%= Hulu.name %>">
-
-        <% for (let i = 0; i < Hulu.seasons.episodes.length; i++) { %>
-            <label for="episode">Episode</label>
-            <input required type="text" value="<%= Hulu.seasons.episodes %>">
-        <% } %>
-
+        <input type="text" name="genre" id="genre" value="<%= Hulu.genre %>">
         <input type="submit" value="Edit TV Show">
     </form>
-    <input type="button" value="Back" onclick="goBack()">
+    <a href="/hulu">Back</a>
 
 <%- include('../partials/footer.ejs') %>

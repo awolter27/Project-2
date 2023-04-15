@@ -1,5 +1,12 @@
 <%- include('../partials/header.ejs') %>
 
-
+<h1>Delete <%= Disney.name %></h1>
+<p>Synopsis: <%= Disney.synopsis %></p>
+<p>Image: <%= Disney.img %></p>
+<p>Genre: <%= Disney.genre %></p>
+<form method="POST" action="/disney/<%= Disney._id %>?_method=DELETE">
+    <input type="submit" value="Delete <%= Disney.title %>">
+</form>
+<a href="/disney/<%= Disney._id %>">Back</a>
 
 <%- include('../partials/footer.ejs') %>

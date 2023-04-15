@@ -1,5 +1,12 @@
 <%- include('../partials/header.ejs') %>
 
-
+<h1>Delete <%= Netflix.name %></h1>
+<p>Synopsis: <%= Netflix.synopsis %></p>
+<p>Image: <%= Netflix.img %></p>
+<p>Genre: <%= Netflix.genre %></p>
+<form method="POST" action="/netflix/<%= Netflix._id %>?_method=DELETE">
+    <input type="submit" value="Delete <%= Netflix.title %>">
+</form>
+<a href="/netflix/<%= Netflix._id %>">Back</a>
 
 <%- include('../partials/footer.ejs') %>

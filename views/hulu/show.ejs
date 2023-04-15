@@ -1,12 +1,12 @@
 <%- include('../partials/header.ejs') %>
 
-<body>
     <h1> <%= Hulu.name %> </h1>
     <img src = <%= Hulu.img %> alt = 'show image'>
     <h1> <%= Hulu.synopsis %> </h1>
     <h1> Genre: <%= Hulu.genre %> </h1>
     <h1> Seasons: <%= Hulu.seasons %> </h1>
     <h1> Episodes: <%= Hulu.episodes %> </h1>
-</body>
+    <a href="/hulu/<%= Hulu._id %>/edit">Edit</a>
+    <a href="/hulu/<%= Hulu._id %>/delete">Delete</a>
 
 <%- include('../partials/footer.ejs') %>

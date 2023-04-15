@@ -1,5 +1,12 @@
 <%- include('../partials/header.ejs') %>
 
-
+    <h1>Delete <%= Hulu.name %></h1>
+    <p>Synopsis: <%= Hulu.synopsis %></p>
+    <p>Image: <%= Hulu.img %></p>
+    <p>Genre: <%= Hulu.genre %></p>
+    <form method="POST" action="/hulu/<%= Hulu._id %>?_method=DELETE">
+        <input type="submit" value="Delete <%= Hulu.title %>">
+    </form>
+    <a href="/hulu/<%= Hulu._id %>">Back</a>
 
 <%- include('../partials/footer.ejs') %>
