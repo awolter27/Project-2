@@ -7,6 +7,9 @@
     <h1> Genre: <%= myDisney.genre %> </h1>
     <h1> Seasons: <%= myDisney.seasons %> </h1>
     <h1> Episodes: <%= myDisney.episodes %> </h1>
+
+    <a href="/disney/<%= myDisney._id %>/edit">Edit this show</a>
+    <a href="/disney/<%= myDisney._id %>/delete">Delete this show</a>
 </body>
 
 <%- include('../partials/footer.ejs') %>

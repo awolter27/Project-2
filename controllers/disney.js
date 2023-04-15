@@ -83,17 +83,17 @@ router.put('/:id', async (req, res, next) => {
 router.get('/:id/delete', async (req, res, next) => {
     try {
         const showToBeDeleted = await Disney.findById(req.params.id);
-        res.render('delete.ejs' , {Disney: showToBeDeleted})
+        res.render('disney/delete.ejs' , {Disney: showToBeDeleted})
     } catch(err) {
         console.log(err);
         next();
     }
 })
 
-router.delete('/disney/:id', async (req, res, next) => {
+router.delete('/:id', async (req, res, next) => {
     try{
-        Disney.splice(req.params.id, 1)
-        res.redirect('/disney/index.ejs')
+        const deletedItem = await Disney.findByIdAndDelete(req.params.id);
+        res.redirect('/disney')
     }catch (err) {
         console.log(err);
         next();
