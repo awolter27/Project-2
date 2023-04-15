@@ -21,6 +21,18 @@ router.get('', async (req, res, next) => {
     }
 })
 
+//seeded
+router.get('/seed', async (req, res, next) => {
+    try{
+        await Disney.deleteMany({});
+        await Disney.insertMany(seedDisney);
+        res.redirect('/disney');
+    }catch(err) {
+        console.log(err);
+        next();
+    }
+})
+
 //new show
 router.get('/new', (req, res) => {
     res.render('disney/new.ejs')
@@ -32,10 +44,12 @@ router.post('', (req, res) => {
         res.redirect('/disney/index.ejs');
 })
 
+
 //new episode
 router.get('/:id/new', (req, res) => {
     res.render('new.ejs')
 })
+
 
 //edit a show page
 router.get('/:id/edit', async (req, res, next) => {
@@ -90,16 +104,5 @@ router.get('/:id', (req, res) => {
 //show episodes page
 
 
-//seeded
-router.get('/seed', async (req, res, next) => {
-    try{
-        await Disney.deleteMany({});
-        await Disney.insertMany(seedDisney);
-        res.redirect('/disney');
-    }catch(err) {
-        console.log(err);
-        next();
-    }
-})
 
 module.exports = router;

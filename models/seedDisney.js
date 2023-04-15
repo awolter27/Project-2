@@ -32,8 +32,11 @@ module.exports = [
                 }
             }
 
-        },
-    
+        }
+    },
+    {
+
+        
         name: "The Simpsons",
         synopsis: "This long-running animated comedy focuses on the eponymous family in the town of Springfield in an unnamed U.S. state. The head of the Simpson family, Homer, is not a typical family man. A nuclear-plant employee, he does his best to lead his family but often finds that they are leading him. The family includes loving, blue-haired matriarch Marge, troublemaking son Bart, overachieving daughter Lisa and baby Maggie. Other Springfield residents include the familys religious neighbour, Ned Flanders, family physician Dr Hibbert, Moe the bartender and police chief Clancy Wiggum.",
         img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2Roz52iTVPuxUIiuzMUQxej8JIZM43SXCOA&usqp=CAU",
@@ -69,8 +72,10 @@ module.exports = [
                     ten: "Bart Gets Hit by a Car"
                 }
             }
-
-        },
+            
+        }
+    },
+    {
 
         name: "Miraculous - Tales of Ladybug & Cat Noir",
         synopsis: "Marinette seems to be a normal teenage girl -- she dreams of becoming a fashion designer, is a bit awkward and has a crush on a classmate. But she has a secret other teenagers dont have -- she lives a double life as a crime-fighting superhero known as Ladybug. She uses her superpowers to help protect her native Paris from supervillain Hawk Moth. She is assisted, reluctantly, by fellow hero Cat Noir, even though she insists she doesnt need him -- a stance she might not take if she knew his alter ego is her crush, Adrien. Together, Ladybug and Cat Noir help keep Paris safe from Hawk Moth and other villains.",
@@ -108,7 +113,9 @@ module.exports = [
                 }
             }
 
-        },
+        }
+    },
+    {
         name: "Once Upon A Time",
         synopsis: "Once Upon a Time tells the story of a new world, one in which fairy-tale legends and modern life collide. Emma Swan (Jennifer Morrison) is comfortable in her life as a bail bonds collector when Henry -- the child she gave up a decade earlier -- suddenly shows up. He is convinced that she is the daughter of Snow White and Prince Charming, who sent her away before the Evil Queen could cast a spell, freezing the fairytale world in time and bringing them to present-day Storybrooke, Maine. After taking Henry home, Emma decides to stay in the town to keep an eye on him, and she discovers he may not be wrong after all.",
         img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkEzvSgbkDNpdCJqW-DszjcBUIfu0KGyFpyw&usqp=CAU",
@@ -145,7 +152,9 @@ module.exports = [
                 }
             }
 
-        },
+        }
+    },
+    {
         name: "Phineas and Ferb",
         synopsis: "Phineas Flynn and his stepbrother, Ferb Fletcher, are determined to make every day of their summer vacation fun. They try building a full-scale roller coaster, becoming musicians, building a backyard beach, and traveling back in time to meet dinosaurs. Their family pet, Perry the Platypus, doubles as a secret agent and battles evil. Meanwhile, older sister Candace is tattling on them to Mom and Dad, though she can never seem to catch them in the act.",
         img:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtwwlhiyTuxAuObGu9Ag8cmZMA37iLXuYjxA&usqp=CAU",
@@ -184,4 +193,5 @@ module.exports = [
 
         }
     }
+    
 ]
