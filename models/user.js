@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const userSchema = new mongoose.Schema({
     email: {
         type: String,
-        required: [true, 'In 21st century everyone has to have an email! No exceptions!'],
+        required: [true, 'In the 21st century everyone has to have an email! No exceptions!'],
         unique: [true, 'You already have an account with this email address']
     }, 
     password: {
@@ -20,6 +20,6 @@ const userSchema = new mongoose.Schema({
     timestamps: true
 });
 
-const User = mongoose.model('User', userSchema);
+const User = mongoose.model('user', userSchema);
 
 module.exports = User;
