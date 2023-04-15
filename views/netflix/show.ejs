@@ -1,10 +1,17 @@
 <%- include('../partials/header.ejs') %>
 
-    <h1> <%= Netflix.name %> </h1>
-    <img src = <%= Netflix.img %> alt = 'show image'>
-    <h1> <%= Netflix.synopsis %> </h1>
-    <h1> Genre: <%= Netflix.genre %> </h1>
-    <h1> Seasons: <%= Netflix.seasons %> </h1>
-    <h1> Episodes: <%= Netflix.episodes %> </h1>
+<h1> <%= Netflix.name %> </h1>
+<img src = <%= Netflix.img %> alt = 'show image'>
+<h1> <%= Netflix.synopsis %> </h1>
+<h1> Genre: <%= Netflix.genre %> </h1>
+<% for (let i = 0; i < Netflix.seasons.length; i++) { %>
+    <h1>Seasons: <%= i + 1 %></h1>
+    <h1>Year: <%= Netflix.seasons[i].year %></h1>
+    <% for (let j = 0; j < Netflix.seasons[i].episodes.length; j++) { %>
+        <p><%= Netflix.seasons[i].episodes[j] %></p>
+    <% } %>
+<% } %>
+<a href="/netflix/<%= Netflix._id %>/edit">Edit</a>
+<a href="/netflix/<%= Netflix._id %>/delete">Delete</a>
 
 <%- include('../partials/footer.ejs') %>

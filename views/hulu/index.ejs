@@ -2,18 +2,11 @@
 
     <h1>TV Shows on Hulu</h1>
     <% for (let i = 0; i < Hulu.length; i++) { %>
+        <img src=<%= Hulu[i].img %> alt="Image of <%= Hulu[i].name %> Poster">
         <a href="hulu/<%= Hulu[i]._id %>">
             <h1><%= Hulu[i].name %></h1>
-            <p><%= Hulu[i].synopsis %></p>
-            <img src=<%= Hulu[i].img %> alt="Image of <%= Hulu[i].name %> Poster">
-            <p><%= Hulu[i].genre %></p>
-            <% for (let j = 0; j < Hulu[i].seasons.length; j++) { %>
-                <p><%= Hulu[i].seasons[j] %></p>
-                <% for (let k = 0; k < Hulu[i].seasons[j].episodes.length; k++) { %>
-                    <p><%= Hulu[i].seasons[j].episodes[k] %></p>
-                <% } %>
-            <% } %>
         </a>
+        <p><%= Hulu[i].synopsis %></p>
     <% } %>
     <a href="/hulu/new">Add A TV Show</a>
 
