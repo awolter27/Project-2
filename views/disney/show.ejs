@@ -5,7 +5,7 @@
     <h1> <%= myDisney.synopsis %> </h1>
     <h1> Genre: <%= myDisney.genre %> </h1>
     <% for (let i = 0; i < myDisney.seasons.length; i++) { %>
-        <h1>Seasons: <%= i + 1 %></h1>
+        <h1>Season: <%= i + 1 %></h1>
         <h1>Year: <%= myDisney.seasons[i].year %></h1>
         <% for (let j = 0; j < myDisney.seasons[i].episodes.length; j++) { %>
             <p><%= myDisney.seasons[i].episodes[j] %></p>
