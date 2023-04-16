@@ -1,7 +1,7 @@
 require('../config/connection');
 
 module.exports = {
-    Users: require('./User'),
+    User: require('./User'),
     Netflix: require('./Netflix'),
     Hulu: require('./Hulu'),
     Disney: require('./Disney'),

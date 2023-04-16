@@ -136,7 +136,7 @@ module.exports = [
     {
         name: "Ozark",
         synopsis: "After his business partner cheats a dangerous client, financial adviser Marty must devise a radical plan to save the lives of himself and his family.",
-        img: "https://static.wikia.nocookie.net/listofdeaths/images/9/99/Ozark.jpg/revision/latest?cb=20220527131130",
+        img: "https://i.ibb.co/mh7BFXv/p14303628-b-v13-aa.jpg",
         genre: ["crime tv shows", "tv dramas", "tv thtillers"],
         seasons: [
             {
@@ -186,7 +186,7 @@ module.exports = [
             {
                 year: 2022,
                 episodes: ["Black Day","Black Shirt","Gold","Sapphire","The Road to Hell","Lock and Key"]
-            },
+            }
         ]
     }
 ]

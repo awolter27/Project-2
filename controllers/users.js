@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const User = require('../models');
+const { User } = require('../models');
 const bcrypt = require('bcryptjs');
 let loginError;
 
@@ -51,7 +51,7 @@ router.post('/signup', async(req, res, next) => {
         const salt = await bcrypt.genSalt(parseInt(rounds));
         console.log(`salt is ${salt}`);
         const hash = await bcrypt.hash(newUser.password, salt);
-        consolr.log(`hash is ${hash}`);
+        console.log(`hash is ${hash}`);
         newUser.password = hash;
         await User.create(newUser);
         res.redirect('/login');
