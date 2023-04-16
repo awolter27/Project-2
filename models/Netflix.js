@@ -19,7 +19,6 @@ const netflixSchema = new mongoose.Schema(
             required: [true, 'Please enter the genre!']
         },
         seasons: [{
-            name: String,
             year: Number,
             episodes: [String]
         }]

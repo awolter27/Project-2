@@ -5,7 +5,6 @@ const { seedHulu, Hulu } = require('../models');
 router.get('', async (req, res, next) => {
     try {
         const myHulus = await Hulu.find({});
-        console.log(myHulus);
         res.render('hulu/index.ejs', { Hulu: myHulus });
     } catch (err) {
         next();
@@ -61,6 +60,7 @@ router.get('/:id/delete', async (req, res, next) => {
 router.post('', async (req, res, next) => {
     try {
         const newHulu = await Hulu.create(req.body);
+        console.log(newHulu);
         res.redirect('/hulu');
     } catch (err) {
         next();

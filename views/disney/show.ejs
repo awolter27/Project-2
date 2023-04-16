@@ -1,15 +1,17 @@
 <%- include('../partials/header.ejs') %>
 
-<body>
     <h1> <%= myDisney.name %> </h1>
     <img src = <%= myDisney.img %> alt = 'show image'>
     <h1> <%= myDisney.synopsis %> </h1>
     <h1> Genre: <%= myDisney.genre %> </h1>
-    <h1> Seasons: <%= myDisney.seasons %> </h1>
-    <h1> Episodes: <%= myDisney.episodes %> </h1>
-
-    <a href="/disney/<%= myDisney._id %>/edit">Edit this show</a>
-    <a href="/disney/<%= myDisney._id %>/delete">Delete this show</a>
-</body>
+    <% for (let i = 0; i < myDisney.seasons.length; i++) { %>
+        <h1>Season: <%= i + 1 %></h1>
+        <h1>Year: <%= myDisney.seasons[i].year %></h1>
+        <% for (let j = 0; j < myDisney.seasons[i].episodes.length; j++) { %>
+            <p><%= myDisney.seasons[i].episodes[j] %></p>
+        <% } %>
+    <% } %>
+    <a href="/disney/<%= myDisney._id %>/edit">Edit</a>
+    <a href="/disney/<%= myDisney._id %>/delete">Delete</a>
 
 <%- include('../partials/footer.ejs') %>
