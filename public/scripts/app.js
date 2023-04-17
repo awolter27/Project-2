@@ -1,23 +1,21 @@
-const comingSoonCarousel = document.querySelector('.carousel');
-//console.log(comingSoonCarousel);
-const listOfComingSoon = document.getElementsByTagName('ul')[0].getElementsByTagName('li');
-//console.log(listOfComingSoon);
+const comingSoonCarousel = document.querySelector('#comingSoonTiles');
+const listOfComingSoon = document.querySelectorAll('.slide');
+console.log(listOfComingSoon);
 
-const slideCount = 3;
+const slideCount = listOfComingSoon.length;
 const slideWidth = listOfComingSoon[0].offsetWidth;
 
-let currentSlide = 0;
+let currentSlide = 1;
 
 function transitionSlide(){
     if(currentSlide < slideCount){
-        comingSoonCarousel.getElementsByClassName.transform = `translateX(${-1000 * currentSlide}px)`;
+        comingSoonCarousel.style.transform = `translateX(${-slideWidth * currentSlide}px)`;
         currentSlide++;
     }
     else{
-        comingSoonCarousel.getElementsByClassName.transform = `translateX(0)`;
-        currentSlide = -1;
+        comingSoonCarousel.style.transform = `translateX(0)`;
+        currentSlide = 1;
     }
-    console.log('called!')
 }
 
-setInterval (transitionSlide, 5000)
+setInterval(transitionSlide, 5000)
