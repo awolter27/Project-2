@@ -11,13 +11,12 @@
         <label for="genre">Genre</label>
         <input type="text" name="genre" id="genre" value="<%= Hulu.genre %>">
         <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
-            <label for="seasons">Season</label>
-            <input type="text" name="seasons" id="seasons" value="<%= i + 1 %>">
+            <p>Season <%= i + 1 %></p>
             <label for="year">Year</label>
-            <input type="text" name="year" id="year" value="<%= Hulu.seasons[i].year %>">
+            <input type="text" name="Hulu.seasons[i].year" id="year" value="<%= Hulu.seasons[i].year %>">
             <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
                 <label for="episodes">Episodes</label>
-                <input type="text" name="episodes" id="episodes" value="<%= Hulu.seasons[i].episodes[j] %>">
+                <input type="text" name="Hulu.seasons[i].episodes[j]" id="episodes" value="<%= Hulu.seasons[i].episodes[j] %>">
             <% } %>
         <% } %>
         <input type="submit" value="Edit TV Show">

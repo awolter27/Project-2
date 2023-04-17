@@ -60,7 +60,6 @@ router.get('/:id/delete', async (req, res, next) => {
 router.post('', async (req, res, next) => {
     try {
         const newHulu = await Hulu.create(req.body);
-        console.log(newHulu);
         res.redirect('/hulu');
     } catch (err) {
         next();
@@ -70,8 +69,9 @@ router.post('', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
     try {
-        const updatedHulu = await Hulu.findByIdAndUpdate(req.params.id, req.body);
-        res.redirect(`/hulu/${req.params.id}`);
+        // const updatedHulu = await Hulu.findByIdAndUpdate(req.params.id, req.body);
+        // res.redirect(`/hulu/${req.params.id}`);
+        console.log(req.body);
     } catch (err) {
         next();
         console.log(err);

@@ -27,3 +27,7 @@ body{
     list-style: none;
 }
 
+img {
+    height: auto;
+    width: 300px;
+}
