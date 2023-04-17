@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const user = require('./User');
 
 const netflixSchema = new mongoose.Schema(
     {
@@ -21,7 +22,11 @@ const netflixSchema = new mongoose.Schema(
         seasons: [{
             year: Number,
             episodes: [String]
-        }]
+        }],
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'user'
+        }
     },
     {
         timestamps: true
