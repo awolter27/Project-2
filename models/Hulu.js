@@ -21,7 +21,11 @@ const huluSchema = new mongoose.Schema(
         seasons: [{
             year: Number,
             episodes: [String]
-        }]
+        }],
+        user: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'user'
+        }
     },
     {
         timestamps: true
