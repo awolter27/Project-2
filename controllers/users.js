@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const { User } = require('../models');
 const bcrypt = require('bcryptjs');
-let loginError;
+// let loginError;
 
 router.get('/login', (req, res) => {
     res.render('users/login');
@@ -12,11 +12,11 @@ router.get('/signup', (req, res) => {
     res.render('users/signup');
 });
 
-router.post('login', async(req, res, next) => {
+router.post('/login', async(req, res, next) => {
     try {
         let user;
         const loggedInUser = req.body;
-        let userExists = await User.exists({username: loggedInUser.email});
+        let userExists = await User.exists({email: loggedInUser.email});
         console.log(user);
         // checking if the user is valid
         if(!userExists) {
@@ -25,7 +25,7 @@ router.post('login', async(req, res, next) => {
         if(userExists) {
             user = await User.findOne({email: loggedInUser.email});
         } else {
-            loginError = 'Wrong password. Plwase try again';
+            // loginError = 'Wrong password. Please try again';
             res.redirect('/login');
         }
         const match = await bcrypt.compare(req.body.password, user.password);

@@ -5,7 +5,11 @@ const { seedNetflix, Netflix } = require('../models');
 router.get('', async (req, res, next) => {
     try {
         const myNetflixes = await Netflix.find({});
-        res.render('netflix/index.ejs', { Netflix: myNetflixes });
+        let user;
+        if(req.session.currentUser) {
+            user = req.session.currentUser.username;
+        }
+        res.render('netflix/index.ejs', { Netflix: myNetflixes, user });
     } catch (err) {
         next();
         console.log(err);
@@ -30,7 +34,13 @@ router.get('/seed', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const myNetflix = await Netflix.findById(req.params.id);
-        res.render('netflix/show.ejs', { Netflix: myNetflix });
+        let usersNetflix = false;
+        if(req.session.currentUser) {
+            if(req.session.currentUser.id == myNetflix.user.toString()) {
+                usersNetflix = true
+            }
+        }
+        res.render('netflix/show.ejs', { Netflix: myNetflix, usersNetflix });
     } catch (err) {
         next();
         console.log(err);

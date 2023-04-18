@@ -14,6 +14,7 @@ body{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
+    height: auto;
     /* justify-content: center;
     position: relative;
     background-color: darkslategrey; */
@@ -22,7 +23,7 @@ body{
 
 .slide {
     min-width: 100%;
-    height: auto;
+    height: max-content;
     list-style: none;
 }
 

@@ -19,14 +19,8 @@ const huluSchema = new mongoose.Schema(
             required: [true, 'You must enter a genre!']
         },
         seasons: [{
-            year: {
-                type: Number,
-                required: [true, 'You must enter a year!']
-            },
-            episodes: {
-                type: [String],
-                required: [true, 'You must enter a episode!']
-            }
+            year: Number,
+            episodes: [String]
         }]
     },
     {
