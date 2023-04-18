@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs') %>
+
+    <h1>Delete <%= Netflix.name %></h1>
+    <p><%= Netflix.name %></p>
+    <p><%= Netflix.synopsis %></p>
+    <img src = <%= Netflix.img %> alt = 'show image'>
+    <p><%= Netflix.genre %></p>
+    <% for (let i = 0; i < Netflix.seasons.length; i++) { %>
+        <p>Season <%= i + 1 %></p>
+        <p><%= Netflix.seasons[i].year %></p>
+        <% for (let j = 0; j < Netflix.seasons[i].episodes.length; j++) { %>
+            <p><%= Netflix.seasons[i].episodes[j] %></p>
+        <% } %>
+    <% } %>
+    <form method="POST" action="/netflix/<%= Netflix._id %>?_method=DELETE">
+        <input type="submit" value="Delete <%= Netflix.name %>">
+    </form>
+    <a href="/netflix/<%= Netflix._id %>">Back</a>
+
+<%- include('../partials/footer.ejs') %>

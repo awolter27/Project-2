@@ -1,0 +1,27 @@
+<%- include('../partials/header.ejs') %>
+
+    <h1>Edit <%= Hulu.name %></h1>
+    <form action="/hulu/<%= Hulu._id %>?_method=PUT" method="POST">
+        <label for="name">Name</label>
+        <input required type="text" name="name" id="name" value="<%= Hulu.name %>">
+        <label for="synopsis">Synopsis</label>
+        <input required type="text" name="synopsis" id="synopsis" value="<%= Hulu.synopsis %>">
+        <label for="img">Image</label>
+        <input required type="text" name="img" id="img" value="<%= Hulu.img %>">
+        <label for="genre">Genre</label>
+        <input required type="text" name="genre" id="genre" value="<%= Hulu.genre %>">
+        <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
+            <p>Season <%= i + 1 %></p>
+            <input type="hidden" name="seasons" value="<%= i + 1 %>">
+            <label for="year">Year</label>
+            <input required type="number" name="year-<%= i %>" id="year" value="<%= Hulu.seasons[i].year %>">
+            <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
+                <label for="episodes">Episode</label>
+                <input required type="text" name="episodes-<%= i %>" id="episodes" value="<%= Hulu.seasons[i].episodes[j] %>">
+            <% } %>
+        <% } %>
+        <input type="submit" value="Edit TV Show">
+    </form>
+    <a href="/hulu">Back</a>
+
+<%- include('../partials/footer.ejs') %>

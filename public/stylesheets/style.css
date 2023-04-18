@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    background-color: antiquewhite;
+}
+
+.carouselContainer {
+    overflow: hidden;
+    width: 95vw;
+    margin: 0 auto;    
+    position: relative;
+}
+
+#comingSoonTiles{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    height: auto;
+    transition: all 500ms ease;
+}
+
+.slide {
+    min-width: 100%;
+    height: max-content;
+    list-style: none;
+}
+
+img {
+    width: 50vh;
+    height: auto;
+}
+
+#navBar {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 2vh;
+}
+
+.nav{
+    text-decoration: none;
+    color: white;
+    font-size: 125%;
+}
+
+.homeLogo {
+    display: flex;
+    justify-content: center;
+}
+.homeTitle {
+    font-size: 10vh;
+    color: purple;
+}

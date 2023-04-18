@@ -1,0 +1,20 @@
+<%- include('../partials/header.ejs') %>
+
+    <h1>Delete <%= Disney.name %></h1>
+    <p><%= Disney.name %></p>
+    <p><%= Disney.synopsis %></p>
+    <img src = <%= Disney.img %> alt = 'show image'>
+    <p><%= Disney.genre %></p>
+    <% for (let i = 0; i < Disney.seasons.length; i++) { %>
+        <p>Season <%= i + 1 %></p>
+        <p><%= Disney.seasons[i].year %></p>
+        <% for (let j = 0; j < Disney.seasons[i].episodes.length; j++) { %>
+            <p><%= Disney.seasons[i].episodes[j] %></p>
+        <% } %>
+    <% } %>
+    <form method="POST" action="/disney/<%= Disney._id %>?_method=DELETE">
+        <input type="submit" value="Delete <%= Disney.name %>">
+    </form>
+    <a href="/disney/<%= Disney._id %>">Back</a>
+
+<%- include('../partials/footer.ejs') %>

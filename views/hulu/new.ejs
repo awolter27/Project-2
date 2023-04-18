@@ -1,0 +1,29 @@
+<%- include('../partials/header.ejs') %>
+
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+
+    <h1>Add a TV Show to Hulu</h1>
+    <form action="/hulu" method="POST">
+        <label for="name">Name</label>
+        <input type="text" name="name" placeholder="You">
+        <label for="synopsis">Synopsis</label>
+        <input type="text" name="synopsis" placeholder="A dangerously charming, intensely obsessive young man goes to extreme measures to insert himself into the lives of those he is transfixed by.">
+        <label for="img">Image</label>
+        <input type="text" name="img" placeholder="https://static.tvtropes.org/pmwiki/pub/images/you_7.png">
+        <label for="genre">Genre</label>
+        <input type="text" name="genre" placeholder="Drama, Psychological Thriller">
+        <label for="seasons">Season</label>
+        <input type="text" name="seasons" placeholder="One">
+        <label for="year">Year</label>
+        <input type="number" name="year" placeholder="2018">
+        <label for="episodes">Episode</label>
+        <input type="text" name="episodes" placeholder="Pilot">
+        <input type="submit" value="Add TV Show">
+    </form>
+    <input type="button" value="Back" onclick="goBack()">
+
+<%- include('../partials/footer.ejs') %>
