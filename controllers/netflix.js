@@ -34,13 +34,13 @@ router.get('/seed', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const myNetflix = await Netflix.findById(req.params.id);
-        let usersNetflix = false;
-        if(req.session.currentUser) {
-            if(req.session.currentUser.id == myNetflix.user.toString()) {
-                usersNetflix = true
-            }
-        }
-        res.render('netflix/show.ejs', { Netflix: myNetflix, usersNetflix });
+        // let usersNetflix = false;
+        // if(req.session.currentUser) {
+        //     if(req.session.currentUser.id == myNetflix.user.toString()) {
+        //         usersNetflix = true
+        //     }
+        // }
+        res.render('netflix/show.ejs', { Netflix: myNetflix });
     } catch (err) {
         next();
         console.log(err);

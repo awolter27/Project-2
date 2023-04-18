@@ -9,7 +9,11 @@ const { seedDisney, Disney } = require('../models');
 router.get('', async (req, res, next) => {
     try {
         const myDisneys = await Disney.find({});
-        res.render('disney/index.ejs', { Disney: myDisneys });
+        let user;
+        if(req.session.currentUser) {
+            user = req.session.currentUser.username;
+        }
+        res.render('disney/index.ejs', { Disney: myDisneys, user });
     } catch (err) {
         next();
         console.log(err);

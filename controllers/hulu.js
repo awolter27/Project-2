@@ -5,7 +5,11 @@ const { seedHulu, Hulu } = require('../models');
 router.get('', async (req, res, next) => {
     try {
         const myHulus = await Hulu.find({});
-        res.render('hulu/index.ejs', { Hulu: myHulus });
+        let user;
+        if(req.session.currentUser) {
+            user = req.session.currentUser.username;
+        }
+        res.render('hulu/index.ejs', { Hulu: myHulus, user });
     } catch (err) {
         next();
         console.log(err);
