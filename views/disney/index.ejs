@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-    <h1>TV Shows on Disney</h1>
+    <h1>Disney</h1>
     <% for (let i = 0; i < Disney.length; i++) { %>
         <img src=<%= Disney[i].img %> alt="Image of <%= Disney[i].name %> Poster">
         <a href="disney/<%= Disney[i]._id %>">

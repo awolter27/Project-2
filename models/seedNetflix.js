@@ -30,7 +30,7 @@ module.exports = [
                 episodes: ["Philadelphia", "Croatia", "Austin", "Santiago de Chile", "Nashville", "Tribute to Helen and Max"]
                 
             },
-        ]
+        ],
     },
     {
             name: "The Last Kingdom",
@@ -59,7 +59,7 @@ module.exports = [
                year: 2022,
                episodes:  ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
             },
-        ]
+        ],
     },
     {
         name: "The Playlist",
@@ -71,7 +71,7 @@ module.exports = [
                 year: 2022,
                 episodes: ["The Vision","The Industry","The Law","The Coder","The Partner","The Artist"]
             }
-        ]
+        ],
     },
     {
         name: "Breaking Bad",
@@ -88,18 +88,18 @@ module.exports = [
                 episodes: ["Seven Thirty-Seven", "Grilled", "Bit by a Dead Bee", "Down", "Breakage", "Peekaboo", "Negro y Azul", "Better Call Saul", "4 Days Out", "Over", "Mandala", "Phoenix", "ABQ"]
             },
             {
-               year: 2010,
-               episodes: ["No Más", "Caballo sin Nombre", "I.F.T.", "Green Light", "Más", "Sunset", "One Minute", "I See You", "Kafkaesque", "Fly", "Abiquiu", "Half Measures", "Full Measure"]
+                year: 2010,
+                episodes: ["No Más", "Caballo sin Nombre", "I.F.T.", "Green Light", "Más", "Sunset", "One Minute", "I See You", "Kafkaesque", "Fly", "Abiquiu", "Half Measures", "Full Measure"]
             },
             {
-               year: 2011,
-               episodes: ["Box Cutter", "Thirty-Eight Snub", "Open House", "Bullet Points", "Shotgun", "Cornered", "Problem Dog", "Hermanos", "Bug", "Salud", "Crawl Space", "End Times", "Face Off"]
+                year: 2011,
+                episodes: ["Box Cutter", "Thirty-Eight Snub", "Open House", "Bullet Points", "Shotgun", "Cornered", "Problem Dog", "Hermanos", "Bug", "Salud", "Crawl Space", "End Times", "Face Off"]
             },
             {
                 year: 2012-2013,
                 episodes: ["Live Free or Die", "Madrigal", "Hazard Pay", "Fifty-One", "Dead Freight", "Buyout", "Say My Name", "Gliding Over All", "Blood Money", "Buried", "Confessions", "Rabid Dog", "To'hajiilee", "Ozymandias", "Granite State", "Felina"]
             },
-        ]
+        ],
     },
     {
         name: "Better Call Saul",
@@ -116,22 +116,22 @@ module.exports = [
                 episodes:  ["Switch", "Cobbler", "Amarillo", "Gloves Off", "Rebecca", "Bali Ha'i", "Inflatable", "Fifi", "Nailed", "Klick"]
             },
             {
-               year: 2017,
-               episodes:  ["Mabel", "Witness", "Sunk Costs", "Sabrosito", "Chicanery", "Off Brand", "Expenses", "Slip", "Fall", "Lantern"]
+                year: 2017,
+                episodes:  ["Mabel", "Witness", "Sunk Costs", "Sabrosito", "Chicanery", "Off Brand", "Expenses", "Slip", "Fall", "Lantern"]
             },
             {
-              year: 2018,
-              episodes:  ["Smoke", "Breathe", "Something Beautiful", "Talk", "Quite a Ride", "Piñata", "Something Stupid", "Coushatta", "Wiedersehen", "Winner"]
+                year: 2018,
+                episodes:  ["Smoke", "Breathe", "Something Beautiful", "Talk", "Quite a Ride", "Piñata", "Something Stupid", "Coushatta", "Wiedersehen", "Winner"]
             },
             {
-             year: 2020,
-             episodes: ["Magic Man", "50% Off", "The Guy for This", "Namaste", "Dedicado a Max", "Wexler v. Goodman", "JMM", "Bagman", "Bad Choice Road", "Something Unforgivable"]
+                year: 2020,
+                episodes: ["Magic Man", "50% Off", "The Guy for This", "Namaste", "Dedicado a Max", "Wexler v. Goodman", "JMM", "Bagman", "Bad Choice Road", "Something Unforgivable"]
             },
             {
-               year: 2022,
-               episodes: ["Wine and Roses", "Carrot and Stick", "Rock and Hard Place", "Hit and Run", "Black and Blue", "Axe and Grind", "Plan and Execution", "Point and Shoot", "Fun and Games", "Nippy", "Breaking Bad", "Waterworks", "Saul Gone"]
+                year: 2022,
+                episodes: ["Wine and Roses", "Carrot and Stick", "Rock and Hard Place", "Hit and Run", "Black and Blue", "Axe and Grind", "Plan and Execution", "Point and Shoot", "Fun and Games", "Nippy", "Breaking Bad", "Waterworks", "Saul Gone"]
             },
-        ]
+        ],
     },
     {
         name: "Ozark",
@@ -142,12 +142,12 @@ module.exports = [
             {
                 year: 2017,
                 episodes: ["Sugarwood", "Blue Cat", "My Dripping Sleep", "Tonight We Improvise", "Ruling Days", "Book of Ruth", "Nest Box", "Kaleidoscope", "Coffee, Black", "The Toll"]
-           },
-           {
+            },
+            {
                 year: 2018,
                 episodes: ["Reparations", "The Precious Blood of Jesus", "Once a Langmore...", "Stag", "Game Day", "Outer Darkness", "One Way Out", "The Big Sleep", "The Badger", "The Gold Coast"]
-           },
-           {
+            },
+            {
                 year: 2020,
                 episodes: ["Wartime", "Civil Union", "Kevin Cronin Was Here", "Boss Fight", "It Came from Michoacán", "Su Casa Es Mi Casa", "In Case of Emergency", "BFF", "Fire Pink", "All In"]
             },
@@ -155,7 +155,8 @@ module.exports = [
                year: 2022,
                episodes: ["The Beginning of the End", "Let the Great World Spin", "City on the Make", "Ace Deuce", "Ellie", "Sangre Sobre Todo", "Sanctified", "The Cousin of Death", "Pick a God and Pray", "You're the Boss", "Pound of Flesh and Still Kickin'", "Trouble the Water", "Mud", "A Hard Way to Go"]
             }
-        ]
+        ],
+        user: "643198fb710fd9a01542b132"
     },
     {
         name: "Peaky Blinders",
@@ -187,6 +188,6 @@ module.exports = [
                 year: 2022,
                 episodes: ["Black Day","Black Shirt","Gold","Sapphire","The Road to Hell","Lock and Key"]
             }
-        ]
+        ],
     }
 ]

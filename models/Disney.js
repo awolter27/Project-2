@@ -4,23 +4,29 @@ const disneySchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, 'You must enter the name of a show!'],
-            unique: true
+            required: [true, 'You must enter a name!']
         },
         synopsis: {
-            type: String
+            type: String,
+            required: [true, 'You must enter a synopsis!']
         },
         img: {
             type: String,
-            required: [true, 'It would make it look much nicer if you add an image.']
+            required: [true, 'You must enter an image!']
         },
         genre: {
             type: [String],
-            required: [true, 'Please enter the genre!']
+            required: [true, 'You must enter a genre!']
         },
         seasons: [{
-            year: Number,
-            episodes: [String]
+            year: {
+                type: Number,
+                required: [true, 'You must enter a year!']
+            } ,
+            episodes: {
+                type: [String],
+                required: [true, 'You must enter an episode!']
+            }
         }]
     },
     {
@@ -31,5 +37,3 @@ const disneySchema = new mongoose.Schema(
 const Disney = mongoose.model('Disney', disneySchema);
 
 module.exports = Disney;
-//an option for a user to add as many episodes as needed since every show has its own amount of episodes in every season.
-// require('mongoose').model('Disney').schema.add({episode: String});

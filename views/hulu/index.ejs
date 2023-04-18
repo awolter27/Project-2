@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-    <h1>TV Shows on Hulu</h1>
+    <h1>Hulu</h1>
     <% for (let i = 0; i < Hulu.length; i++) { %>
         <img src=<%= Hulu[i].img %> alt="Image of <%= Hulu[i].name %> Poster">
         <a href="hulu/<%= Hulu[i]._id %>">
