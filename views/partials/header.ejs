@@ -9,14 +9,14 @@
     <title>Sofa Spud</title>
 </head>
 <body>
-    <nav>
-        <a href="/login">Log In</a>
-        <a href="/">Home</a>
-        <a href="/netflix">Netflix</a>
-        <a href="/hulu">Hulu</a>
-        <a href="/disney">Disney</a>
-        <a href="/signup">Sign Up</a>
-        <a href="/logout">Logout</a>
+    <nav class="navBar">
+        <a class="nav" href="/login">Log In</a>
+        <a class="nav" href="/">Home</a>
+        <a class="nav" href="/netflix">Netflix</a>
+        <a class="nav" href="/hulu">Hulu</a>
+        <a class="nav" href="/disney">Disney</a>
+        <a class="nav" href="/signup">Sign Up</a>
+        <a class="nav" href="/logout">Logout</a>
         <div>
             <% if(typeof user !== 'undefined') { %>
                 <h2>🛋️ Welcome, <%= user %>!</h2>
