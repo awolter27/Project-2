@@ -31,7 +31,6 @@ module.exports = [
                 
             },
         ],
-            user: "643198fb710fd9a01542b132"
     },
     {
             name: "The Last Kingdom",
@@ -61,7 +60,6 @@ module.exports = [
                episodes:  ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
             },
         ],
-            user: "643198fb710fd9a01542b132"
     },
     {
         name: "The Playlist",
@@ -74,7 +72,6 @@ module.exports = [
                 episodes: ["The Vision","The Industry","The Law","The Coder","The Partner","The Artist"]
             }
         ],
-        user: "643198fb710fd9a01542b132"
     },
     {
         name: "Breaking Bad",
@@ -103,7 +100,6 @@ module.exports = [
                 episodes: ["Live Free or Die", "Madrigal", "Hazard Pay", "Fifty-One", "Dead Freight", "Buyout", "Say My Name", "Gliding Over All", "Blood Money", "Buried", "Confessions", "Rabid Dog", "To'hajiilee", "Ozymandias", "Granite State", "Felina"]
             },
         ],
-        user: "643198fb710fd9a01542b132"
     },
     {
         name: "Better Call Saul",
@@ -136,7 +132,6 @@ module.exports = [
                 episodes: ["Wine and Roses", "Carrot and Stick", "Rock and Hard Place", "Hit and Run", "Black and Blue", "Axe and Grind", "Plan and Execution", "Point and Shoot", "Fun and Games", "Nippy", "Breaking Bad", "Waterworks", "Saul Gone"]
             },
         ],
-        user: "643198fb710fd9a01542b132"
     },
     {
         name: "Ozark",
@@ -194,6 +189,5 @@ module.exports = [
                 episodes: ["Black Day","Black Shirt","Gold","Sapphire","The Road to Hell","Lock and Key"]
             }
         ],
-        user: "643198fb710fd9a01542b132"
     }
 ]

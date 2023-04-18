@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const user = require('./User');
+
 
 const netflixSchema = new mongoose.Schema(
     {
