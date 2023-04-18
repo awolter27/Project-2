@@ -4,28 +4,24 @@ const huluSchema = new mongoose.Schema(
     {
         name: {
             type: String,
-            required: [true, 'You must enter the name of a show!'],
-            unique: true
+            required: [true, 'You must enter a name!']
         },
         synopsis: {
-            type: String
+            type: String,
+            required: [true, 'You must enter a synopsis!']
         },
         img: {
             type: String,
-            required: [true, 'It would make it look much nicer if you add an image.']
+            required: [true, 'You must enter an image!']
         },
         genre: {
             type: [String],
-            required: [true, 'Please enter the genre!']
+            required: [true, 'You must enter a genre!']
         },
         seasons: [{
             year: Number,
             episodes: [String]
-        }],
-        user: {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: 'user'
-        }
+        }]
     },
     {
         timestamps: true
@@ -35,5 +31,3 @@ const huluSchema = new mongoose.Schema(
 const Hulu = mongoose.model('Hulu', huluSchema);
 
 module.exports = Hulu;
-//an option for a user to add as many episodes as needed since every show has its own amount of episodes in every season.
-// require('mongoose').model('Hulu').schema.add({episode: String});

@@ -60,7 +60,6 @@ router.get('/:id/delete', async (req, res, next) => {
 router.post('', async (req, res, next) => {
     try {
         const newHulu = await Hulu.create(req.body);
-        console.log(newHulu);
         res.redirect('/hulu');
     } catch (err) {
         next();
@@ -70,7 +69,38 @@ router.post('', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
     try {
-        const updatedHulu = await Hulu.findByIdAndUpdate(req.params.id, req.body);
+        const form = req.body;
+        // const name = form.name;
+        // const synopsis = form.synopsis;
+        // const img = form.img;
+        const { name, synopsis, img, genre } = form;
+        const updatedShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [] }
+        console.log(form);
+        // console.log(updatedShow);
+        for (let i = 0; i < form.seasons.length; i++) {
+            let season = {
+                year: 0,
+                episodes: []
+            }
+            updatedShow.seasons.push(season);
+        }
+        // console.log(updatedShow);
+        for (const key in form) {
+            // console.log(`Form Key: ${key}: ${form[key]}`)
+            if (key.slice(0, 4) === 'year') {
+                updatedShow.seasons[key.slice(5)].year = Number(form[key])
+            }
+            if (key.slice(0, 8) === 'episodes') {
+                updatedShow.seasons[key.slice(9)].episodes = form[key]
+            }
+        }
+        // for of (iterates over values) and for in (iterates over properties) loop
+        // console.log(form);
+        console.log(updatedShow);
+        for (let i = 0; i < updatedShow.seasons.length; i++) {
+            console.log(updatedShow.seasons[i].episodes);
+        }
+        const updatedHulu = await Hulu.findByIdAndUpdate(req.params.id, updatedShow);
         res.redirect(`/hulu/${req.params.id}`);
     } catch (err) {
         next();
