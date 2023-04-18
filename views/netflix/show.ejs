@@ -11,9 +11,7 @@
         <p><%= Netflix.seasons[i].episodes[j] %></p>
     <% } %>
 <% } %>
-<% if(usersNetflix) { %>
 <a href="/netflix/<%= Netflix._id %>/edit">Edit</a>
 <a href="/netflix/<%= Netflix._id %>/delete">Delete</a>
-<% } %>
 
 <%- include('../partials/footer.ejs') %>

@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs')  %>
 
-    <h1>TV Shows on Netflix</h1>
+    <h1>Netflix</h1>
     <% for (let i = 0; i < Netflix.length; i++) { %>
         <img src=<%= Netflix[i].img %> alt="Image of <%= Netflix[i].name %> Poster">
         <a href="netflix/<%= Netflix[i]._id %>">
