@@ -63,7 +63,10 @@ router.get('/:id/delete', async (req, res, next) => {
 
 router.post('', async (req, res, next) => {
     try {
-        const newHulu = await Hulu.create(req.body);
+        const form = req.body;
+        const { name, synopsis, img, genre } = form;
+        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{year: 0, episodes: []}] }
+        const newHulu = await Hulu.create(newShow);
         res.redirect('/hulu');
     } catch (err) {
         next();
