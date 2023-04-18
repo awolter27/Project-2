@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    background-color: antiquewhite;
 }
 
 .carouselContainer {
@@ -14,9 +15,6 @@ body {
     flex-direction: row;
     flex-wrap: nowrap;
     height: auto;
-    /* justify-content: center;
-    position: relative;
-    background-color: darkslategrey; */
     transition: all 500ms ease;
 }
 
@@ -31,3 +29,24 @@ img {
     height: auto;
 }
 
+#navBar {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 2vh;
+}
+
+.nav{
+    text-decoration: none;
+    color: white;
+    font-size: 125%;
+}
+
+.homeLogo {
+    display: flex;
+    justify-content: center;
+}
+.homeTitle {
+    font-size: 10vh;
+    color: purple;
+}
