@@ -18,11 +18,11 @@ router.get('', async (req, res, next) => {
 
 //seeded
 router.get('/seed', async (req, res, next) => {
-    try{
+    try {
         await Disney.deleteMany({});
         await Disney.insertMany(seedDisney);
         res.redirect('/disney');
-    }catch(err) {
+    } catch (err) {
         console.log(err);
         next();
     }
@@ -45,9 +45,9 @@ router.get('/new', (req, res) => {
 })
 
 router.post('', (req, res) => {
-        const newShow = Disney.create(req.body);
-        console.log(newShow);
-        res.redirect('/disney/index.ejs');
+    const newShow = Disney.create(req.body);
+    console.log(newShow);
+    res.redirect('/disney/index.ejs');
 })
 
 
@@ -62,8 +62,8 @@ router.get('/:id/edit', async (req, res, next) => {
     try {
         const showToBeEdited = await Disney.findById(req.params.id);
         console.log(showToBeEdited);
-        res.render('Disney/edit.ejs', {Disney: showToBeEdited})
-    } catch(err) {
+        res.render('Disney/edit.ejs', { Disney: showToBeEdited })
+    } catch (err) {
         console.log(err);
         next()
     }
@@ -71,11 +71,29 @@ router.get('/:id/edit', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
     try {
-        const updatedShow = await Disney.findByIdAndUpdate(req.params.id, req.body);
-        res.redirect(`/disney/${req.params.id}`)
-    } catch(err) {
-        console.log(err);
+        const form = req.body;
+        const { name, synopsis, img, genre } = form;
+        const updatedShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [] }
+        for (let i = 0; i < form.seasons.length; i++) {
+            let season = {
+                year: 0,
+                episodes: []
+            }
+            updatedShow.seasons.push(season);
+        }
+        for (const key in form) {
+            if (key.slice(0, 4) === 'year') {
+                updatedShow.seasons[key.slice(5)].year = Number(form[key]);
+            }
+            if (key.slice(0, 8) === 'episodes') {
+                updatedShow.seasons[key.slice(9)].episodes = form[key];
+            }
+        }
+        const updatedDisney = await Disney.findByIdAndUpdate(req.params.id, updatedShow);
+        res.redirect(`/disney/${req.params.id}`);
+    } catch (err) {
         next();
+        console.log(err);
     }
 })
 
@@ -83,18 +101,18 @@ router.put('/:id', async (req, res, next) => {
 router.get('/:id/delete', async (req, res, next) => {
     try {
         const showToBeDeleted = await Disney.findById(req.params.id);
-        res.render('disney/delete.ejs' , {Disney: showToBeDeleted})
-    } catch(err) {
+        res.render('disney/delete.ejs', { Disney: showToBeDeleted })
+    } catch (err) {
         console.log(err);
         next();
     }
 })
 
 router.delete('/:id', async (req, res, next) => {
-    try{
+    try {
         const deletedItem = await Disney.findByIdAndDelete(req.params.id);
         res.redirect('/disney')
-    }catch (err) {
+    } catch (err) {
         console.log(err);
         next();
     }

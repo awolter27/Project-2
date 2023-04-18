@@ -5,7 +5,7 @@
         <label for="name">Name</label>
         <input required type="text" name="name" id="name" value="<%= Hulu.name %>">
         <label for="synopsis">Synopsis</label>
-        <input type="text" name="synopsis" id="synopsis" value="<%= Hulu.synopsis %>">
+        <input required type="text" name="synopsis" id="synopsis" value="<%= Hulu.synopsis %>">
         <label for="img">Image</label>
         <input required type="text" name="img" id="img" value="<%= Hulu.img %>">
         <label for="genre">Genre</label>
@@ -17,10 +17,9 @@
             <input required type="number" name="year-<%= i %>" id="year" value="<%= Hulu.seasons[i].year %>">
             <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
                 <label for="episodes">Episode</label>
-                <input type="text" name="episodes-<%= i %>" id="episodes" value="<%= Hulu.seasons[i].episodes[j] %>">
+                <input required type="text" name="episodes-<%= i %>" id="episodes" value="<%= Hulu.seasons[i].episodes[j] %>">
             <% } %>
         <% } %>
-
         <input type="submit" value="Edit TV Show">
     </form>
     <a href="/hulu">Back</a>

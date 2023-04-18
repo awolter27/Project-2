@@ -69,7 +69,25 @@ router.post('', async (req, res, next) => {
 
 router.put('/:id', async (req, res, next) => {
     try {
-        const updatedNetflix = await Netflix.findByIdAndUpdate(req.params.id, req.body);
+        const form = req.body;
+        const { name, synopsis, img, genre } = form;
+        const updatedShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [] }
+        for (let i = 0; i < form.seasons.length; i++) {
+            let season = {
+                year: 0,
+                episodes: []
+            }
+            updatedShow.seasons.push(season);
+        }
+        for (const key in form) {
+            if (key.slice(0, 4) === 'year') {
+                updatedShow.seasons[key.slice(5)].year = Number(form[key]);
+            }
+            if (key.slice(0, 8) === 'episodes') {
+                updatedShow.seasons[key.slice(9)].episodes = form[key];
+            }
+        }
+        const updatedNetflix = await Netflix.findByIdAndUpdate(req.params.id, updatedShow);
         res.redirect(`/netflix/${req.params.id}`);
     } catch (err) {
         next();
