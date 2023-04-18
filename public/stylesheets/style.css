@@ -27,3 +27,8 @@ body{
     list-style: none;
 }
 
+img {
+    width: 50vh;
+    height: auto;
+}
+
