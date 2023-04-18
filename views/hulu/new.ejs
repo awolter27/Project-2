@@ -9,21 +9,46 @@
     <h1>Add a TV Show to Hulu</h1>
     <form action="/hulu" method="POST">
         <label for="name">Name</label>
-        <input type="text" name="name" placeholder="The Dropout">
+        <input required type="text" name="name" placeholder="The Dropout">
         <label for="synopsis">Synopsis</label>
-        <input type="text" name="synopsis" placeholder="TV series that chronicles Theranos founder Elizabeth Holmes' attempt to revolutionize the healthcare industry after dropping out of college and starting a technology company.">
+        <input required type="text" name="synopsis" placeholder="TV series that chronicles Theranos founder Elizabeth Holmes' attempt to revolutionize the healthcare industry after dropping out of college and starting a technology company.">
         <label for="img">Image</label>
-        <input type="text" name="img" placeholder="https://cdn.firstcuriosity.com/wp-content/uploads/2023/03/14000019/IMG_COM_20230313_2205_47_9503-696x522.jpg">
+        <input required type="text" name="img" placeholder="https://cdn.firstcuriosity.com/wp-content/uploads/2023/03/14000019/IMG_COM_20230313_2205_47_9503-696x522.jpg">
         <label for="genre">Genre</label>
-        <input type="text" name="genre" placeholder="Drama, True Crime">
+        <input required type="text" name="genre" placeholder="Drama, True Crime">
         <label for="seasons">Season</label>
-        <input type="text" name="seasons" placeholder="One">
+        <input required type="text" name="seasons" placeholder="One">
         <label for="year">Year</label>
-        <input type="number" name="year" placeholder="2022">
+        <input required type="number" name="year" placeholder="2022">
         <label for="episodes">Episode</label>
-        <input type="text" name="episodes" placeholder="I'm in a Hurry">
+        <input required type="text" name="episodes" placeholder="I'm in a Hurry">
         <input type="submit" value="Add TV Show">
     </form>
     <input type="button" value="Back" onclick="goBack()">
+
+
+
+    
+        
+     
+        <label for="synopsis">Synopsis</label>
+        <input required type="text" name="synopsis" id="synopsis" value="<%= Hulu.synopsis %>">
+        <label for="img">Image</label>
+        <input required type="text" name="img" id="img" value="<%= Hulu.img %>">
+        <label for="genre">Genre</label>
+        <input required type="text" name="genre" id="genre" value="<%= Hulu.genre %>">
+        <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
+            <p>Season <%= i + 1 %></p>
+            <input type="hidden" name="seasons" value="<%= i + 1 %>">
+            <label for="year">Year</label>
+            <input required type="number" name="year-<%= i %>" id="year" value="<%= Hulu.seasons[i].year %>">
+            <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
+                <label for="episodes">Episode</label>
+                <input required type="text" name="episodes-<%= i %>" id="episodes" value="<%= Hulu.seasons[i].episodes[j] %>">
+            <% } %>
+        <% } %>
+        <input type="submit" value="Edit TV Show">
+    </form>
+    <a href="/hulu">Back</a>
 
 <%- include('../partials/footer.ejs') %>
