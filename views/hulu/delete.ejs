@@ -7,9 +7,15 @@
     <p><%= Hulu.genre %></p>
     <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
         <p>Season <%= i + 1 %></p>
+        <form method="POST" action="/hulu/<%= Hulu._id %>?_method=DELETE">
+            <input type="submit" value="Delete Season <%= i + 1 %>">
+        </form>
         <p><%= Hulu.seasons[i].year %></p>
         <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
             <p><%= Hulu.seasons[i].episodes[j] %></p>
+            <form method="POST" action="/hulu/<%= Hulu._id %>?_method=DELETE">
+                <input type="submit" value="Delete Episode <%= Hulu.seasons[i].episodes[j] %>">
+            </form>
         <% } %>
     <% } %>
     <form method="POST" action="/hulu/<%= Hulu._id %>?_method=DELETE">
