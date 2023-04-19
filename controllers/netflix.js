@@ -84,7 +84,10 @@ router.post('/:id/comments', async(req, res, next) => {
 
 router.post('', async (req, res, next) => {
     try {
-        const newNetflix = await Netflix.create(req.body);
+        const form = req.body;
+        const { name, synopsis, img, genre } = form;
+        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{year: 0, episodes: []}] }
+        const newNetflix = await Netflix.create(newShow);
         res.redirect('/netflix');
     } catch (err) {
         next();
