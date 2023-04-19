@@ -34,13 +34,13 @@ router.get('/seed', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const myNetflix = await Netflix.findById(req.params.id);
-        let usersNetflix = false;
-        if(req.session.currentUser) {
-            if(req.session.currentUser.id == myNetflix.user.toString()) {
-                usersNetflix = true
-            }
-        }
-        res.render('netflix/show.ejs', { Netflix: myNetflix, usersNetflix });
+        // let usersNetflix = false;
+        // if(req.session.currentUser) {
+        //     if(req.session.currentUser.id == myNetflix.user.toString()) {
+        //         usersNetflix = true
+        //     }
+        // }
+        res.render('netflix/show.ejs', { Netflix: myNetflix });
     } catch (err) {
         next();
         console.log(err);
@@ -69,7 +69,10 @@ router.get('/:id/delete', async (req, res, next) => {
 
 router.post('', async (req, res, next) => {
     try {
-        const newNetflix = await Netflix.create(req.body);
+        const form = req.body;
+        const { name, synopsis, img, genre } = form;
+        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{year: 0, episodes: []}] }
+        const newNetflix = await Netflix.create(newShow);
         res.redirect('/netflix');
     } catch (err) {
         next();

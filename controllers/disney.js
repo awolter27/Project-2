@@ -9,7 +9,11 @@ const { seedDisney, Disney } = require('../models');
 router.get('', async (req, res, next) => {
     try {
         const myDisneys = await Disney.find({});
-        res.render('disney/index.ejs', { Disney: myDisneys });
+        let user;
+        if(req.session.currentUser) {
+            user = req.session.currentUser.username;
+        }
+        res.render('disney/index.ejs', { Disney: myDisneys, user });
     } catch (err) {
         next();
         console.log(err);
@@ -44,12 +48,18 @@ router.get('/new', (req, res) => {
     res.render('disney/new.ejs')
 })
 
-router.post('', (req, res) => {
-    const newShow = Disney.create(req.body);
-    console.log(newShow);
-    res.redirect('/disney/index.ejs');
+router.post('', async (req, res, next) => {
+    try {
+        const form = req.body;
+        const { name, synopsis, img, genre } = form;
+        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{year: 0, episodes: []}] }
+        const newDisney = await Disney.create(newShow);
+        res.redirect('/disney');
+    } catch (err) {
+        next();
+        console.log(err);
+    }
 })
-
 
 //new episode
 router.get('/:id/new', (req, res) => {

@@ -36,7 +36,11 @@ app.use(
 
 
 app.get('/', (req, res) => {
-    res.render('home.ejs');
+    let user;
+    if(req.session.currentUser) {
+        user = req.session.currentUser.username;
+    }
+    res.render('home.ejs', { user });
 });
 
 app.use('', userController);

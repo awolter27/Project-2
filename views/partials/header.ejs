@@ -9,17 +9,17 @@
     <title>Sofa Spud</title>
 </head>
 <body>
-        <nav id = 'navBar'>
-            <a class = 'nav' href="/login">Log In</a>
-            <a class = 'nav' href="/">Home</a>
-            <a class = 'nav' href="/netflix">Netflix</a>
-            <a class = 'nav' href="/hulu">Hulu</a>
-            <a class = 'nav' href="/disney">Disney</a>
-            <a class = 'nav' href="/signup">Sign Up</a>
-            <a class = 'nav' href="/logout">Logout</a>
-            <div>
-                <% if(typeof username !== 'undefined') { %>
-                    <h2>Welcome, <%= username %></h2>
-                    <% } %>
-                </div>
+    <nav class="navBar">
+        <a class="nav" href="/login">Log In</a>
+        <a class="nav" href="/">Home</a>
+        <a class="nav" href="/netflix">Netflix</a>
+        <a class="nav" href="/hulu">Hulu</a>
+        <a class="nav" href="/disney">Disney</a>
+        <a class="nav" href="/signup">Sign Up</a>
+        <a class="nav" href="/logout">Logout</a>
+        <div>
+            <% if(typeof user !== 'undefined') { %>
+                <h2>🛋️ Welcome, <%= user %>!</h2>
+           <% } %>
+        </div>
     </nav>
