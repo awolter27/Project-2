@@ -11,9 +11,9 @@
             <img class='showImage' src=<%= Hulu[i].img %> alt="Image of <%= Hulu[i].name %> Poster">
             <div class="showNameAndSynopsis">
                 <a href="hulu/<%= Hulu[i]._id %>">
-                    <h1><%= Hulu[i].name %></h1>
+                    <h1 class="showTitle"><%= Hulu[i].name %></h1>
                 </a>
-                <p><%= Hulu[i].synopsis %></p>
+                <p class="sansSerif"><%= Hulu[i].synopsis %></p>
                 <% } %>
             </div>
         </div>

@@ -10,9 +10,9 @@
                 <img class="showImage" src=<%= Disney[i].img %> alt="Image of <%= Disney[i].name %> Poster">
             <div class="showNameAndSynopsis">
                 <a href="disney/<%= Disney[i]._id %>">
-                    <h1><%= Disney[i].name %></h1>
+                    <h1 class="showTitle"><%= Disney[i].name %></h1>
                 </a>
-                <p><%= Disney[i].synopsis %></p>
+                <p class="sansSerif"><%= Disney[i].synopsis %></p>
                 <% } %>
             </div>
         </div>
