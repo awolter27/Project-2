@@ -1,6 +1,10 @@
+
 <%- include('../partials/header.ejs') %>
 
-    <h1>Edit <%= Disney.name %></h1>
+<div class="editRoutePage">
+    <div class="editHeader">
+        <h1>Edit <%= Disney.name %></h1>
+    </div>
     <form action="/disney/<%= Disney._id %>?_method=PUT" method="POST">
         <label for="name">Name</label>
         <input required type="text" name="name" id="name" value="<%= Disney.name %>">
@@ -18,10 +22,11 @@
             <% for (let j = 0; j < Disney.seasons[i].episodes.length; j++) { %>
                 <label for="episodes">Episode</label>
                 <input required type="text" name="episodes-<%= i %>" id="episodes" value="<%= Disney.seasons[i].episodes[j] %>">
-            <% } %>
-        <% } %>
-        <input type="submit" value="Edit TV Show">
-    </form>
-    <a href="/disney">Back</a>
-
-<%- include('../partials/footer.ejs') %>
+                <% } %>
+                <% } %>
+                <input type="submit" value="Edit TV Show">
+            </form>
+        </div>
+            <a href="/disney">Back</a>
+            
+            <%- include('../partials/footer.ejs') %>
