@@ -115,7 +115,7 @@ img {
 }
 
 .newShowButton {
-    background-color: purple;
+    background-color: rgb(117, 135, 158);
     padding: 25px;
     width: 20%;
 }
@@ -128,7 +128,7 @@ img {
 }
 
 .showTitle {
-    color: lightskyblue;
+    color: lightslategrey;
     font-family: sans-serif;
 }
 
