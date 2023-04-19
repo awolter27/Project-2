@@ -7,6 +7,14 @@ body {
     color: lightgoldenrodyellow;
 }
 
+h1{
+    font-family: sans-serif;
+}
+
+h1{
+    font-family: sans-serif;
+}
+
 .carouselContainer {
     overflow: hidden;
     width: 95vw;
@@ -112,9 +120,25 @@ img {
 }
 
 .newShowButton {
-    border: 2px purple solid;
-    background-color: purple;
+    background-color: rgb(117, 135, 158);
     padding: 25px;
     width: 20%;
 }
 
+
+
+.seasonsEpisodes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: lightgoldenrodyellow;
+}
+
+.showTitle {
+    color: lightslategrey;
+    font-family: sans-serif;
+}
+
+.sansSerif{
+    font-family: sans-serif;
+}

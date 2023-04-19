@@ -20,8 +20,9 @@
     <input type="submit" value="Submit">
 </form>
 <% for(let i = 0; i < netflixComments.length; i++) { %>
-    <h3>Rating: <%= netflixComments[i].rating %> </h3>
-    <h3>Comment: <%= netflixComments[i].commentText %></h3>
+    <h4>Rating: <%= netflixComments[i].rating %> </h4>
+    <h4>Comment: <%= netflixComments[i].commentText %></h4>
+    <h4>By: <%= netflixCommentUsers[i] %></h4>
 <% } %>
 
 <%- include('../partials/footer.ejs') %>
