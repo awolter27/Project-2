@@ -1,6 +1,7 @@
 <%- include('../partials/header.ejs') %>
 
 <h1>Create a new account</h1>
+<a href="/login"><h3>Already have an account? Login</h3></a>
 <form method="POST" action="/signup">
     <label for="email">Email:</label>
     <input type="email" name="email" id="email" placeholder="something@email.com" required>
