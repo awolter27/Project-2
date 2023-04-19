@@ -16,6 +16,18 @@ const commentSchema = new mongoose.Schema(
         user: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'user'
+        },
+        netflix: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Netflix'
+        },
+        hulu: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Hulu'
+        },
+        disney: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Disney'
         }
     },
     {

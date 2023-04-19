@@ -14,4 +14,14 @@
 <a href="/netflix/<%= Netflix._id %>/edit">Edit</a>
 <a href="/netflix/<%= Netflix._id %>/delete">Delete</a>
 
+<form method="POST" action="/netflix/<%= Netflix._id %>/comments">
+    Rating: <input type="number" name="rating" required>
+    Comment: <input type="text" name="commentText" id="commentText" required>
+    <input type="submit" value="Submit">
+</form>
+<% for(let i = 0; i < netflixComments.length; i++) { %>
+    <h3>Rating: <%= netflixComments[i].rating %> </h3>
+    <h3>Comment: <%= netflixComments[i].commentText %></h3>
+<% } %>
+
 <%- include('../partials/footer.ejs') %>
