@@ -6,6 +6,10 @@ body {
     font-family: 'DynaPuff', cursive;
 }
 
+h1{
+    font-family: sans-serif;
+}
+
 .carouselContainer {
     overflow: hidden;
     width: 95vw;
@@ -111,8 +115,23 @@ img {
 }
 
 .newShowButton {
-    border: 2px purple solid;
     background-color: purple;
     padding: 25px;
     width: 20%;
+}
+
+.seasonsEpisodes {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    color: lightgoldenrodyellow;
+}
+
+.showTitle {
+    color: lightskyblue;
+    font-family: sans-serif;
+}
+
+.sansSerif{
+    font-family: sans-serif;
 }

@@ -1,16 +1,19 @@
 <%- include('../partials/header.ejs') %>
-
-    <h1> <%= myDisney.name %> </h1>
-    <img src = <%= myDisney.img %> alt = 'show image'>
+<div class="listOfShows">
+    <h1 class="showTitle"> <%= myDisney.name %> </h1>
+    <img class="showImage" src = <%= myDisney.img %> alt = 'show image'>
     <h1> <%= myDisney.synopsis %> </h1>
     <h1> Genre: <%= myDisney.genre %> </h1>
     <% for (let i = 0; i < myDisney.seasons.length; i++) { %>
-        <h1>Season: <%= i + 1 %></h1>
-        <h1>Year: <%= myDisney.seasons[i].year %></h1>
-        <% for (let j = 0; j < myDisney.seasons[i].episodes.length; j++) { %>
-            <p><%= myDisney.seasons[i].episodes[j] %></p>
-        <% } %>
-    <% } %>
+    </div>
+    <div class="seasonsEpisodes">
+            <h1>Season: <%= i + 1 %></h1>
+            <h1>Year: <%= myDisney.seasons[i].year %></h1>
+            <% for (let j = 0; j < myDisney.seasons[i].episodes.length; j++) { %>
+                <p><%= myDisney.seasons[i].episodes[j] %></p>
+                <% } %>
+                <% } %>
+        </div>
     <a href="/disney/<%= myDisney._id %>/edit">Edit</a>
     <a href="/disney/<%= myDisney._id %>/delete">Delete</a>
 
