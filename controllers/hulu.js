@@ -18,9 +18,9 @@ router.get('', async (req, res, next) => {
 
 router.get('/seasons/:seasons', async (req, res, next) => {
     try {
-        const showBySeason = await Hulu.find({ genre: req.params.seasons})
+        const showBySeason = await Hulu.find({ seasons: req.params.seasons[{}]})
         console.log(showBySeason);
-        res.render('showSeasons.ejs', { Hulu: showBySeason })
+        res.render('hulu/showSeasons.ejs', { Hulu: showBySeason })
     } catch (err) {
         next();
         console.log(err);
