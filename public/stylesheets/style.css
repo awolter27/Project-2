@@ -80,3 +80,35 @@ img {
 .editHeader {
     color: lightgoldenrodyellow;
 }
+
+.showsContainer {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 5px;
+    background-color: white;
+}
+
+.listOfShows {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 25px;
+}
+
+.showImage{
+    border: 2px solid white;
+
+}
+.showNameAndSynopsis, a {
+    color: lightgoldenrodyellow;
+}
+
+.newShowButton {
+    border: 2px purple solid;
+    background-color: purple;
+    padding: 25px;
+    width: 20%;
+}
