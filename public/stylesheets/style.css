@@ -237,3 +237,22 @@ box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
 .loginForm, input {
     width: 250px;
 }
+
+.pageNotFound{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+} 
+
+#errorHeading {
+    font-size: 80px ;
+}
+
+.errorImage {
+    border: white 2px solid;
+    padding: 20px;
+    margin-left: 400px;
+    margin-right: 350px;
+    background-color: black;
+}
