@@ -8,7 +8,9 @@
         <h1>Season: <%= i + 1 %></h1>
         <h1>Year: <%= Hulu.seasons[i].year %></h1>
         <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
-            <p><%= Hulu.seasons[i].episodes[j] %></p>
+            <a href="/hulu/episodes/<%= Hulu.seasons[i].episodes[j] %>">
+                <p><%= Hulu.seasons[i].episodes[j] %></p>
+            </a>
         <% } %>
     <% } %>
     <a href="/hulu/<%= Hulu._id %>/edit">Edit</a>
