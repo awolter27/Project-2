@@ -149,7 +149,6 @@ img {
     font-family: sans-serif;
 }
 
-<<<<<<< HEAD
 .commentForm {
     display: flex;
     justify-content: center;
@@ -158,7 +157,6 @@ img {
 .genre {
     background-color: rgb(77, 77, 79);
 }
-=======
 /* STYLING FOR COMMENT SECTION */
 /* .rating {
 display: flex;
@@ -216,4 +214,26 @@ border-color: #ffffff;
 outline: 0;
 box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
 } */
->>>>>>> c4e5ee59f2606755038db982489024a099873860
+
+
+
+.loginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 55px;
+}
+
+.loginTitle {
+    font-size: 60px;
+}
+
+.loginForm{
+    font-size: 30px;
+}
+
+.loginForm, input {
+    width: 250px;
+}
