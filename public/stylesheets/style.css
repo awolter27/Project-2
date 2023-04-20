@@ -7,19 +7,19 @@ body {
     color: lightgoldenrodyellow;
 }
 
-h1{
+h1 {
     font-family: sans-serif;
 }
 
 .carouselContainer {
     overflow: hidden;
     width: 95vw;
-    margin: 0 auto;    
+    margin: 0 auto;
     position: relative;
     color: lightgoldenrodyellow
 }
 
-#comingSoonTiles{
+#comingSoonTiles {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -103,8 +103,8 @@ img {
     flex-direction: column;
 }
 
-.seasonInputForm{
-text-align: center;
+.seasonInputForm {
+    text-align: center;
 }
 
 #welcome-user {
@@ -129,13 +129,14 @@ text-align: center;
     color: lightgrey;
 }
 
-.showImage{
+.showImage {
     border: 2px solid white;
 
 }
 
-.showNameAndSynopsis, a {
-    color:  lightgray;
+.showNameAndSynopsis,
+a {
+    color: lightgray;
 }
 
 .newShowButton {
@@ -155,7 +156,7 @@ text-align: center;
     flex-direction: row;
     justify-content: space-around;
     padding: 0 25%;
-    
+
 }
 
 .showTitle {
@@ -163,7 +164,7 @@ text-align: center;
     font-family: sans-serif;
 }
 
-.sansSerif{
+.sansSerif {
     font-family: sans-serif;
 }
 
@@ -175,6 +176,7 @@ text-align: center;
 .genre {
     background-color: rgb(77, 77, 79);
 }
+
 /* STYLING FOR COMMENT SECTION */
 /* .rating {
 display: flex;
@@ -248,24 +250,25 @@ box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
     font-size: 60px;
 }
 
-.loginForm{
+.loginForm {
     font-size: 30px;
     margin: auto;
 }
 
-.loginForm, input {
+.loginForm,
+input {
     width: fit-content;
 }
 
-.pageNotFound{
+.pageNotFound {
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-} 
+}
 
 #errorHeading {
-    font-size: 80px ;
+    font-size: 80px;
 }
 
 .errorImage {
@@ -294,6 +297,7 @@ box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
     margin: auto;
 }
 
-.createAccountForm, input {
+.createAccountForm,
+input {
     width: fit-content;
 }
