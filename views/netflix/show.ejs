@@ -15,12 +15,14 @@
 <a href="/netflix/<%= Netflix._id %>/delete">Delete</a>
 
 <form method="POST" action="/netflix/<%= Netflix._id %>/comments">
-    Rating: <input type="number" name="rating" required>
-    Comment: <input type="text" name="commentText" id="commentText" required>
+    <h4>Rate and Comment:</h4>
+    <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+    <br>
+<div class="comment-area"> <textarea class="form-control" name="commentText" placeholder="Please give us your opinion here!" rows="4" required></textarea> </div>
     <input type="submit" value="Submit">
 </form>
 <% for(let i = 0; i < netflixComments.length; i++) { %>
-    <h4>Rating: <%= netflixComments[i].rating %> </h4>
+    <h4>User Rating: <%= netflixComments[i].rating %> </h4>
     <h4>Comment: <%= netflixComments[i].commentText %></h4>
     <h4>By: <%= netflixCommentUsers[i] %></h4>
 <% } %>

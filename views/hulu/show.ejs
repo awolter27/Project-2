@@ -14,4 +14,18 @@
     <a href="/hulu/<%= Hulu._id %>/edit">Edit</a>
     <a href="/hulu/<%= Hulu._id %>/delete">Delete</a>
 
+    <form method="POST" action="/hulu/<%= Hulu._id %>/comments">
+        <h4>Rate and Comment:</h4>
+        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+        <br>
+    <div class="comment-area"> <textarea class="form-control" name="commentText" placeholder="Please give us your opinion here!" rows="4" required></textarea> </div>
+        <input type="submit" value="Submit">
+    </form>
+    </form>
+    <% for(let i = 0; i < huluComments.length; i++) { %>
+        <h4>Rating: <%= huluComments[i].rating %> </h4>
+        <h4>Comment: <%= huluComments[i].commentText %></h4>
+        <h4>By: <%= huluCommentUsers[i] %></h4>
+    <% } %>
+
 <%- include('../partials/footer.ejs') %>
