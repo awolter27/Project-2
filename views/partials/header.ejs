@@ -23,6 +23,8 @@
         <div id="welcome-user">
             <% if(typeof user !== 'undefined') { %>
                 <h2>🛋️ Welcome, <%= user %>!</h2>
+           <% } else { %>
+                <h2>Welcome, Stranger!</h2>
            <% } %>
         </div>
     </nav>
