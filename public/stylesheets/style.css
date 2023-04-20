@@ -11,10 +11,6 @@ h1{
     font-family: sans-serif;
 }
 
-h1{
-    font-family: sans-serif;
-}
-
 .carouselContainer {
     overflow: hidden;
     width: 95vw;
@@ -112,6 +108,7 @@ img {
     justify-content: space-around;
     align-items: center;
     padding: 25px;
+    color: lightgrey;
 }
 
 .showImage{
@@ -120,7 +117,7 @@ img {
 }
 
 .showNameAndSynopsis, a {
-    color: lightgoldenrodyellow;
+    color:  lightgray;
 }
 
 .newShowButton {
@@ -130,12 +127,17 @@ img {
 }
 
 .seasonsEpisodes {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    color: lightgoldenrodyellow;
+    color: black;
     font-family: sans-serif;
-    border: white 2px solid;
+    width: 50%;
+}
+
+.seasonContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 0 25%;
+    
 }
 
 .showTitle {
@@ -147,6 +149,14 @@ img {
     font-family: sans-serif;
 }
 
+.commentForm {
+    display: flex;
+    justify-content: center;
+}
+
+.genre {
+    background-color: rgb(77, 77, 79);
+}
 /* STYLING FOR COMMENT SECTION */
 /* .rating {
 display: flex;
@@ -204,3 +214,68 @@ border-color: #ffffff;
 outline: 0;
 box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
 } */
+
+
+
+.loginContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 0;
+    margin-bottom: 55px;
+}
+
+.loginTitle {
+    font-size: 60px;
+}
+
+.loginForm{
+    font-size: 30px;
+    margin: auto;
+}
+
+.loginForm, input {
+    width: fit-content;
+}
+
+.pageNotFound{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+} 
+
+#errorHeading {
+    font-size: 80px ;
+}
+
+.errorImage {
+    border: white 2px solid;
+    padding: 20px;
+    margin-left: 400px;
+    margin-right: 350px;
+    background-color: black;
+}
+
+.newAccountContainer {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+
+.newAccountTitle {
+    font-size: 75px;
+    margin: 0;
+}
+
+.createAccountForm {
+    padding: 60px;
+    margin: auto;
+}
+
+.createAccountForm, input {
+    width: fit-content;
+}
