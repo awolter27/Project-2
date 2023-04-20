@@ -1,17 +1,40 @@
 <%- include('../partials/header.ejs') %>
-
-    <h1> <%= Hulu.name %> </h1>
-    <img src = <%= Hulu.img %> alt = 'show image'>
-    <h1> <%= Hulu.synopsis %> </h1>
-    <h1> Genre: <%= Hulu.genre %> </h1>
+<div class="listOfShows">
+  <h1 class="showTitle"><%= Hulu.name %></h1>
+  <img class="showImage" src= <%=Hulu.img %> alt = 'show image'>
+  <h1><%= Hulu.synopsis %></h1>
+  <h1 class="genre">Genre: <%= Hulu.genre %></h1>
+</div>
+<div class="seasonContainer">
     <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
-        <h1>Season: <%= i + 1 %></h1>
-        <h1>Year: <%= Hulu.seasons[i].year %></h1>
-        <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
-            <p><%= Hulu.seasons[i].episodes[j] %></p>
-        <% } %>
+        <hr>
+  <div class="seasonsEpisodes">
+    <h1>Season: <%= i + 1 %></h1>
+    <h1>Year: <%= Hulu.seasons[i].year %></h1>
+    <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
+    <p><%= Hulu.seasons[i].episodes[j] %></p>
     <% } %>
-    <a href="/hulu/<%= Hulu._id %>/edit">Edit</a>
+  </div>
+  <% } %>
+</div>
+<div class="newShowButton">
+    <a href="/hulu/<%= Hulu._id %>/edit">Edit</a><br><br>
     <a href="/hulu/<%= Hulu._id %>/delete">Delete</a>
+</div>
+
+<%- include('../partials/footer.ejs') %>
+    <form method="POST" action="/hulu/<%= Hulu._id %>/comments">
+        <h4>Rate and Comment:</h4>
+        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+        <br>
+    <div class="comment-area"> <textarea class="form-control" name="commentText" placeholder="Please give us your opinion here!" rows="4" required></textarea> </div>
+        <input type="submit" value="Submit">
+    </form>
+    </form>
+    <% for(let i = 0; i < huluComments.length; i++) { %>
+        <h4>Rating: <%= huluComments[i].rating %> </h4>
+        <h4>Comment: <%= huluComments[i].commentText %></h4>
+        <h4>By: <%= huluCommentUsers[i] %></h4>
+    <% } %>
 
 <%- include('../partials/footer.ejs') %>

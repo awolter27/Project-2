@@ -37,7 +37,7 @@ app.use(
 
 app.get('/', (req, res) => {
     let user;
-    if(req.session.currentUser) {
+    if (req.session.currentUser) {
         user = req.session.currentUser.username;
     }
     res.render('home.ejs', { user });

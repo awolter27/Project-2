@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { seedNetflix, Netflix } = require('../models');
+const { seedNetflix, Netflix, Comment, User } = require('../models');
 
 router.get('', async (req, res, next) => {
     try {
@@ -29,18 +29,19 @@ router.get('/seed', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.get('/:id', async (req, res, next) => {
     try {
         const myNetflix = await Netflix.findById(req.params.id);
-        // let usersNetflix = false;
-        // if(req.session.currentUser) {
-        //     if(req.session.currentUser.id == myNetflix.user.toString()) {
-        //         usersNetflix = true
-        //     }
-        // }
-        res.render('netflix/show.ejs', { Netflix: myNetflix });
+        const netflixComments = await Comment.find({netflix: myNetflix._id});
+        // displaying a username of a person who left a comment. Thank you, Eric!
+        let netflixCommentUsers = [];
+        for(let i = 0; i < netflixComments.length; i++) {
+            let user = await User.findById(netflixComments[i].user);
+            netflixCommentUsers.push(user.username);
+        };
+        res.render('netflix/show.ejs', { Netflix: myNetflix, netflixComments, netflixCommentUsers });
     } catch (err) {
         next();
         console.log(err);
@@ -65,7 +66,21 @@ router.get('/:id/delete', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
+
+// route for comments on a single show
+router.post('/:id/comments', async(req, res, next) => {
+    try {
+        let newComment = req.body;
+        newComment.user = req.session.currentUser.id;
+        newComment.netflix = req.params.id;
+        await Comment.create(newComment);
+        res.redirect(`/netflix/${req.params.id}`);
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+});
 
 router.post('', async (req, res, next) => {
     try {

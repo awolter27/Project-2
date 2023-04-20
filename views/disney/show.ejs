@@ -1,17 +1,39 @@
 <%- include('../partials/header.ejs') %>
-
-    <h1> <%= myDisney.name %> </h1>
-    <img src = <%= myDisney.img %> alt = 'show image'>
+<div class="listOfShows">
+    <h1 class="showTitle"> <%= myDisney.name %> </h1>
+    <img class="showImage" src = <%= myDisney.img %> alt = 'show image'>
     <h1> <%= myDisney.synopsis %> </h1>
-    <h1> Genre: <%= myDisney.genre %> </h1>
+    <h1 class="genre"> Genre: <%= myDisney.genre %> </h1>
+</div>
+<div class="seasonContainer">
     <% for (let i = 0; i < myDisney.seasons.length; i++) { %>
-        <h1>Season: <%= i + 1 %></h1>
-        <h1>Year: <%= myDisney.seasons[i].year %></h1>
-        <% for (let j = 0; j < myDisney.seasons[i].episodes.length; j++) { %>
-            <p><%= myDisney.seasons[i].episodes[j] %></p>
-        <% } %>
+            <hr>
+        <div class="seasonsEpisodes">
+            <h1>Season: <%= i + 1 %></h1>
+            <h1>Year: <%= myDisney.seasons[i].year %></h1>
+            <% for (let j = 0; j < myDisney.seasons[i].episodes.length; j++) { %>
+                <p><%= myDisney.seasons[i].episodes[j] %></p>
+                <% } %>
+        </div>
+                <% } %>
+</div>
+        <div class="newShowButton">
+            <a href="/disney/<%= myDisney._id %>/edit">Edit</a><br><br>
+            <a href="/disney/<%= myDisney._id %>/delete">Delete</a>
+        </div>
+
+    <form method="POST" action="/disney/<%= myDisney._id %>/comments">
+        <h4>Rate and Comment:</h4>
+        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+        <br>
+    <div class="comment-area"> <textarea class="form-control" name="commentText" placeholder="Please give us your opinion here!" rows="4" required></textarea> </div>
+        <input type="submit" value="Submit">
+    </form>
+    </form>
+    <%for(let i = 0; i < disneyComments.length; i++) { %>
+            <h4>User Rating: <%= disneyComments[i].rating %></h4>
+            <h4>Comment: <%= disneyComments[i].commentText %></h4>
+            <h4>By: <%= disneyCommentUsers[i] %></h4>
     <% } %>
-    <a href="/disney/<%= myDisney._id %>/edit">Edit</a>
-    <a href="/disney/<%= myDisney._id %>/delete">Delete</a>
 
 <%- include('../partials/footer.ejs') %>

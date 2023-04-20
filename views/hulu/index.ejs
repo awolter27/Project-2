@@ -1,13 +1,24 @@
 <%- include('../partials/header.ejs') %>
 
-    <h1>Hulu</h1>
+<div class="showsContainer">
+    <div class="huluLogo">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6boSviBmaYBVYiJyBojgiabEQFx3A4Ke78g&usqp=CAU">
+    </div>
+</div>
+<hr>
     <% for (let i = 0; i < Hulu.length; i++) { %>
-        <img src=<%= Hulu[i].img %> alt="Image of <%= Hulu[i].name %> Poster">
-        <a href="hulu/<%= Hulu[i]._id %>">
-            <h1><%= Hulu[i].name %></h1>
-        </a>
-        <p><%= Hulu[i].synopsis %></p>
-    <% } %>
-    <a href="/hulu/new">Add A TV Show</a>
-
+        <div class="listOfShows">
+            <img class='showImage' src=<%= Hulu[i].img %> alt="Image of <%= Hulu[i].name %> Poster">
+            <div class="showNameAndSynopsis">
+                <a href="hulu/<%= Hulu[i]._id %>">
+                    <h1 class="showTitle"><%= Hulu[i].name %></h1>
+                </a>
+                <p class="sansSerif"><%= Hulu[i].synopsis %></p>
+                <% } %>
+            </div>
+        </div>
+        <div class="newShowButton">
+            <a href="/hulu/new">Add A TV Show</a>
+        </div>
+            
 <%- include('../partials/footer.ejs') %>

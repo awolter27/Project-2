@@ -1,12 +1,12 @@
 const express = require('express');
 const router = express.Router();
-const { seedHulu, Hulu } = require('../models');
+const { seedHulu, Hulu, Comment, User } = require('../models');
 
 router.get('', async (req, res, next) => {
     try {
         const myHulus = await Hulu.find({});
         let user;
-        if(req.session.currentUser) {
+        if (req.session.currentUser) {
             user = req.session.currentUser.username;
         }
         res.render('hulu/index.ejs', { Hulu: myHulus, user });
@@ -15,6 +15,16 @@ router.get('', async (req, res, next) => {
         console.log(err);
     }
 })
+
+// router.get('/episodes/:episodes', async (req, res, next) => {
+//     try {
+//         const showByEpisode = await Hulu.findByIdAndUpdate({ episodes: req.params.episodes });
+//         res.render('hulu/showEpisodes.ejs', { Hulu: showByEpisode });
+//     } catch (err) {
+//         next();
+//         console.log(err);
+//     }
+// })
 
 router.get('/new', (req, res) => {
     res.render('hulu/new.ejs');
@@ -34,7 +44,14 @@ router.get('/seed', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const myHulu = await Hulu.findById(req.params.id);
-        res.render('hulu/show.ejs', { Hulu: myHulu });
+        const huluComments = await Comment.find({hulu: myHulu._id});
+        // displaying a username of a person who left a comment. Thank you, Eric!
+        let huluCommentUsers = [];
+        for(let i = 0; i < huluComments.length; i++) {
+            let user = await User.findById(huluComments[i].user);
+            huluCommentUsers.push(user.username);
+        };
+        res.render('hulu/show.ejs', { Hulu: myHulu, huluComments, huluCommentUsers });
     } catch (err) {
         next();
         console.log(err);
@@ -59,13 +76,27 @@ router.get('/:id/delete', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
+
+// route for comments on a single show
+router.post('/:id/comments', async(req, res, next) => {
+    try {
+        let newComment = req.body;
+        newComment.user = req.session.currentUser.id;
+        newComment.hulu = req.params.id;
+        await Comment.create(newComment);
+        res.redirect(`/hulu/${req.params.id}`);
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+});
 
 router.post('', async (req, res, next) => {
     try {
         const form = req.body;
         const { name, synopsis, img, genre } = form;
-        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{year: 0, episodes: []}] }
+        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{ year: 0, episodes: [] }] }
         const newHulu = await Hulu.create(newShow);
         res.redirect('/hulu');
     } catch (err) {
@@ -111,5 +142,19 @@ router.delete('/:id', async (req, res, next) => {
         console.log(err);
     }
 })
+
+// router.put('/:id/:idx', async (req, res, next) => {
+//     try {
+//         const deletedHulu = await Hulu.findById(req.params.id);
+//         deletedHulu.seasons.splice(req.params.idx, 1, );
+//         console.log(req.params.idx);
+//         console.log(deletedHulu);
+//         await Hulu.findByIdAndUpdate(req.params.id, deletedHulu);
+//         res.redirect('/hulu');
+//     } catch (err) {
+//         next();
+//         console.log(err);
+//     }
+// })
 
 module.exports = router;
