@@ -81,12 +81,30 @@ img {
 
 .editRoutePage {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .editHeader {
-    color: lightgoldenrodyellow;
+    color: dark;
+    font-size: 40px;
+}
+
+.editForm {
+    color: lightgray;
+    border: 4px groove grey;
+    padding: 75px;
+    margin: 50px;
+    font-size: 30px;
+}
+
+.editSeasonsForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.seasonInputForm{
+text-align: center;
 }
 
 #welcome-user {
