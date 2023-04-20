@@ -4,6 +4,11 @@ body {
     background-image: url(data:image/jpeg;base64,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);
     background-size: cover;
     font-family: 'DynaPuff', cursive;
+    color: lightgoldenrodyellow;
+}
+
+h1{
+    font-family: sans-serif;
 }
 
 h1{
@@ -58,10 +63,12 @@ img {
     margin: 0;
     height: 30vh;
 }
+
 .homeTitle {
     font-size: 10vh;
     margin: 0;
 }
+
 #spudPic {
     margin: 0;
 }
@@ -81,6 +88,7 @@ img {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .editHeader {
     color: lightgoldenrodyellow;
 }
@@ -110,14 +118,15 @@ img {
     border: 2px solid white;
 
 }
+
 .showNameAndSynopsis, a {
     color: lightgoldenrodyellow;
 }
 
 .newShowButton {
     background-color: rgb(117, 135, 158);
-    padding: 25px;
-    width: 20%;
+    padding: 20px;
+    width: 10%;
 }
 
 .seasonsEpisodes {
@@ -125,6 +134,8 @@ img {
     flex-direction: column;
     flex-wrap: nowrap;
     color: lightgoldenrodyellow;
+    font-family: sans-serif;
+    border: white 2px solid;
 }
 
 .showTitle {
