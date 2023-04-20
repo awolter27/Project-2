@@ -7,7 +7,7 @@
     <p><%= Hulu.genre %></p>
     <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
         <p>Season <%= i + 1 %></p>
-        <form method="POST" action="/hulu/<%= Hulu._id %>?_method=DELETE">
+        <form method="POST" action="/hulu/<%= Hulu._id %>/<%= i %>?_method=PUT">
             <input type="submit" value="Delete Season <%= i + 1 %>">
         </form>
         <p><%= Hulu.seasons[i].year %></p>

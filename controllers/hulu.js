@@ -16,16 +16,15 @@ router.get('', async (req, res, next) => {
     }
 })
 
-router.get('/episodes/:episodes', async (req, res, next) => {
-    try {
-        const myHulus = await Hulu.find({});
-        const showByEpisode = await Hulu.find({ episodes: req.params.episodes });
-        res.render('hulu/showEpisodes.ejs', { Hulu: myHulus, Hulu: showByEpisode });
-    } catch (err) {
-        next();
-        console.log(err);
-    }
-})
+// router.get('/episodes/:episodes', async (req, res, next) => {
+//     try {
+//         const showByEpisode = await Hulu.findByIdAndUpdate({ episodes: req.params.episodes });
+//         res.render('hulu/showEpisodes.ejs', { Hulu: showByEpisode });
+//     } catch (err) {
+//         next();
+//         console.log(err);
+//     }
+// })
 
 router.get('/new', (req, res) => {
     res.render('hulu/new.ejs');
@@ -122,5 +121,19 @@ router.delete('/:id', async (req, res, next) => {
         console.log(err);
     }
 })
+
+// router.put('/:id/:idx', async (req, res, next) => {
+//     try {
+//         const deletedHulu = await Hulu.findById(req.params.id);
+//         deletedHulu.seasons.splice(req.params.idx, 1, );
+//         console.log(req.params.idx);
+//         console.log(deletedHulu);
+//         await Hulu.findByIdAndUpdate(req.params.id, deletedHulu);
+//         res.redirect('/hulu');
+//     } catch (err) {
+//         next();
+//         console.log(err);
+//     }
+// })
 
 module.exports = router;
