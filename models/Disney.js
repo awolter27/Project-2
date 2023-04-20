@@ -22,7 +22,7 @@ const disneySchema = new mongoose.Schema(
             year: {
                 type: Number,
                 required: [true, 'You must enter a year!']
-            } ,
+            },
             episodes: {
                 type: [String],
                 required: [true, 'You must enter an episode!']

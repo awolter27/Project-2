@@ -10,7 +10,7 @@ router.get('', async (req, res, next) => {
     try {
         const myDisneys = await Disney.find({});
         let user;
-        if(req.session.currentUser) {
+        if (req.session.currentUser) {
             user = req.session.currentUser.username;
         }
         res.render('disney/index.ejs', { Disney: myDisneys, user });
@@ -33,14 +33,14 @@ router.get('/seed', async (req, res, next) => {
 });
 
 // route for comments
-router.post('/:id/comments', async(req, res, next) => {
+router.post('/:id/comments', async (req, res, next) => {
     try {
         let newComment = req.body;
         newComment.user = req.session.currentUser.id;
         newComment.disney = req.params.id;
         await Comment.create(newComment);
         res.redirect(`/disney/${req.params.id}`);
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         next();
     }
@@ -50,10 +50,10 @@ router.post('/:id/comments', async(req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const myDisney = await Disney.findById(req.params.id);
-        const disneyComments = await Comment.find({disney: myDisney._id});
+        const disneyComments = await Comment.find({ disney: myDisney._id });
         // algo to display a username of a person who left a comment
         let disneyCommentUsers = [];
-        for(let i = 0; i < disneyComments.length; i++) {
+        for (let i = 0; i < disneyComments.length; i++) {
             let user = await User.findById(disneyComments[i].user);
             disneyCommentUsers.push(user.username);
         };
@@ -74,7 +74,7 @@ router.post('', async (req, res, next) => {
     try {
         const form = req.body;
         const { name, synopsis, img, genre } = form;
-        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{year: 0, episodes: []}] }
+        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{ year: 0, episodes: [] }] }
         const newDisney = await Disney.create(newShow);
         res.redirect('/disney');
     } catch (err) {
