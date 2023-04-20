@@ -63,10 +63,12 @@ img {
     margin: 0;
     height: 30vh;
 }
+
 .homeTitle {
     font-size: 10vh;
     margin: 0;
 }
+
 #spudPic {
     margin: 0;
 }
@@ -86,6 +88,7 @@ img {
     justify-content: center;
     flex-wrap: wrap;
 }
+
 .editHeader {
     color: lightgoldenrodyellow;
 }
@@ -115,23 +118,24 @@ img {
     border: 2px solid white;
 
 }
+
 .showNameAndSynopsis, a {
     color: lightgoldenrodyellow;
 }
 
 .newShowButton {
     background-color: rgb(117, 135, 158);
-    padding: 25px;
-    width: 20%;
+    padding: 20px;
+    width: 10%;
 }
-
-
 
 .seasonsEpisodes {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
     color: lightgoldenrodyellow;
+    font-family: sans-serif;
+    border: white 2px solid;
 }
 
 .showTitle {

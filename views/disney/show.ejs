@@ -14,7 +14,9 @@
                 <% } %>
                 <% } %>
         </div>
-    <a href="/disney/<%= myDisney._id %>/edit">Edit</a>
-    <a href="/disney/<%= myDisney._id %>/delete">Delete</a>
+        <div class="newShowButton">
+            <a href="/disney/<%= myDisney._id %>/edit">Edit</a><br><br>
+            <a href="/disney/<%= myDisney._id %>/delete">Delete</a>
+        </div>
 
 <%- include('../partials/footer.ejs') %>
