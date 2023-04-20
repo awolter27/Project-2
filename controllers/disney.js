@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { seedDisney, Disney } = require('../models');
+const { seedDisney, Disney, User, Comment } = require('../models');
 
 //home page & login page
 //I think maybe this should go in the server since it will be the same for all three?
@@ -30,23 +30,45 @@ router.get('/seed', async (req, res, next) => {
         console.log(err);
         next();
     }
-})
+});
+
+// route for comments
+router.post('/:id/comments', async(req, res, next) => {
+    try {
+        let newComment = req.body;
+        newComment.user = req.session.currentUser.id;
+        newComment.disney = req.params.id;
+        await Comment.create(newComment);
+        res.redirect(`/disney/${req.params.id}`);
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+});
 
 //single show page
 router.get('/:id', async (req, res, next) => {
     try {
         const myDisney = await Disney.findById(req.params.id);
-        res.render('disney/show.ejs', { myDisney });
+        const disneyComments = await Comment.find({disney: myDisney._id});
+        // algo to display a username of a person who left a comment
+        let disneyCommentUsers = [];
+        for(let i = 0; i < disneyComments.length; i++) {
+            let user = await User.findById(disneyComments[i].user);
+            disneyCommentUsers.push(user.username);
+        };
+        res.render('disney/show.ejs', { myDisney, disneyComments, disneyCommentUsers });
     } catch (err) {
         next();
         console.log(err);
     }
-})
+});
 
 //new show
 router.get('/new', (req, res) => {
     res.render('disney/new.ejs')
-})
+});
+
 
 router.post('', async (req, res, next) => {
     try {
@@ -59,7 +81,7 @@ router.post('', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 //new episode
 router.get('/:id/new', (req, res) => {
@@ -105,7 +127,7 @@ router.put('/:id', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 //delete a show
 router.get('/:id/delete', async (req, res, next) => {
@@ -116,7 +138,7 @@ router.get('/:id/delete', async (req, res, next) => {
         console.log(err);
         next();
     }
-})
+});
 
 router.delete('/:id', async (req, res, next) => {
     try {
@@ -126,7 +148,7 @@ router.delete('/:id', async (req, res, next) => {
         console.log(err);
         next();
     }
-})
+});
 
 
 

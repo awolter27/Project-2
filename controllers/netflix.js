@@ -29,24 +29,18 @@ router.get('/seed', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.get('/:id', async (req, res, next) => {
     try {
         const myNetflix = await Netflix.findById(req.params.id);
         const netflixComments = await Comment.find({netflix: myNetflix._id});
-        // displaying a username of a persone who left a comment. Thank you, Eric!
+        // displaying a username of a person who left a comment. Thank you, Eric!
         let netflixCommentUsers = [];
         for(let i = 0; i < netflixComments.length; i++) {
             let user = await User.findById(netflixComments[i].user);
             netflixCommentUsers.push(user.username);
         };
-        // let usersNetflix = false;
-        // if(req.session.currentUser) {
-        //     if(req.session.currentUser.id == myNetflix.user.toString()) {
-        //         usersNetflix = true
-        //     }
-        // }
         res.render('netflix/show.ejs', { Netflix: myNetflix, netflixComments, netflixCommentUsers });
     } catch (err) {
         next();

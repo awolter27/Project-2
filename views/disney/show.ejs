@@ -22,4 +22,18 @@
             <a href="/disney/<%= myDisney._id %>/delete">Delete</a>
         </div>
 
+    <form method="POST" action="/disney/<%= myDisney._id %>/comments">
+        <h4>Rate and Comment:</h4>
+        <div class="rating"> <input type="radio" name="rating" value="5" id="5"><label for="5">☆</label> <input type="radio" name="rating" value="4" id="4"><label for="4">☆</label> <input type="radio" name="rating" value="3" id="3"><label for="3">☆</label> <input type="radio" name="rating" value="2" id="2"><label for="2">☆</label> <input type="radio" name="rating" value="1" id="1"><label for="1">☆</label> </div>
+        <br>
+    <div class="comment-area"> <textarea class="form-control" name="commentText" placeholder="Please give us your opinion here!" rows="4" required></textarea> </div>
+        <input type="submit" value="Submit">
+    </form>
+    </form>
+    <%for(let i = 0; i < disneyComments.length; i++) { %>
+            <h4>User Rating: <%= disneyComments[i].rating %></h4>
+            <h4>Comment: <%= disneyComments[i].commentText %></h4>
+            <h4>By: <%= disneyCommentUsers[i] %></h4>
+    <% } %>
+
 <%- include('../partials/footer.ejs') %>

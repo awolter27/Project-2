@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const { seedHulu, Hulu } = require('../models');
+const { seedHulu, Hulu, Comment, User } = require('../models');
 
 router.get('', async (req, res, next) => {
     try {
@@ -44,7 +44,14 @@ router.get('/seed', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const myHulu = await Hulu.findById(req.params.id);
-        res.render('hulu/show.ejs', { Hulu: myHulu });
+        const huluComments = await Comment.find({hulu: myHulu._id});
+        // displaying a username of a person who left a comment. Thank you, Eric!
+        let huluCommentUsers = [];
+        for(let i = 0; i < huluComments.length; i++) {
+            let user = await User.findById(huluComments[i].user);
+            huluCommentUsers.push(user.username);
+        };
+        res.render('hulu/show.ejs', { Hulu: myHulu, huluComments, huluCommentUsers });
     } catch (err) {
         next();
         console.log(err);
@@ -69,7 +76,21 @@ router.get('/:id/delete', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
+
+// route for comments on a single show
+router.post('/:id/comments', async(req, res, next) => {
+    try {
+        let newComment = req.body;
+        newComment.user = req.session.currentUser.id;
+        newComment.hulu = req.params.id;
+        await Comment.create(newComment);
+        res.redirect(`/hulu/${req.params.id}`);
+    } catch(err) {
+        console.log(err);
+        next();
+    }
+});
 
 router.post('', async (req, res, next) => {
     try {
