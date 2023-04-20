@@ -1,28 +1,40 @@
 <%- include('../partials/header.ejs') %>
+<div class="listOfShows">
+    <h1 class="showTitle"> <%= Netflix.name %> </h1>
+    <img class="showImage" src = <%= Netflix.img %> alt = 'show image'>
+    <h1> <%= Netflix.synopsis %> </h1>
+    <h1 class="genre"> Genre: <%= Netflix.genre %> </h1>
+</div>
+<div class="seasonContainer">
+    <% for (let i = 0; i < Netflix.seasons.length; i++) { %>
+        <hr>
+    <div class="seasonsEpisodes">
+            <h1>Season: <%= i + 1 %></h1>
+            <h1>Year: <%= Netflix.seasons[i].year %></h1>
+            <% for (let j = 0; j < Netflix.seasons[i].episodes.length; j++) { %>
+                <p><%= Netflix.seasons[i].episodes[j] %></p>
+                <% } %>
+        </div>
+            <% } %>
+</div>
+<div class="newShowButton">
+    <a href="/netflix/<%= Netflix._id %>/edit">Edit</a>
+    <a href="/netflix/<%= Netflix._id %>/delete">Delete</a>
+</div>
 
-<h1> <%= Netflix.name %> </h1>
-<img src = <%= Netflix.img %> alt = 'show image'>
-<h1> <%= Netflix.synopsis %> </h1>
-<h1> Genre: <%= Netflix.genre %> </h1>
-<% for (let i = 0; i < Netflix.seasons.length; i++) { %>
-    <h1>Season: <%= i + 1 %></h1>
-    <h1>Year: <%= Netflix.seasons[i].year %></h1>
-    <% for (let j = 0; j < Netflix.seasons[i].episodes.length; j++) { %>
-        <p><%= Netflix.seasons[i].episodes[j] %></p>
-    <% } %>
-<% } %>
-<a href="/netflix/<%= Netflix._id %>/edit">Edit</a>
-<a href="/netflix/<%= Netflix._id %>/delete">Delete</a>
-
-<form method="POST" action="/netflix/<%= Netflix._id %>/comments">
-    Rating: <input type="number" name="rating" required>
-    Comment: <input type="text" name="commentText" id="commentText" required>
-    <input type="submit" value="Submit">
-</form>
-<% for(let i = 0; i < netflixComments.length; i++) { %>
-    <h4>Rating: <%= netflixComments[i].rating %> </h4>
-    <h4>Comment: <%= netflixComments[i].commentText %></h4>
-    <h4>By: <%= netflixCommentUsers[i] %></h4>
-<% } %>
+<div class="commentForm">
+    <div class="ratingForm">
+        <form method="POST" action="/netflix/<%= Netflix._id %>/comments">
+            Rating: <input type="number" name="rating" required>
+            Comment: <input type="text" name="commentText" id="commentText" required>
+            <input type="submit" value="Submit">
+        </form>
+        <% for(let i = 0; i < netflixComments.length; i++) { %>
+            <h4>Rating: <%= netflixComments[i].rating %> </h4>
+            <h4>Comment: <%= netflixComments[i].commentText %></h4>
+            <h4>By: <%= netflixCommentUsers[i] %></h4>
+            <% } %>
+        </div>
+    </div>
 
 <%- include('../partials/footer.ejs') %>

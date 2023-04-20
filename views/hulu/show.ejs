@@ -1,20 +1,25 @@
 <%- include('../partials/header.ejs') %>
 <div class="listOfShows">
-
-    <h1 class="showTitle"> <%= Hulu.name %> </h1>
-    <img class="showImage" src = <%= Hulu.img %> alt = 'show image'>
-    <h1> <%= Hulu.synopsis %> </h1>
-    <h1> Genre: <%= Hulu.genre %> </h1>
+  <h1 class="showTitle"><%= Hulu.name %></h1>
+  <img class="showImage" src= <%=Hulu.img %> alt = 'show image'>
+  <h1><%= Hulu.synopsis %></h1>
+  <h1 class="genre">Genre: <%= Hulu.genre %></h1>
+</div>
+<div class="seasonContainer">
     <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
-    </div>
-    <div class="seasonsEpisodes">
-        <h1>Season: <%= i + 1 %></h1>
-        <h1>Year: <%= Hulu.seasons[i].year %></h1>
-        <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
-                <p><%= Hulu.seasons[i].episodes[j] %></p>
-        <% } %>
+        <hr>
+  <div class="seasonsEpisodes">
+    <h1>Season: <%= i + 1 %></h1>
+    <h1>Year: <%= Hulu.seasons[i].year %></h1>
+    <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
+    <p><%= Hulu.seasons[i].episodes[j] %></p>
     <% } %>
-    <a href="/hulu/<%= Hulu._id %>/edit">Edit</a>
+  </div>
+  <% } %>
+</div>
+<div class="newShowButton">
+    <a href="/hulu/<%= Hulu._id %>/edit">Edit</a><br><br>
     <a href="/hulu/<%= Hulu._id %>/delete">Delete</a>
+</div>
 
 <%- include('../partials/footer.ejs') %>
