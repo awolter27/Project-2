@@ -44,10 +44,10 @@ router.get('/seed', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const myHulu = await Hulu.findById(req.params.id);
-        const huluComments = await Comment.find({hulu: myHulu._id});
+        const huluComments = await Comment.find({ hulu: myHulu._id });
         // displaying a username of a person who left a comment. Thank you, Eric!
         let huluCommentUsers = [];
-        for(let i = 0; i < huluComments.length; i++) {
+        for (let i = 0; i < huluComments.length; i++) {
             let user = await User.findById(huluComments[i].user);
             huluCommentUsers.push(user.username);
         };
@@ -79,14 +79,14 @@ router.get('/:id/delete', async (req, res, next) => {
 });
 
 // route for comments on a single show
-router.post('/:id/comments', async(req, res, next) => {
+router.post('/:id/comments', async (req, res, next) => {
     try {
         let newComment = req.body;
         newComment.user = req.session.currentUser.id;
         newComment.hulu = req.params.id;
         await Comment.create(newComment);
         res.redirect(`/hulu/${req.params.id}`);
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         next();
     }
