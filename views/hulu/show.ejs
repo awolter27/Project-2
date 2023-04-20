@@ -1,10 +1,13 @@
 <%- include('../partials/header.ejs') %>
+<div class="listOfShows">
 
-    <h1> <%= Hulu.name %> </h1>
-    <img src = <%= Hulu.img %> alt = 'show image'>
+    <h1 class="showTitle"> <%= Hulu.name %> </h1>
+    <img class="showImage" src = <%= Hulu.img %> alt = 'show image'>
     <h1> <%= Hulu.synopsis %> </h1>
     <h1> Genre: <%= Hulu.genre %> </h1>
     <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
+    </div>
+    <div class="seasonsEpisodes">
         <h1>Season: <%= i + 1 %></h1>
         <h1>Year: <%= Hulu.seasons[i].year %></h1>
         <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
