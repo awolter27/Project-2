@@ -4,9 +4,7 @@ const commentSchema = new mongoose.Schema(
     {
         rating: {
             type: Number,
-            required: [true, 'It needs a rating, be generous!'],
-            min: 1,
-            max: 5
+            required: [true, 'It needs a rating, be generous!']
         },
         commentText: {
             type: String,
