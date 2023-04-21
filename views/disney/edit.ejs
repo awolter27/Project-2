@@ -1,32 +1,35 @@
-
 <%- include('../partials/header.ejs') %>
 
-<div class="editRoutePage">
-    <div class="editHeader">
-        <h1>Edit <%= Disney.name %></h1>
-    </div>
-    <form action="/disney/<%= Disney._id %>?_method=PUT" method="POST">
-        <label for="name">Name</label>
-        <input required type="text" name="name" id="name" value="<%= Disney.name %>">
-        <label for="synopsis">Synopsis</label>
-        <input required type="text" name="synopsis" id="synopsis" value="<%= Disney.synopsis %>">
-        <label for="img">Image</label>
-        <input required type="text" name="img" id="img" value="<%= Disney.img %>">
-        <label for="genre">Genre</label>
-        <input required type="text" name="genre" id="genre" value="<%= Disney.genre %>">
-        <% for (let i = 0; i < Disney.seasons.length; i++) { %>
-            <p>Season <%= i + 1 %></p>
-            <input type="hidden" name="seasons" value="<%= i + 1 %>">
-            <label for="year">Year</label>
-            <input required type="number" name="year-<%= i %>" id="year" value="<%= Disney.seasons[i].year %>">
-            <% for (let j = 0; j < Disney.seasons[i].episodes.length; j++) { %>
-                <label for="episodes">Episode</label>
-                <input required type="text" name="episodes-<%= i %>" id="episodes" value="<%= Disney.seasons[i].episodes[j] %>">
-                <% } %>
-                <% } %>
-                <input type="submit" value="Edit TV Show">
-            </form>
+    <div class="editRoutePage sansSerif">
+        <div class="editHeader">
+            <h1>Edit <%= Disney.name %></h1>
         </div>
-            <a href="/disney">Back</a>
-            
-            <%- include('../partials/footer.ejs') %>
+        <form class="editForm" action="/disney/<%= Disney._id %>?_method=PUT" method="POST">
+            <label for="name">Name</label>
+            <input required type="text" name="name" id="name" value="<%= Disney.name %>">
+            <label for="synopsis">Synopsis</label>
+            <input required type="text" name="synopsis" id="synopsis" value="<%= Disney.synopsis %>">
+            <label for="img">Image</label>
+            <input required type="text" name="img" id="img" value="<%= Disney.img %>">
+            <label for="genre">Genre</label>
+            <input required type="text" name="genre" id="genre" value="<%= Disney.genre %>">
+            <div class="seasonsEditForm">
+                <% for (let i=0; i < Disney.seasons.length; i++) { %>
+                    <p>Season <%= i + 1 %></p>
+                    <div class="seasonsInputForm">
+                        <input type="hidden" name="seasons" value="<%= i + 1 %>">
+                        <label for="year">Year</label>
+                        <input required type="number" name="year-<%= i %>" id="year" value="<%= Disney.seasons[i].year %>">
+                        <% for (let j=0; j < Disney.seasons[i].episodes.length; j++) { %>
+                            <label for="episodes">Episode</label>
+                            <input required type="text" name="episodes-<%= i %>" id="episodes" value="<%= Disney.seasons[i].episodes[j] %>">
+                        <% } %>
+                    </div>
+                <% } %>
+            </div>
+            <input type="submit" value="Edit TV Show">
+        </form>
+    </div>
+    <a href="/disney">Back</a>
+
+<%- include('../partials/footer.ejs') %>

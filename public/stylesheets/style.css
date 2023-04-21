@@ -7,19 +7,19 @@ body {
     color: lightgoldenrodyellow;
 }
 
-h1{
+h1 {
     font-family: sans-serif;
 }
 
 .carouselContainer {
     overflow: hidden;
     width: 95vw;
-    margin: 0 auto;    
+    margin: 0 auto;
     position: relative;
     color: lightgoldenrodyellow
 }
 
-#comingSoonTiles{
+#comingSoonTiles {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
@@ -81,12 +81,30 @@ img {
 
 .editRoutePage {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .editHeader {
-    color: lightgoldenrodyellow;
+    color: dark;
+    font-size: 40px;
+}
+
+.editForm {
+    color: lightgray;
+    border: 4px groove grey;
+    padding: 75px;
+    margin: 50px;
+    font-size: 30px;
+}
+
+.editSeasonsForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.seasonInputForm {
+    text-align: center;
 }
 
 #welcome-user {
@@ -111,13 +129,14 @@ img {
     color: lightgrey;
 }
 
-.showImage{
+.showImage {
     border: 2px solid white;
 
 }
 
-.showNameAndSynopsis, a {
-    color:  lightgray;
+.showNameAndSynopsis,
+a {
+    color: lightgray;
 }
 
 .newShowButton {
@@ -137,7 +156,7 @@ img {
     flex-direction: row;
     justify-content: space-around;
     padding: 0 25%;
-    
+
 }
 
 .showTitle {
@@ -145,7 +164,7 @@ img {
     font-family: sans-serif;
 }
 
-.sansSerif{
+.sansSerif {
     font-family: sans-serif;
 }
 
@@ -157,6 +176,7 @@ img {
 .genre {
     background-color: rgb(77, 77, 79);
 }
+
 /* STYLING FOR COMMENT SECTION */
 /* .rating {
 display: flex;
@@ -215,8 +235,6 @@ outline: 0;
 box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
 } */
 
-
-
 .loginContainer {
     display: flex;
     align-items: center;
@@ -230,24 +248,25 @@ box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
     font-size: 60px;
 }
 
-.loginForm{
+.loginForm {
     font-size: 30px;
     margin: auto;
 }
 
-.loginForm, input {
+.loginForm,
+input {
     width: fit-content;
 }
 
-.pageNotFound{
+.pageNotFound {
     display: flex;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-} 
+}
 
 #errorHeading {
-    font-size: 80px ;
+    font-size: 80px;
 }
 
 .errorImage {
@@ -276,6 +295,7 @@ box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
     margin: auto;
 }
 
-.createAccountForm, input {
+.createAccountForm,
+input {
     width: fit-content;
 }

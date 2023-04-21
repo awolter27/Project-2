@@ -6,7 +6,7 @@ router.get('', async (req, res, next) => {
     try {
         const myNetflixes = await Netflix.find({});
         let user;
-        if(req.session.currentUser) {
+        if (req.session.currentUser) {
             user = req.session.currentUser.username;
         }
         res.render('netflix/index.ejs', { Netflix: myNetflixes, user });
@@ -14,11 +14,11 @@ router.get('', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.get('/new', (req, res) => {
     res.render('netflix/new.ejs');
-})
+});
 
 router.get('/seed', async (req, res, next) => {
     try {
@@ -34,10 +34,10 @@ router.get('/seed', async (req, res, next) => {
 router.get('/:id', async (req, res, next) => {
     try {
         const myNetflix = await Netflix.findById(req.params.id);
-        const netflixComments = await Comment.find({netflix: myNetflix._id});
+        const netflixComments = await Comment.find({ netflix: myNetflix._id });
         // displaying a username of a person who left a comment. Thank you, Eric!
         let netflixCommentUsers = [];
-        for(let i = 0; i < netflixComments.length; i++) {
+        for (let i = 0; i < netflixComments.length; i++) {
             let user = await User.findById(netflixComments[i].user);
             netflixCommentUsers.push(user.username);
         };
@@ -69,14 +69,14 @@ router.get('/:id/delete', async (req, res, next) => {
 });
 
 // route for comments on a single show
-router.post('/:id/comments', async(req, res, next) => {
+router.post('/:id/comments', async (req, res, next) => {
     try {
         let newComment = req.body;
         newComment.user = req.session.currentUser.id;
         newComment.netflix = req.params.id;
         await Comment.create(newComment);
         res.redirect(`/netflix/${req.params.id}`);
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         next();
     }
@@ -86,7 +86,7 @@ router.post('', async (req, res, next) => {
     try {
         const form = req.body;
         const { name, synopsis, img, genre } = form;
-        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{year: 0, episodes: []}] }
+        const newShow = { name: name, synopsis: synopsis, img: img, genre: genre, seasons: [{ year: 0, episodes: [] }] }
         const newNetflix = await Netflix.create(newShow);
         res.redirect('/netflix');
     } catch (err) {

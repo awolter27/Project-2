@@ -12,24 +12,24 @@ router.get('/signup', (req, res) => {
     res.render('users/signup');
 });
 
-router.post('/login', async(req, res, next) => {
+router.post('/login', async (req, res, next) => {
     try {
         let user;
         const loggedInUser = req.body;
-        let userExists = await User.exists({email: loggedInUser.email});
+        let userExists = await User.exists({ email: loggedInUser.email });
         console.log(user);
         // checking if the user is valid
-        if(!userExists) {
-            userExists = await User.exists({email: loggedInUser.email});
+        if (!userExists) {
+            userExists = await User.exists({ email: loggedInUser.email });
         };
-        if(userExists) {
-            user = await User.findOne({email: loggedInUser.email});
+        if (userExists) {
+            user = await User.findOne({ email: loggedInUser.email });
         } else {
             // loginError = 'Wrong password. Please try again';
             res.redirect('/login');
         }
         const match = await bcrypt.compare(req.body.password, user.password);
-        if(match) {
+        if (match) {
             req.session.currentUser = {
                 id: user._id,
                 username: user.username
@@ -38,13 +38,13 @@ router.post('/login', async(req, res, next) => {
         } else {
             res.redirect('/login');
         }
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         next();
     }
 });
 
-router.post('/signup', async(req, res, next) => {
+router.post('/signup', async (req, res, next) => {
     try {
         const newUser = req.body;
         const rounds = process.env.SALT_ROUNDS;
@@ -56,7 +56,7 @@ router.post('/signup', async(req, res, next) => {
         
         await User.create(newUser);
         res.redirect('/login');
-    } catch(err) {
+    } catch (err) {
         console.log(err);
         next();
     }
