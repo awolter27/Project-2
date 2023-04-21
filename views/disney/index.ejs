@@ -6,9 +6,9 @@
         </div>
     </div>
     <hr>
-    <% for (let i=0; i < Disney.length; i++) { %>
+    <% for (let i = 0; i < Disney.length; i++) { %>
         <div class="listOfShows">
-            <img class="showImage" src=<%=Disney[i].img %> alt="Image of <%= Disney[i].name %> Poster">
+            <img class="showImage" src="<%=Disney[i].img %>" alt="Image of <%= Disney[i].name %> Poster">
             <div class="showNameAndSynopsis">
                 <a href="disney/<%= Disney[i]._id %>">
                     <h1 class="showTitle"><%= Disney[i].name %></h1>

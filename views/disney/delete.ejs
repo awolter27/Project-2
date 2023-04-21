@@ -3,13 +3,19 @@
     <h1>Delete <%= Disney.name %></h1>
     <p><%= Disney.name %></p>
     <p><%= Disney.synopsis %></p>
-    <img src = <%= Disney.img %> alt='show image'>
+    <img src="<%= Disney.img %>" alt="show image">
     <p><%= Disney.genre %></p>
     <% for (let i = 0; i < Disney.seasons.length; i++) { %>
-        <p>Season <%= i + 1 %></p>
+        <p>Season <%= Disney.seasons[i].name %></p>
+        <form method="POST" action="/disney/<%= Disney._id %>/<%= Disney.seasons[i].name %>?_method=PUT">
+            <input type="submit" value="Delete Season <%= Disney.seasons[i].name %>">
+        </form>
         <p><%= Disney.seasons[i].year %></p>
         <% for (let j = 0; j < Disney.seasons[i].episodes.length; j++) { %>
             <p><%= Disney.seasons[i].episodes[j] %></p>
+            <form method="POST" action="/disney/<%= Disney._id %>/episodes/<%= i %>/<%= j %>?_method=PUT">
+                <input type="submit" value="Delete Episode <%= Disney.seasons[i].episodes[j] %>">
+            </form>
         <% } %>
     <% } %>
     <form method="POST" action="/disney/<%= Disney._id %>?_method=DELETE">

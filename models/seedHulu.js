@@ -6,10 +6,12 @@ module.exports = [
         genre: "comedy",
         seasons: [
             {
+                name: 1,
                 year: 1993,
                 episodes: ["The Good Son", "Space Quest", "Dinner at Eight", "I Hate Frasier Crane", "Here's Looking at You", "The Crucible", "Call Me Irresponsible", "Beloved Infidel", "Selling Out", "Oops"]
             },
             {
+                name: 2,
                 year: 1994,
                 episodes: ["Slow Tango in South Seattle", "The Unkindest Cut of All", "The Matchmaker", "Flour Child", "Duke's, We Hardly Knew Ye", "The Botched Language of Cranes", "The Candidate", "Adventures in Paradise: Part 1", "Adventures in Paradise: Part 2", "Burying a Grudge"]
             }
@@ -22,10 +24,12 @@ module.exports = [
         genre: "comedy",
         seasons: [
             {
+                name: 1,
                 year: 1985,
                 episodes: ["The Engagement", "Guess Who's Coming to the Wedding?", "Rose the Prude", "Transplant", "The Triangle", "On Golden Girls", "The Competition", "Break In", "Blanche and the Younger Man", "The Heart Attack"]
             },
             {
+                name: 2,
                 year: 1986,
                 episodes: ["End of the Curse", "Ladies of the Evening", "Take Him, He's Mine", "It's a Miserable Life", "Isn't It Romantic?", "Big Daddy's Little Lady", "Family Affair", "Vacation", "Joust Between Friends", "Love, Rose"]
             }
@@ -38,10 +42,12 @@ module.exports = [
         genre: "comedy",
         seasons: [
             {
+                name: 1,
                 year: 2021,
                 episodes: ["Pilot", "Light Bulb", "Wishlist", "New Tech", "Student Transfer", "Gifted Program", "Art Teacher", "Work Family", "Step Class", "Open House"]
             },
             {
+                name: 2,
                 year: 2022,
                 episodes: ["Development Day", "Wrong Delivery", "Story Samurai", "Principal's Office", "Juice", "Candy Zombies", "Attack Ad", "Egg Drop", "Sick Day", "Holiday Hookah"]
             }
@@ -54,10 +60,12 @@ module.exports = [
         genre: ["drama", "crime"],
         seasons: [
             {
+                name: 1,
                 year: 2017,
                 episodes: ["Pilot", "Make Them Birds Fly", "Slow Hand", "Trauma", "Seven-Four", "A Long Time Coming", "Cracking", "Baby Teeth", "Story of a Scar", "The Rubicon"]
             },
             {
+                name: 2,
                 year: 2018,
                 episodes: ["Sightlines", "The Day", "Prometheus Rising", "Jingle Bell Rock", "Serpiente", "The Offer", "The World Is Yours", "Surrender", "Aftermath", "Education"]
             }
@@ -70,10 +78,12 @@ module.exports = [
         genre: "drama",
         seasons: [
             {
+                name: 1,
                 year: 2017,
                 episodes: ["Offred", "Birth Day", "Late", "Nolite Te Bastardes Carborundorum", "Faithful", "A Woman's Place", "The Other Side", "Jezebels", "The Bridge", "Night"]
             },
             {
+                name: 2,
                 year: 2018,
                 episodes: ["June", "Unwomen", "Baggage", "Other Women", "Seeds", "First Blood", "After", "Women's Work", "Smart Power", "The Last Ceremony"]
             }

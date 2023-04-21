@@ -6,10 +6,12 @@ module.exports = [
         genre: ["science-fiction", "action-adventure"],
         seasons: [
             {
+                name: 1,
                 year: 2019,
                 episodes: ["Chapter 1: The Mandalorian", "Chapter 2: The Child", "Chapter 3: The Sin", "Chapter 4: Sancuary", "Chapter 5: The Ginslinger", "Chapter 6: The Prisoner", "Chapter 7: The Reckoning", "Chapter 8: Redemption"]
             },
             {
+                name: 2,
                 year: 2020,
                 episodes: ["Chapter 9: The Marshal", "Chapter 10: The Passenger", "Chapter 11: The Heiress", "Chapter 12: The Siege", "Chapter 13: The Jedi", "Chapter 14: The Tragedy", "Chapter 15: The Believer", "Chapter 16: The Rescue", ]
             }
@@ -22,10 +24,12 @@ module.exports = [
         genre: ["Comedy", "Animation"],
         seasons: [
             {
+                name: 1,
                 year: 1989,
                 episodes: ["Simpsons Roasting on an Open Fire", "Bart the Genius", "Homers Odyssey", "Theres No Disgrace Like Home", "Bart the General", "Moaning Lisa", "The Call of the Simpsons", "The Telltale Head", "Life on the Fast Lane", "Homers Night Out"]
             },
             {
+                name: 2,
                 year: 1990,
                 episodes: ["Bart Gets an F", "Simpson and Delilah", "Treehouse of Horror", "Two Cars in Every Garage and Three Eyes on Every Fish", "Dancin Homer", "Dead Putting Society", "Bart vs. Thanksgiving", "Bart the Daredevil", "Itchy & Scratchy & Marge", "Bart Gets Hit by a Car"]
             }
@@ -39,10 +43,12 @@ module.exports = [
         genre: ["Romance", "Animation", "Fantasy", "Super Hero", "Action-Adventure"],
         seasons: [
             {
+                name: 1,
                 year: 2015,
                 episodes: ["Stormy Weather", "The Bubbler", "Timebreaker", "The Pharaoh", "Mr. Pigeon", "Lady Wifi", "The Evillustrator", "Rogercop", "Horrificator", "Dark Cupid"]
             },
             {
+                name: 2,
                 year: 2016,
                 episodes: ["The Collector", "Prime Queen", "Glaciator", "Despair Bear", "Troublemaker", "Gigantitan", "Riposte", "Befana", "Frightningale", "Gorizilla"]
             }
@@ -55,10 +61,12 @@ module.exports = [
         genre: ["Soap Opera", "Melodrama", "Fantasy", "Action-Adventure"],
         seasons: [
             {
+                name: 1,
                 year: 2011,
                 episodes: ["Pilot", "The Thing You Love Most", "Snow Falls", "The Price of Gold", "That Still Small Voice", "The Shepherd", "The Heart is a Lonely Hunter", "Desperate Souls", "True North", "7:15 A.M."]
             },
             {
+                name: 2,
                 year: 2012,
                 episodes: ["Broken", "We are Both", "Lady of the Lake", "The Crocodile", "The Doctor", "Tallahassee", "Child of the Moon", "Into the Deep", "Queen of Hearts", "The Cricket Game"]
             }
@@ -72,10 +80,12 @@ module.exports = [
         genre: ["Comedy", "Musical", "Kids", "Action-Adventure", "Anamation"],
         seasons: [
             {
+                name: 1,
                 year: 2007,
                 episodes: ["Rollercoaster/Candace Loses Her Head", "The Fast and the Phineas/Lawn Gnome Beach Party of Terror!", "The Magnificent Few/S-Winter", "Are You My Mummy?/Flop Starz", "Raging Bully / Lights, Candace, Action!", "Get That Bigfood Outa My Face! / Tree to Get Ready","Its About Timee!", "Jerk De Soleil / Toy to the World", "One Good Scaare Ought To Do It!", "A Hard Days Knight/ I, Brobot"]
             },
             {
+                name: 2,
                 year: 2008,
                 episodes: ["The Lake Nose Monster", "Interview with a Platypus / Tip of the Day", "Attack of the 50-Foot Sister / Backyard Aquarium", "Day of the Living Gelatin! / Elementary, My Dear Stacy", "Dont Even Blink / Chez Platypus", "Perry Lays an Egg / Gaming the System", "The Chronicles of Meap", "Thaddeus and Thor / De Plane! De Plane!", "Lets Take a Quiz / At the Car Wash", "Oh, There you Are, Perry / Swiss Family Phineas"]
             }
