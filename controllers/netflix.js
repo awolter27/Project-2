@@ -14,11 +14,11 @@ router.get('', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.get('/new', (req, res) => {
     res.render('netflix/new.ejs');
-})
+});
 
 router.get('/seed', async (req, res, next) => {
     try {

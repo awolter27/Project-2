@@ -14,21 +14,11 @@ router.get('', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
-
-// router.get('/episodes/:episodes', async (req, res, next) => {
-//     try {
-//         const showByEpisode = await Hulu.findByIdAndUpdate({ episodes: req.params.episodes });
-//         res.render('hulu/showEpisodes.ejs', { Hulu: showByEpisode });
-//     } catch (err) {
-//         next();
-//         console.log(err);
-//     }
-// })
+});
 
 router.get('/new', (req, res) => {
     res.render('hulu/new.ejs');
-})
+});
 
 router.get('/seed', async (req, res, next) => {
     try {
@@ -39,7 +29,7 @@ router.get('/seed', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.get('/:id', async (req, res, next) => {
     try {
@@ -56,7 +46,7 @@ router.get('/:id', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.get('/:id/edit', async (req, res, next) => {
     try {
@@ -66,7 +56,7 @@ router.get('/:id/edit', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.get('/:id/delete', async (req, res, next) => {
     try {
@@ -78,7 +68,6 @@ router.get('/:id/delete', async (req, res, next) => {
     }
 });
 
-// route for comments on a single show
 router.post('/:id/comments', async (req, res, next) => {
     try {
         let newComment = req.body;
@@ -87,8 +76,8 @@ router.post('/:id/comments', async (req, res, next) => {
         await Comment.create(newComment);
         res.redirect(`/hulu/${req.params.id}`);
     } catch (err) {
-        console.log(err);
         next();
+        console.log(err);
     }
 });
 
@@ -103,7 +92,7 @@ router.post('', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.put('/:id', async (req, res, next) => {
     try {
@@ -119,10 +108,10 @@ router.put('/:id', async (req, res, next) => {
         }
         for (const key in form) {
             if (key.slice(0, 4) === 'year') {
-                updatedShow.seasons[key.slice(5)].year = Number(form[key])
+                updatedShow.seasons[key.slice(5)].year = Number(form[key]);
             }
             if (key.slice(0, 8) === 'episodes') {
-                updatedShow.seasons[key.slice(9)].episodes = form[key]
+                updatedShow.seasons[key.slice(9)].episodes = form[key];
             }
         }
         const updatedHulu = await Hulu.findByIdAndUpdate(req.params.id, updatedShow);
@@ -131,7 +120,7 @@ router.put('/:id', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.delete('/:id', async (req, res, next) => {
     try {
@@ -141,20 +130,6 @@ router.delete('/:id', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
-
-// router.put('/:id/:idx', async (req, res, next) => {
-//     try {
-//         const deletedHulu = await Hulu.findById(req.params.id);
-//         deletedHulu.seasons.splice(req.params.idx, 1, );
-//         console.log(req.params.idx);
-//         console.log(deletedHulu);
-//         await Hulu.findByIdAndUpdate(req.params.id, deletedHulu);
-//         res.redirect('/hulu');
-//     } catch (err) {
-//         next();
-//         console.log(err);
-//     }
-// })
+});
 
 module.exports = router;
