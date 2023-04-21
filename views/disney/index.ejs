@@ -1,23 +1,24 @@
 <%- include('../partials/header.ejs') %>
-<div class="showsContainer">
-    <div class="disneyLogo">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPhtxtbgHXTXja-yVYgyRNDe0C2uZgXfNz5g&usqp=CAU">
+
+    <div class="showsContainer">
+        <div class="disneyLogo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPhtxtbgHXTXja-yVYgyRNDe0C2uZgXfNz5g&usqp=CAU">
+        </div>
     </div>
-</div>
-<hr>
-<% for (let i = 0; i < Disney.length; i++) { %>
+    <hr>
+    <% for (let i=0; i < Disney.length; i++) { %>
         <div class="listOfShows">
-                <img class="showImage" src=<%= Disney[i].img %> alt="Image of <%= Disney[i].name %> Poster">
+            <img class="showImage" src=<%=Disney[i].img %> alt="Image of <%= Disney[i].name %> Poster">
             <div class="showNameAndSynopsis">
                 <a href="disney/<%= Disney[i]._id %>">
                     <h1 class="showTitle"><%= Disney[i].name %></h1>
                 </a>
                 <p class="sansSerif"><%= Disney[i].synopsis %></p>
-                <% } %>
             </div>
         </div>
-        <div class="newShowButton">
-            <a href="/disney/new">Add A TV Show</a>
-        </div>
+    <% } %>
+    <div class="newShowButton">
+        <a href="/disney/new">Add A TV Show</a>
+    </div>
 
 <%- include('../partials/footer.ejs') %>

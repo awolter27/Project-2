@@ -19,7 +19,7 @@ module.exports = [
             },
             {
                 year: 2020,
-                episodes:  ["Rio de Janeiro", "San Francisco", "Singapore", "The Mississippi Delta", "Hawaii"]
+                episodes: ["Rio de Janeiro", "San Francisco", "Singapore", "The Mississippi Delta", "Hawaii"]
             },
             {
                 year: 2022,
@@ -28,16 +28,16 @@ module.exports = [
             {
                 year: 2022,
                 episodes: ["Philadelphia", "Croatia", "Austin", "Santiago de Chile", "Nashville", "Tribute to Helen and Max"]
-                
+
             },
         ],
     },
     {
-            name: "The Last Kingdom",
-            synopsis: "Abducted by a Viking warlord after his father is slain in battle, young Utred adopts the Norse way of life until tragedy befalls his new family.",
-            img: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-12206744520.jpg",
-            genre: ["british", "tv dramas", "based on books"],
-            seasons: [
+        name: "The Last Kingdom",
+        synopsis: "Abducted by a Viking warlord after his father is slain in battle, young Utred adopts the Norse way of life until tragedy befalls his new family.",
+        img: "https://www.tvguide.com/a/img/catalog/provider/1/1/1-12206744520.jpg",
+        genre: ["british", "tv dramas", "based on books"],
+        seasons: [
             {
                 year: 2015,
                 episodes: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8"]
@@ -48,16 +48,16 @@ module.exports = [
             },
             {
                 year: 2018,
-                episodes:  ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8"]
+                episodes: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8"]
             },
             {
                 year: 2020,
-                episodes: ["4.1","4.2","4.3","4.4","4.5","4.6","4.7","4.8","4.9","4.10"]
-                
+                episodes: ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10"]
+
             },
             {
-               year: 2022,
-               episodes:  ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
+                year: 2022,
+                episodes: ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
             },
         ],
     },
@@ -69,7 +69,7 @@ module.exports = [
         seasons: [
             {
                 year: 2022,
-                episodes: ["The Vision","The Industry","The Law","The Coder","The Partner","The Artist"]
+                episodes: ["The Vision", "The Industry", "The Law", "The Coder", "The Partner", "The Artist"]
             }
         ],
     },
@@ -81,7 +81,7 @@ module.exports = [
         seasons: [
             {
                 year: 2008,
-                episodes:  ["Pilot", "Cat's in the Bag...", "...And the Bag's in the River", "Cancer Man", "Gray Matter", "Crazy Handful of Nothin'", "A No-Rough-Stuff-Type Deal"]
+                episodes: ["Pilot", "Cat's in the Bag...", "...And the Bag's in the River", "Cancer Man", "Gray Matter", "Crazy Handful of Nothin'", "A No-Rough-Stuff-Type Deal"]
             },
             {
                 year: 2009,
@@ -96,7 +96,7 @@ module.exports = [
                 episodes: ["Box Cutter", "Thirty-Eight Snub", "Open House", "Bullet Points", "Shotgun", "Cornered", "Problem Dog", "Hermanos", "Bug", "Salud", "Crawl Space", "End Times", "Face Off"]
             },
             {
-                year: 2012-2013,
+                year: 2012 - 2013,
                 episodes: ["Live Free or Die", "Madrigal", "Hazard Pay", "Fifty-One", "Dead Freight", "Buyout", "Say My Name", "Gliding Over All", "Blood Money", "Buried", "Confessions", "Rabid Dog", "To'hajiilee", "Ozymandias", "Granite State", "Felina"]
             },
         ],
@@ -113,15 +113,15 @@ module.exports = [
             },
             {
                 year: 2016,
-                episodes:  ["Switch", "Cobbler", "Amarillo", "Gloves Off", "Rebecca", "Bali Ha'i", "Inflatable", "Fifi", "Nailed", "Klick"]
+                episodes: ["Switch", "Cobbler", "Amarillo", "Gloves Off", "Rebecca", "Bali Ha'i", "Inflatable", "Fifi", "Nailed", "Klick"]
             },
             {
                 year: 2017,
-                episodes:  ["Mabel", "Witness", "Sunk Costs", "Sabrosito", "Chicanery", "Off Brand", "Expenses", "Slip", "Fall", "Lantern"]
+                episodes: ["Mabel", "Witness", "Sunk Costs", "Sabrosito", "Chicanery", "Off Brand", "Expenses", "Slip", "Fall", "Lantern"]
             },
             {
                 year: 2018,
-                episodes:  ["Smoke", "Breathe", "Something Beautiful", "Talk", "Quite a Ride", "Piñata", "Something Stupid", "Coushatta", "Wiedersehen", "Winner"]
+                episodes: ["Smoke", "Breathe", "Something Beautiful", "Talk", "Quite a Ride", "Piñata", "Something Stupid", "Coushatta", "Wiedersehen", "Winner"]
             },
             {
                 year: 2020,
@@ -152,8 +152,8 @@ module.exports = [
                 episodes: ["Wartime", "Civil Union", "Kevin Cronin Was Here", "Boss Fight", "It Came from Michoacán", "Su Casa Es Mi Casa", "In Case of Emergency", "BFF", "Fire Pink", "All In"]
             },
             {
-               year: 2022,
-               episodes: ["The Beginning of the End", "Let the Great World Spin", "City on the Make", "Ace Deuce", "Ellie", "Sangre Sobre Todo", "Sanctified", "The Cousin of Death", "Pick a God and Pray", "You're the Boss", "Pound of Flesh and Still Kickin'", "Trouble the Water", "Mud", "A Hard Way to Go"]
+                year: 2022,
+                episodes: ["The Beginning of the End", "Let the Great World Spin", "City on the Make", "Ace Deuce", "Ellie", "Sangre Sobre Todo", "Sanctified", "The Cousin of Death", "Pick a God and Pray", "You're the Boss", "Pound of Flesh and Still Kickin'", "Trouble the Water", "Mud", "A Hard Way to Go"]
             }
         ],
         user: "643198fb710fd9a01542b132"
@@ -166,27 +166,27 @@ module.exports = [
         seasons: [
             {
                 year: 2014,
-                episodes: ["1.1","1.2","1.3","1.4","1.5","1.6"]
+                episodes: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"]
             },
             {
                 year: 2014,
-                episodes: ["2.1","2.2","2.3","2.4","2.5","2.6"]
+                episodes: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6"]
             },
             {
                 year: 2016,
-                episodes: ["3.1","3.2","3.3","3.4","3.5","3.6"]
+                episodes: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
             },
             {
                 year: 2017,
-                episodes: ["The Noose","Heathens","Blackbird","Dangerous","The Duel","The Company"]
+                episodes: ["The Noose", "Heathens", "Blackbird", "Dangerous", "The Duel", "The Company"]
             },
             {
                 year: 2019,
-                episodes:["Black Tuesday", "Black Cats", "Strategy", "The Loop", "The Shock", "Mr. Jones"]
+                episodes: ["Black Tuesday", "Black Cats", "Strategy", "The Loop", "The Shock", "Mr. Jones"]
             },
             {
                 year: 2022,
-                episodes: ["Black Day","Black Shirt","Gold","Sapphire","The Road to Hell","Lock and Key"]
+                episodes: ["Black Day", "Black Shirt", "Gold", "Sapphire", "The Road to Hell", "Lock and Key"]
             }
         ],
     }
