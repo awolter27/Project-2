@@ -122,6 +122,32 @@ router.get('/:id/delete', async (req, res, next) => {
     }
 });
 
+// delete a specific season
+router.put('/:id/:seasons', async (req, res, next) => {
+    try {
+        const deletedDisneySeason = await Disney.findById(req.params.id);
+        deletedDisneySeason.seasons.splice(req.params.seasons, 1);
+        await Disney.findByIdAndUpdate(req.params.id, deletedDisneySeason);
+        res.redirect('/disney');
+    } catch (err) {
+        next();
+        console.log(err);
+    }
+})
+
+// delete a specific episode
+router.put('/:id/episodes/:seasons/:episodes', async (req, res, next) => {
+    try {
+        const deletedDisneyEpisode = await Disney.findById(req.params.id);
+        deletedDisneyEpisode.seasons[req.params.seasons].episodes.splice(req.params.episodes, 1);
+        await Disney.findByIdAndUpdate(req.params.id, deletedDisneyEpisode);
+        res.redirect('/disney');
+    } catch (err) {
+        next();
+        console.log(err);
+    }
+})
+
 router.delete('/:id', async (req, res, next) => {
     try {
         const deletedItem = await Disney.findByIdAndDelete(req.params.id);

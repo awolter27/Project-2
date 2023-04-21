@@ -6,29 +6,34 @@ module.exports = [
         genre: ["docuseries", "lifestyle", "reality", "travel and adventure"],
         seasons: [
             {
+                name: 1,
                 year: 2018,
                 episodes: ["Bangkok", "Saigon", "Tel Aviv", "Lisbon", "New Orleans", "Mexico City"]
             },
             {
+                name: 2,
                 year: 2018,
                 episodes: ["Venice", "Dublin", "Buenos Aires", "Copenhagen", "Cape Town", "New York City"],
             },
             {
+                name: 3,
                 year: 2020,
                 episodes: ["Marrakesh", "Chicago", "London", "Seoul", "Montreal"]
             },
             {
+                name: 4,
                 year: 2020,
                 episodes: ["Rio de Janeiro", "San Francisco", "Singapore", "The Mississippi Delta", "Hawaii"]
             },
             {
+                name: 5,
                 year: 2022,
                 episodes: ["Oaxaca", "Maine", "Helsinki", "Portland", "Madrid"]
             },
             {
+                name: 6,
                 year: 2022,
                 episodes: ["Philadelphia", "Croatia", "Austin", "Santiago de Chile", "Nashville", "Tribute to Helen and Max"]
-
             },
         ],
     },
@@ -39,23 +44,28 @@ module.exports = [
         genre: ["british", "tv dramas", "based on books"],
         seasons: [
             {
+                name: 1,
                 year: 2015,
                 episodes: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6", "1.7", "1.8"]
             },
             {
+                name: 2,
                 year: 2017,
                 episodes: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6", "2.7", "2.8"]
             },
             {
+                name: 3,
                 year: 2018,
                 episodes: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6", "3.7", "3.8"]
             },
             {
+                name: 4,
                 year: 2020,
                 episodes: ["4.1", "4.2", "4.3", "4.4", "4.5", "4.6", "4.7", "4.8", "4.9", "4.10"]
 
             },
             {
+                name: 5,
                 year: 2022,
                 episodes: ["5.1", "5.2", "5.3", "5.4", "5.5", "5.6", "5.7", "5.8", "5.9", "5.10"]
             },
@@ -68,6 +78,7 @@ module.exports = [
         genre: ["swedish", "based on real life", "based on books", "tv dramas", "music"],
         seasons: [
             {
+                name: 1,
                 year: 2022,
                 episodes: ["The Vision", "The Industry", "The Law", "The Coder", "The Partner", "The Artist"]
             }
@@ -80,22 +91,27 @@ module.exports = [
         genre: ["crime tv shows", "tv thrillers", "tv dramas"],
         seasons: [
             {
+                name: 1,
                 year: 2008,
                 episodes: ["Pilot", "Cat's in the Bag...", "...And the Bag's in the River", "Cancer Man", "Gray Matter", "Crazy Handful of Nothin'", "A No-Rough-Stuff-Type Deal"]
             },
             {
+                name: 2,
                 year: 2009,
                 episodes: ["Seven Thirty-Seven", "Grilled", "Bit by a Dead Bee", "Down", "Breakage", "Peekaboo", "Negro y Azul", "Better Call Saul", "4 Days Out", "Over", "Mandala", "Phoenix", "ABQ"]
             },
             {
+                name: 3,
                 year: 2010,
                 episodes: ["No Más", "Caballo sin Nombre", "I.F.T.", "Green Light", "Más", "Sunset", "One Minute", "I See You", "Kafkaesque", "Fly", "Abiquiu", "Half Measures", "Full Measure"]
             },
             {
+                name: 4,
                 year: 2011,
                 episodes: ["Box Cutter", "Thirty-Eight Snub", "Open House", "Bullet Points", "Shotgun", "Cornered", "Problem Dog", "Hermanos", "Bug", "Salud", "Crawl Space", "End Times", "Face Off"]
             },
             {
+                name: 5,
                 year: 2012 - 2013,
                 episodes: ["Live Free or Die", "Madrigal", "Hazard Pay", "Fifty-One", "Dead Freight", "Buyout", "Say My Name", "Gliding Over All", "Blood Money", "Buried", "Confessions", "Rabid Dog", "To'hajiilee", "Ozymandias", "Granite State", "Felina"]
             },
@@ -108,26 +124,32 @@ module.exports = [
         genre: ["crime tv shows", "tv dramas"],
         seasons: [
             {
+                name: 1,
                 year: 2015,
                 episodes: ["Uno", "Mijo", "Nacho", "Hero", "Alpine Shepherd Boy", "Five-O", "Bingo", "RICO", "Pimento", "Marco"]
             },
             {
+                name: 2,
                 year: 2016,
                 episodes: ["Switch", "Cobbler", "Amarillo", "Gloves Off", "Rebecca", "Bali Ha'i", "Inflatable", "Fifi", "Nailed", "Klick"]
             },
             {
+                name: 3,
                 year: 2017,
                 episodes: ["Mabel", "Witness", "Sunk Costs", "Sabrosito", "Chicanery", "Off Brand", "Expenses", "Slip", "Fall", "Lantern"]
             },
             {
+                name: 4,
                 year: 2018,
                 episodes: ["Smoke", "Breathe", "Something Beautiful", "Talk", "Quite a Ride", "Piñata", "Something Stupid", "Coushatta", "Wiedersehen", "Winner"]
             },
             {
+                name: 5,
                 year: 2020,
                 episodes: ["Magic Man", "50% Off", "The Guy for This", "Namaste", "Dedicado a Max", "Wexler v. Goodman", "JMM", "Bagman", "Bad Choice Road", "Something Unforgivable"]
             },
             {
+                name: 6,
                 year: 2022,
                 episodes: ["Wine and Roses", "Carrot and Stick", "Rock and Hard Place", "Hit and Run", "Black and Blue", "Axe and Grind", "Plan and Execution", "Point and Shoot", "Fun and Games", "Nippy", "Breaking Bad", "Waterworks", "Saul Gone"]
             },
@@ -140,18 +162,22 @@ module.exports = [
         genre: ["crime tv shows", "tv dramas", "tv thtillers"],
         seasons: [
             {
+                name: 1,
                 year: 2017,
                 episodes: ["Sugarwood", "Blue Cat", "My Dripping Sleep", "Tonight We Improvise", "Ruling Days", "Book of Ruth", "Nest Box", "Kaleidoscope", "Coffee, Black", "The Toll"]
             },
             {
+                name: 2,
                 year: 2018,
                 episodes: ["Reparations", "The Precious Blood of Jesus", "Once a Langmore...", "Stag", "Game Day", "Outer Darkness", "One Way Out", "The Big Sleep", "The Badger", "The Gold Coast"]
             },
             {
+                name: 3,
                 year: 2020,
                 episodes: ["Wartime", "Civil Union", "Kevin Cronin Was Here", "Boss Fight", "It Came from Michoacán", "Su Casa Es Mi Casa", "In Case of Emergency", "BFF", "Fire Pink", "All In"]
             },
             {
+                name: 4,
                 year: 2022,
                 episodes: ["The Beginning of the End", "Let the Great World Spin", "City on the Make", "Ace Deuce", "Ellie", "Sangre Sobre Todo", "Sanctified", "The Cousin of Death", "Pick a God and Pray", "You're the Boss", "Pound of Flesh and Still Kickin'", "Trouble the Water", "Mud", "A Hard Way to Go"]
             }
@@ -165,26 +191,32 @@ module.exports = [
         genre: ["british", "crime tv shows", "tv dramas", "period pieces"],
         seasons: [
             {
+                name: 1,
                 year: 2014,
                 episodes: ["1.1", "1.2", "1.3", "1.4", "1.5", "1.6"]
             },
             {
+                name: 2,
                 year: 2014,
                 episodes: ["2.1", "2.2", "2.3", "2.4", "2.5", "2.6"]
             },
             {
+                name: 3,
                 year: 2016,
                 episodes: ["3.1", "3.2", "3.3", "3.4", "3.5", "3.6"]
             },
             {
+                name: 4,
                 year: 2017,
                 episodes: ["The Noose", "Heathens", "Blackbird", "Dangerous", "The Duel", "The Company"]
             },
             {
+                name: 5,
                 year: 2019,
                 episodes: ["Black Tuesday", "Black Cats", "Strategy", "The Loop", "The Shock", "Mr. Jones"]
             },
             {
+                name: 6,
                 year: 2022,
                 episodes: ["Black Day", "Black Shirt", "Gold", "Sapphire", "The Road to Hell", "Lock and Key"]
             }

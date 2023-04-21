@@ -7,12 +7,12 @@
         <h1 class="genre"> Genre: <%= Netflix.genre %></h1>
     </div>
     <div class="seasonContainer">
-        <% for (let i=0; i < Netflix.seasons.length; i++) { %>
+        <% for (let i = 0; i < Netflix.seasons.length; i++) { %>
             <hr>
             <div class="seasonsEpisodes">
-                <h1>Season: <%= i + 1 %></h1>
+                <h1>Season: <%= Netflix.seasons[i].name %></h1>
                 <h1>Year: <%= Netflix.seasons[i].year %></h1>
-                <% for (let j=0; j < Netflix.seasons[i].episodes.length; j++) { %>
+                <% for (let j = 0; j < Netflix.seasons[i].episodes.length; j++) { %>
                     <p><%= Netflix.seasons[i].episodes[j] %></p>
                 <% } %>
             </div>
