@@ -2,17 +2,17 @@
 
     <div class="listOfShows">
         <h1 class="showTitle"><%= Hulu.name %></h1>
-        <img class="showImage" src=<%=Hulu.img %> alt = 'show image'>
+        <img class="showImage" src="<%=Hulu.img %>" alt='show image'>
         <h1><%= Hulu.synopsis %></h1>
         <h1 class="genre">Genre: <%= Hulu.genre %></h1>
     </div>
     <div class="seasonContainer">
-        <% for (let i=0; i < Hulu.seasons.length; i++) { %>
+        <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
             <hr>
             <div class="seasonsEpisodes">
-                <h1>Season: <%= i + 1 %></h1>
+                <h1>Season: <%= Hulu.seasons[i].name %></h1>
                 <h1>Year: <%= Hulu.seasons[i].year %></h1>
-                <% for (let j=0; j < Hulu.seasons[i].episodes.length; j++) { %>
+                <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
                     <p><%= Hulu.seasons[i].episodes[j] %></p>
                 <% } %>
             </div>

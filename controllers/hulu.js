@@ -122,6 +122,32 @@ router.put('/:id', async (req, res, next) => {
     }
 });
 
+// delete a specific season
+router.put('/:id/:seasons', async (req, res, next) => {
+    try {
+        const deletedHuluSeason = await Hulu.findById(req.params.id);
+        deletedHuluSeason.seasons.splice(req.params.seasons, 1);
+        await Hulu.findByIdAndUpdate(req.params.id, deletedHuluSeason);
+        res.redirect('/hulu');
+    } catch (err) {
+        next();
+        console.log(err);
+    }
+})
+
+// delete a specific episode
+router.put('/:id/episodes/:seasons/:episodes', async (req, res, next) => {
+    try {
+        const deletedHuluEpisode = await Hulu.findById(req.params.id);
+        deletedHuluEpisode.seasons[req.params.seasons].episodes.splice(req.params.episodes, 1);
+        await Hulu.findByIdAndUpdate(req.params.id, deletedHuluEpisode);
+        res.redirect('/hulu');
+    } catch (err) {
+        next();
+        console.log(err);
+    }
+})
+
 router.delete('/:id', async (req, res, next) => {
     try {
         const deletedHulu = await Hulu.findByIdAndDelete(req.params.id);

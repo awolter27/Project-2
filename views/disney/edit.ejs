@@ -15,9 +15,9 @@
             <input required type="text" name="genre" id="genre" value="<%= Disney.genre %>">
             <div class="seasonsEditForm">
                 <% for (let i=0; i < Disney.seasons.length; i++) { %>
-                    <p>Season <%= i + 1 %></p>
+                    <p>Season <%= Disney.seasons[i].name %></p>
                     <div class="seasonsInputForm">
-                        <input type="hidden" name="seasons" value="<%= i + 1 %>">
+                        <input type="hidden" name="seasons" value="<%= Disney.seasons[i].name %>">
                         <label for="year">Year</label>
                         <input required type="number" name="year-<%= i %>" id="year" value="<%= Disney.seasons[i].year %>">
                         <% for (let j=0; j < Disney.seasons[i].episodes.length; j++) { %>

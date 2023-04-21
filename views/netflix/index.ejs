@@ -8,7 +8,7 @@
     <hr>
     <% for (let i=0; i < Netflix.length; i++) { %>
         <div class="listOfShows">
-            <img class="showImage" src=<%=Netflix[i].img %> alt="Image of <%= Netflix[i].name %> Poster">
+            <img class="showImage" src="<%=Netflix[i].img %>" alt="Image of <%= Netflix[i].name %> Poster">
                 <div class="showNameAndSynopsis">
                 <a href="netflix/<%= Netflix[i]._id %>">
                     <h1 class="showTitle"><%= Netflix[i].name %></h1>

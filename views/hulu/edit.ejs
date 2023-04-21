@@ -15,9 +15,9 @@
             <input required type="text" name="genre" id="genre" value="<%= Hulu.genre %>">
             <div class="seasonsEditForm">
                 <% for (let i=0; i < Hulu.seasons.length; i++) { %>
-                    <p>Season <%= i + 1 %></p>
+                    <p>Season <%= Hulu.seasons[i].name %></p>
                     <div class="seasonsInputForm">
-                        <input type="hidden" name="seasons" value="<%= i + 1 %>">
+                        <input type="hidden" name="seasons" value="<%= Hulu.seasons[i].name %>">
                         <label for="year">Year</label>
                         <input required type="number" name="year-<%= i %>" id="year" value="<%= Hulu.seasons[i].year %>">
                         <% for (let j=0; j < Hulu.seasons[i].episodes.length; j++) { %>

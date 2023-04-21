@@ -123,6 +123,32 @@ router.put('/:id', async (req, res, next) => {
     }
 })
 
+// delete a specific season
+router.put('/:id/:seasons', async (req, res, next) => {
+    try {
+        const deletedNetflixSeason = await Netflix.findById(req.params.id);
+        deletedNetflixSeason.seasons.splice(req.params.seasons, 1);
+        await Netflix.findByIdAndUpdate(req.params.id, deletedNetflixSeason);
+        res.redirect('/netflix');
+    } catch (err) {
+        next();
+        console.log(err);
+    }
+})
+
+// delete a specific episode
+router.put('/:id/episodes/:seasons/:episodes', async (req, res, next) => {
+    try {
+        const deletedNetflixEpisode = await Netflix.findById(req.params.id);
+        deletedNetflixEpisode.seasons[req.params.seasons].episodes.splice(req.params.episodes, 1);
+        await Netflix.findByIdAndUpdate(req.params.id, deletedNetflixEpisode);
+        res.redirect('/netflix');
+    } catch (err) {
+        next();
+        console.log(err);
+    }
+})
+
 router.delete('/:id', async (req, res, next) => {
     try {
         const deletedNetflix = await Netflix.findByIdAndDelete(req.params.id);
