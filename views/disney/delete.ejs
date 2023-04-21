@@ -7,7 +7,7 @@
     <p><%= Disney.genre %></p>
     <% for (let i = 0; i < Disney.seasons.length; i++) { %>
         <p>Season <%= Disney.seasons[i].name %></p>
-        <form method="POST" action="/disney/<%= Disney._id %>/<%= Disney.seasons[i].name %>?_method=PUT">
+        <form method="POST" action="/disney/<%= Disney._id %>/<%= i %>?_method=PUT">
             <input type="submit" value="Delete Season <%= Disney.seasons[i].name %>">
         </form>
         <p><%= Disney.seasons[i].year %></p>

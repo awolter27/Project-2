@@ -3,11 +3,11 @@
     <h1>Delete <%= Hulu.name %></h1>
     <p><%= Hulu.name %></p>
     <p><%= Hulu.synopsis %></p>
-    <img src="<%= Hulu.img %>" alt="show image">
+    <img src = <%= Hulu.img %> alt = 'show image'>
     <p><%= Hulu.genre %></p>
     <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
         <p>Season <%= Hulu.seasons[i].name %></p>
-        <form method="POST" action="/hulu/<%= Hulu._id %>/<%= Hulu.seasons[i].name %>?_method=PUT">
+        <form method="POST" action="/hulu/<%= Hulu._id %>/<%= i %>?_method=PUT">
             <input type="submit" value="Delete Season <%= Hulu.seasons[i].name %>">
         </form>
         <p><%= Hulu.seasons[i].year %></p>

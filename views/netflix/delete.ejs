@@ -7,7 +7,7 @@
     <p><%= Netflix.genre %></p>
     <% for (let i = 0; i < Netflix.seasons.length; i++) { %>
         <p>Season <%= Netflix.seasons[i].name %></p>
-        <form method="POST" action="/netflix/<%= Netflix._id %>/<%= Netflix.seasons[i].name %>?_method=PUT">
+        <form method="POST" action="/netflix/<%= Netflix._id %>/<%= i %>?_method=PUT">
             <input type="submit" value="Delete Season <%= Netflix.seasons[i].name %>">
         </form>
         <p><%= Netflix.seasons[i].year %></p>
