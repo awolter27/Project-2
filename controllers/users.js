@@ -53,7 +53,6 @@ router.post('/signup', async (req, res, next) => {
         const hash = await bcrypt.hash(newUser.password, salt);
         console.log(`hash is ${hash}`);
         newUser.password = hash;
-        
         await User.create(newUser);
         res.redirect('/login');
     } catch (err) {
@@ -64,7 +63,7 @@ router.post('/signup', async (req, res, next) => {
 
 router.get('/logout', (req, res) => {
     req.session.destroy();
-    res.redirect('/login');
+    res.redirect('/');
 });
 
 module.exports = router;

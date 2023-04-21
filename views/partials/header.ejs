@@ -16,13 +16,10 @@
 
 <body>
     <nav class="navBar">
-        <a class="nav" href="/login">Log In</a>
         <a class="nav" href="/">Home</a>
-        <a class="nav" href="/netflix">Netflix</a>
-        <a class="nav" href="/hulu">Hulu</a>
-        <a class="nav" href="/disney">Disney</a>
-        <a class="nav" href="/signup">Sign Up</a>
-        <a class="nav" href="/logout">Logout</a>
+        <% for(let i = 0; i < routes.length; i++) { %>
+            <a href="<%= routes[i].href %>"><%= routes[i].title %></a>
+        <% } %>
         <div id="welcome-user">
             <% if(typeof user !=='undefined' ) { %>
                 <h2>🛋️ Welcome, <%= user %>!</h2>
