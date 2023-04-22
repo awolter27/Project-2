@@ -1,22 +1,31 @@
 <%- include('../partials/header.ejs') %>
-    
+
     <div class="listOfShows sansSerif">
-        <h1 class="showTitle"> <%= Netflix.name %></h1>
-        <img class="showImage" src="<%= Netflix.img %>" alt = 'show image'>
-        <h1><%= Netflix.synopsis %></h1>
-        <h1 class="genre"> Genre: <%= Netflix.genre %></h1>
+        <h1 class="showTitle">
+            <%= Netflix.name %>
+        </h1>
+        <img class="showImage" src="<%= Netflix.img %>" alt='show image'>
+        <h1>
+            <%= Netflix.synopsis %>
+        </h1>
+        <h1 class="genre"> Genre: <%= Netflix.genre %>
+        </h1>
     </div>
     <div class="seasonContainer">
-        <% for (let i = 0; i < Netflix.seasons.length; i++) { %>
+        <% for (let i=0; i < Netflix.seasons.length; i++) { %>
             <hr>
             <div class="seasonsEpisodes">
-                <h1>Season: <%= Netflix.seasons[i].name %></h1>
-                <h1>Year: <%= Netflix.seasons[i].year %></h1>
-                <% for (let j = 0; j < Netflix.seasons[i].episodes.length; j++) { %>
-                    <p><%= Netflix.seasons[i].episodes[j] %></p>
-                <% } %>
+                <h1>Season: <%= Netflix.seasons[i].name %>
+                </h1>
+                <h1>Year: <%= Netflix.seasons[i].year %>
+                </h1>
+                <% for (let j=0; j < Netflix.seasons[i].episodes.length; j++) { %>
+                    <p>
+                        <%= Netflix.seasons[i].episodes[j] %>
+                    </p>
+                    <% } %>
             </div>
-        <% } %>
+            <% } %>
     </div>
     <div class="newShowButton">
         <a href="/netflix/<%= Netflix._id %>/edit">Edit</a>
@@ -26,30 +35,34 @@
         <div class="ratingForm">
             <form method="POST" action="/netflix/<%= Netflix._id %>/comments">
                 <h4>Rate and Comment:</h4>
-                <div class="rating"> 
-                    <input type="radio" name="rating" value="5" id="5">
-                    <label for="5">☆</label>
-                    <input type="radio" name="rating" value="4" id="4">
-                    <label for="4">☆</label>
-                    <input type="radio"name="rating" value="3" id="3">
-                    <label for="3">☆</label>
-                    <input type="radio" name="rating" value="2"id="2">
-                    <label for="2">☆</label>
+                <div class="rating">
                     <input type="radio" name="rating" value="1" id="1">
-                    <label for="1">☆</label> 
+                    <label for="1">1☆</label>
+                    <input type="radio" name="rating" value="2" id="2">
+                    <label for="2">2☆</label>
+                    <input type="radio" name="rating" value="3" id="3">
+                    <label for="3">3☆</label>
+                    <input type="radio" name="rating" value="4" id="4">
+                    <label for="4">4☆</label>
+                    <input type="radio" name="rating" value="5" id="5">
+                    <label for="5">5☆</label>
                 </div>
                 <br>
                 <div class="comment-area">
-                    <textarea class="form-control" name="commentText" placeholder="Please give us your opinion here!" rows="4" required></textarea>
+                    <textarea class="form-control" name="commentText" placeholder="Please give us your opinion here!"
+                        rows="4" required></textarea>
                 </div>
                 <input type="submit" value="Submit">
             </form>
             <% for(let i=0; i < netflixComments.length; i++) { %>
-                <h4>Rating: <%= netflixComments[i].rating %></h4>
-                <h4>Comment: <%= netflixComments[i].commentText %></h4>
-                <h4>By: <%= netflixCommentUsers[i] %></h4>
-            <% } %>
+                <h4>Rating: <%= netflixComments[i].rating %>
+                </h4>
+                <h4>Comment: <%= netflixComments[i].commentText %>
+                </h4>
+                <h4>By: <%= netflixCommentUsers[i] %>
+                </h4>
+                <% } %>
         </div>
     </div>
 
-<%- include('../partials/footer.ejs') %> 
+    <%- include('../partials/footer.ejs') %>

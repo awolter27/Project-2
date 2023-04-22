@@ -89,6 +89,7 @@ img {
     background-color: black;
     padding: 2vh;
     text-transform: uppercase;
+    text-decoration: none;
 }
 
 .nav {
@@ -241,7 +242,7 @@ a {
     font-size: 8vh;
 }
 
-.addForm, label{
+.addForm label{
     padding: 25px;
     display: flex;
     flex-direction: column;
