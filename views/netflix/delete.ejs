@@ -10,11 +10,10 @@
         <p class="genre"><%= Netflix.genre %></p>
     </div>
     
-    <div class="deleteShowsContainer editForm">
+    <div class="deleteShowsContainer">
         <% for (let i = 0; i < Netflix.seasons.length; i++) { %>
             <div class="editSeasonsForm">
-
-                    <p>Season <%= Netflix.seasons[i].name %></p>
+                    <p class="seasonHeader">Season <%= Netflix.seasons[i].name %></p>
                     <form method="POST" action="/netflix/<%= Netflix._id %>/<%= i %>?_method=PUT">
                         <input type="submit" value="Delete Season <%= Netflix.seasons[i].name %>">
                     </form>
@@ -27,8 +26,8 @@
                         <% } %>
                     </div>
                     <% } %>
-                <form method="POST" action="/Netflix/<%= Netflix._id %>?_method=DELETE">
-                    <input type="submit" value="Delete <%= Netflix.name %>">
+                        <form method="POST" action="/Netflix/<%= Netflix._id %>?_method=DELETE">
+                            <input type="submit" value="Delete <%= Netflix.name %>">
                 </div>
             </form>
         </div>
