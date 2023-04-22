@@ -79,10 +79,6 @@ img {
     padding: 0;
 }
 
-.homeSpudLink {
-   transform: scale(.35);
-}
-
 .navBar {
     display: flex;
     justify-content: space-around;
@@ -95,6 +91,11 @@ img {
 .nav {
     text-decoration: none;
     color: white;
+    font-size: 125%;
+}
+
+.title {
+    text-decoration: none;
     font-size: 125%;
 }
 
@@ -343,20 +344,3 @@ input {
 .toggle-btn.hide::before {
     content: '\f070';
 }
-/* #toggle-login {
-    cursor: pointer;
-    color: #fff;
-    background-color: rgb(120, 118, 116, 0.5);
-    border-radius: 50%;
-    padding: 5px;
-    width: 10px;
-}
-
-#toggle-login::before {
-    content: '\f06e';
-    font-family: fontAwesome;
-}
-
-#toggle-login.hide::before {
-    content: '\f070';
-} */

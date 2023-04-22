@@ -20,7 +20,7 @@
             <a class="nav" href="/">Home</a>
         </div>
         <% for(let i = 0; i < routes.length; i++) { %>
-            <a href="<%= routes[i].href %>"><%= routes[i].title %></a>
+            <a class="title" href="<%= routes[i].href %>"><%= routes[i].title %></a>
         <% } %>
         <div id="welcome-user">
             <% if(typeof user !=='undefined' ) { %>
