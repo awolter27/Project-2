@@ -43,6 +43,7 @@ img {
     justify-content: space-around;
     background-color: black;
     padding: 2vh;
+    text-transform: uppercase;
 }
 
 .nav {
@@ -77,7 +78,18 @@ img {
 .footer {
     text-decoration: none;
     color: white;
+    text-transform: uppercase;
 }
+
+.showInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: lightgray;
+    font-size: 5vh;
+}
+
 
 .editRoutePage {
     display: flex;
@@ -86,7 +98,7 @@ img {
 }
 
 .editHeader {
-    color: dark;
+    color: darkgoldenrod;
     font-size: 40px;
 }
 
@@ -103,6 +115,15 @@ img {
     flex-direction: column;
 }
 
+.deleteShowsContainer {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    padding: 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
 .seasonInputForm {
     text-align: center;
 }
@@ -110,6 +131,7 @@ img {
 #welcome-user {
     color: #fff
 }
+
 
 .showsContainer {
     display: flex;
