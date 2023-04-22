@@ -1,20 +1,37 @@
 <%- include('../partials/header.ejs') %>
 
-    <h1>Delete <%= Hulu.name %></h1>
-    <p><%= Hulu.name %></p>
-    <p><%= Hulu.synopsis %></p>
-    <img src=<%=Hulu.img %> alt='show image'>
-    <p><%= Hulu.genre %></p>
-    <% for (let i=0; i < Hulu.seasons.length; i++) { %>
-        <p>Season <%= i + 1 %></p>
-        <p><%= Hulu.seasons[i].year %></p>
-        <% for (let j=0; j < Hulu.seasons[i].episodes.length; j++) { %>
-            <p><%= Hulu.seasons[i].episodes[j] %></p>
-        <% } %>
-    <% } %>
-    <form method="POST" action="/hulu/<%= Hulu._id %>?_method=DELETE">
-        <input type="submit" value="Delete <%= Hulu.name %>">
-    </form>
-    <a href="/hulu/<%= Hulu._id %>">Back</a>
+<div class="editRoutePage sansSerif">
+    <div class="editHeader">
+        <h1>Delete <%= Hulu.name %></h1>
+    </div>
+    <div class="showInfo">
+        <p><%= Hulu.name %></p>
+        <p><%= Hulu.synopsis %></p>
+        <img src = <%= Hulu.img %> alt = 'show image'>
+        <p class="genre"><%= Hulu.genre %></p>
+    </div>
 
-<%- include('../partials/footer.ejs') %>
+    <div class="deleteShowsContainer">
+        <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
+            <div class="editSeasonsForm">
+                <p class="seasonHeader">Season <%= Hulu.seasons[i].name %></p>
+                <form method="POST" action="/hulu/<%= Hulu._id %>/<%= i %>?_method=PUT">
+                    <input type="submit" value="Delete Season <%= Hulu.seasons[i].name %>">
+                </form>
+                <p><%= Hulu.seasons[i].year %></p>
+                <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
+                    <p><%= Hulu.seasons[i].episodes[j] %></p>
+                    <form method="POST" action="/hulu/<%= Hulu._id %>/episodes/<%= i %>/<%= j %>?_method=PUT">
+                        <input type="submit" value="Delete Episode <%= Hulu.seasons[i].episodes[j] %>">
+                    </form>
+                    <% } %>
+                </div>
+                    <% } %>
+                    <form method="POST" action="/hulu/<%= Hulu._id %>?_method=DELETE">
+                        <input type="submit" value="Delete <%= Hulu.name %>">
+                    </div>
+                </form>
+            </div>
+        <a href="/hulu/<%= Hulu._id %>">Back</a>
+            
+            <%- include('../partials/footer.ejs') %>

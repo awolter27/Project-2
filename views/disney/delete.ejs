@@ -1,20 +1,39 @@
 <%- include('../partials/header.ejs') %>
 
-    <h1>Delete <%= Disney.name %></h1>
-    <p><%= Disney.name %></p>
-    <p><%= Disney.synopsis %></p>
-    <img src = <%= Disney.img %> alt='show image'>
-    <p><%= Disney.genre %></p>
-    <% for (let i = 0; i < Disney.seasons.length; i++) { %>
-        <p>Season <%= i + 1 %></p>
-        <p><%= Disney.seasons[i].year %></p>
-        <% for (let j = 0; j < Disney.seasons[i].episodes.length; j++) { %>
-            <p><%= Disney.seasons[i].episodes[j] %></p>
-        <% } %>
-    <% } %>
-    <form method="POST" action="/disney/<%= Disney._id %>?_method=DELETE">
-        <input type="submit" value="Delete <%= Disney.name %>">
-    </form>
-    <a href="/disney/<%= Disney._id %>">Back</a>
+    <div class="editRoutePage sansSerif">
+        <div class="editHeader">
+            <h1>Delete <%= Disney.name %></h1>
+        </div>
+        <div class="showInfo">
 
-<%- include('../partials/footer.ejs') %>
+            <p><%= Disney.name %></p>
+            <p><%= Disney.synopsis %></p>
+            <img src="<%= Disney.img %>" alt="show image">
+            <p class="genre"><%= Disney.genre %></p>
+        </div>
+
+    <div class="deleteShowsContainer">
+        <% for (let i = 0; i < Disney.seasons.length; i++) { %>
+            <div class="editSeasonsForm">
+
+                <p class="seasonHeader">Season <%= Disney.seasons[i].name %></p>
+                <form method="POST" action="/disney/<%= Disney._id %>/<%= i %>?_method=PUT">
+                    <input type="submit" value="Delete Season <%= Disney.seasons[i].name %>">
+                </form>
+                <p><%= Disney.seasons[i].year %></p>
+                <% for (let j = 0; j < Disney.seasons[i].episodes.length; j++) { %>
+                    <p><%= Disney.seasons[i].episodes[j] %></p>
+                    <form method="POST" action="/disney/<%= Disney._id %>/episodes/<%= i %>/<%= j %>?_method=PUT">
+                        <input type="submit" value="Delete Episode <%= Disney.seasons[i].episodes[j] %>">
+                    </form>
+                    <% } %>
+                </div>
+                    <% } %>
+                    <form method="POST" action="/disney/<%= Disney._id %>?_method=DELETE">
+                        <input type="submit" value="Delete <%= Disney.name %>">
+                </div>
+            </form>
+        </div>
+    <a href="/disney/<%= Disney._id %>">Back</a>
+            
+            <%- include('../partials/footer.ejs') %>

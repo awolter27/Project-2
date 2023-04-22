@@ -1,18 +1,18 @@
 <%- include('../partials/header.ejs') %>
 
-    <div class="listOfShows">
+    <div class="listOfShows sansSerif">
         <h1 class="showTitle"><%= Hulu.name %></h1>
-        <img class="showImage" src=<%=Hulu.img %> alt = 'show image'>
+        <img class="showImage" src="<%=Hulu.img %>" alt='show image'>
         <h1><%= Hulu.synopsis %></h1>
         <h1 class="genre">Genre: <%= Hulu.genre %></h1>
     </div>
     <div class="seasonContainer">
-        <% for (let i=0; i < Hulu.seasons.length; i++) { %>
+        <% for (let i = 0; i < Hulu.seasons.length; i++) { %>
             <hr>
             <div class="seasonsEpisodes">
-                <h1>Season: <%= i + 1 %></h1>
+                <h1>Season: <%= Hulu.seasons[i].name %></h1>
                 <h1>Year: <%= Hulu.seasons[i].year %></h1>
-                <% for (let j=0; j < Hulu.seasons[i].episodes.length; j++) { %>
+                <% for (let j = 0; j < Hulu.seasons[i].episodes.length; j++) { %>
                     <p><%= Hulu.seasons[i].episodes[j] %></p>
                 <% } %>
             </div>
@@ -25,16 +25,16 @@
     <form method="POST" action="/hulu/<%= Hulu._id %>/comments">
         <h4>Rate and Comment:</h4>
         <div class="rating"> 
-            <input type="radio" name="rating" value="5" id="5">
-            <label for="5">☆</label>
-            <input type="radio" name="rating" value="4" id="4">
-            <label for="4">☆</label>
-            <input type="radio"name="rating" value="3" id="3">
-            <label for="3">☆</label>
-            <input type="radio" name="rating" value="2"id="2">
-            <label for="2">☆</label>
             <input type="radio" name="rating" value="1" id="1">
-            <label for="1">☆</label> 
+            <label for="1">1☆</label> 
+            <input type="radio" name="rating" value="2"id="2">
+            <label for="2">2☆</label>
+            <input type="radio"name="rating" value="3" id="3">
+            <label for="3">3☆</label>
+            <input type="radio" name="rating" value="4" id="4">
+            <label for="4">4☆</label>
+            <input type="radio" name="rating" value="5" id="5">
+            <label for="5">5☆</label>
         </div>
         <br>
         <div class="comment-area">

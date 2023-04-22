@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-    <div class="showsContainer">
+    <div class="showsContainer sansSerif">
         <div class="netflixLogo">
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb9Z2qjN-KVfy70azCOjoeuv3kx9JmbftzsQ&usqp=CAU">
         </div>
@@ -8,7 +8,7 @@
     <hr>
     <% for (let i=0; i < Netflix.length; i++) { %>
         <div class="listOfShows">
-            <img class="showImage" src=<%=Netflix[i].img %> alt="Image of <%= Netflix[i].name %> Poster">
+            <img class="showImage" src="<%=Netflix[i].img %>" alt="Image of <%= Netflix[i].name %> Poster">
                 <div class="showNameAndSynopsis">
                 <a href="netflix/<%= Netflix[i]._id %>">
                     <h1 class="showTitle"><%= Netflix[i].name %></h1>

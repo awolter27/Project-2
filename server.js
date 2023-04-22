@@ -34,6 +34,28 @@ app.use(
     })
 );
 
+app.use( (req, res, next) => {
+    const guest = [
+        {href: '/login', title: 'LOGIN'},
+        {href: '/signup', title: 'SIGNUP'}
+    ];
+    const loggedIn = [
+        {href: '/netflix', title: 'NEFTLIX'},
+        {href: '/hulu', title: 'HULU'},
+        {href: '/disney', title: 'DISNEY+'},
+        {href: '/logout', title: 'LOGOUT'}
+    ];
+    function isloggedIn() {
+        res.locals.username = req.session.currentUser.username;
+        res.locals.routes = loggedIn;
+    };
+    function guestUser() {
+        res.locals.routes = guest;
+    };
+    req.session.currentUser ? isloggedIn() : guestUser();
+    next();
+});
+
 
 app.get('/', (req, res) => {
     let user;

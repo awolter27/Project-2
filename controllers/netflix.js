@@ -14,11 +14,11 @@ router.get('', async (req, res, next) => {
         next();
         console.log(err);
     }
-})
+});
 
 router.get('/new', (req, res) => {
     res.render('netflix/new.ejs');
-})
+});
 
 router.get('/seed', async (req, res, next) => {
     try {
@@ -117,6 +117,32 @@ router.put('/:id', async (req, res, next) => {
         }
         const updatedNetflix = await Netflix.findByIdAndUpdate(req.params.id, updatedShow);
         res.redirect(`/netflix/${req.params.id}`);
+    } catch (err) {
+        next();
+        console.log(err);
+    }
+})
+
+// delete a specific season
+router.put('/:id/:seasons', async (req, res, next) => {
+    try {
+        const deletedNetflixSeason = await Netflix.findById(req.params.id);
+        deletedNetflixSeason.seasons.splice(req.params.seasons, 1);
+        await Netflix.findByIdAndUpdate(req.params.id, deletedNetflixSeason);
+        res.redirect('/netflix');
+    } catch (err) {
+        next();
+        console.log(err);
+    }
+})
+
+// delete a specific episode
+router.put('/:id/episodes/:seasons/:episodes', async (req, res, next) => {
+    try {
+        const deletedNetflixEpisode = await Netflix.findById(req.params.id);
+        deletedNetflixEpisode.seasons[req.params.seasons].episodes.splice(req.params.episodes, 1);
+        await Netflix.findByIdAndUpdate(req.params.id, deletedNetflixEpisode);
+        res.redirect('/netflix');
     } catch (err) {
         next();
         console.log(err);

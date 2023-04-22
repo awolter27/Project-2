@@ -17,13 +17,13 @@ router.post('/login', async (req, res, next) => {
         let user;
         const loggedInUser = req.body;
         let userExists = await User.exists({ email: loggedInUser.email });
-        console.log(user);
         // checking if the user is valid
         if (!userExists) {
             userExists = await User.exists({ email: loggedInUser.email });
         };
         if (userExists) {
             user = await User.findOne({ email: loggedInUser.email });
+            console.log(user);
         } else {
             // loginError = 'Wrong password. Please try again';
             res.redirect('/login');
@@ -63,7 +63,7 @@ router.post('/signup', async (req, res, next) => {
 
 router.get('/logout', (req, res) => {
     req.session.destroy();
-    res.redirect('/login');
+    res.redirect('/');
 });
 
 module.exports = router;
