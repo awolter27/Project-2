@@ -12,14 +12,14 @@
         <label for="username">Username:</label>
         <input type="text" name="username" id="username">
         <label for="password">Password:</label>
-        <input type="password" name="password" id="password" required>
-        <span id="toggle-btn"></span>
+        <input type="password" name="password" class="password" required>
+        <span class="toggle-btn"></span>
         <input type="submit" value="Create an account">
     </form>
 </div>
 <script>
-const password = document.getElementById('password');
-const toggleBtn = document.getElementById('toggle-btn');
+const password = document.querySelector('.password');
+const toggleBtn = document.querySelector('.toggle-btn');
 // Show/hide password
 toggleBtn.onclick = function() {
     if(password.type === 'password') {
