@@ -1,26 +1,36 @@
 <%- include('../partials/header.ejs') %>
-
-    <h1>Delete <%= Netflix.name %></h1>
-    <p><%= Netflix.name %></p>
-    <p><%= Netflix.synopsis %></p>
-    <img src="<%= Netflix.img %>" alt="show image">
-    <p><%= Netflix.genre %></p>
-    <% for (let i = 0; i < Netflix.seasons.length; i++) { %>
-        <p>Season <%= Netflix.seasons[i].name %></p>
-        <form method="POST" action="/netflix/<%= Netflix._id %>/<%= i %>?_method=PUT">
-            <input type="submit" value="Delete Season <%= Netflix.seasons[i].name %>">
-        </form>
-        <p><%= Netflix.seasons[i].year %></p>
-        <% for (let j = 0; j < Netflix.seasons[i].episodes.length; j++) { %>
-            <p><%= Netflix.seasons[i].episodes[j] %></p>
-            <form method="POST" action="/netflix/<%= Netflix._id %>/episodes/<%= i %>/<%= j %>?_method=PUT">
-                <input type="submit" value="Delete Episode <%= Netflix.seasons[i].episodes[j] %>">
+<div class="editRoutePage sansSerif">
+    <div class="editHeader">
+        <h1>Delete <%= Netflix.name %></h1>
+    </div>
+    <div class="showInfo">
+        <p><%= Netflix.name %></p>
+        <p><%= Netflix.synopsis %></p>
+        <img src="<%= Netflix.img %>" alt="show image">
+        <p class="genre"><%= Netflix.genre %></p>
+    </div>
+    
+    <div class="deleteShowsContainer">
+        <% for (let i = 0; i < Netflix.seasons.length; i++) { %>
+            <div class="editSeasonsForm">
+                    <p class="seasonHeader">Season <%= Netflix.seasons[i].name %></p>
+                    <form method="POST" action="/netflix/<%= Netflix._id %>/<%= i %>?_method=PUT">
+                        <input type="submit" value="Delete Season <%= Netflix.seasons[i].name %>">
+                    </form>
+                    <p><%= Netflix.seasons[i].year %></p>
+                    <% for (let j = 0; j < Netflix.seasons[i].episodes.length; j++) { %>
+                        <p><%= Netflix.seasons[i].episodes[j] %></p>
+                        <form method="POST" action="/netflix/<%= Netflix._id %>/episodes/<%= i %>/<%= j %>?_method=PUT">
+                            <input type="submit" value="Delete Episode <%= Netflix.seasons[i].episodes[j] %>">
+                        </form>
+                        <% } %>
+                    </div>
+                    <% } %>
+                        <form method="POST" action="/Netflix/<%= Netflix._id %>?_method=DELETE">
+                            <input type="submit" value="Delete <%= Netflix.name %>">
+                </div>
             </form>
-        <% } %>
-    <% } %>
-    <form method="POST" action="/Netflix/<%= Netflix._id %>?_method=DELETE">
-        <input type="submit" value="Delete <%= Netflix.name %>">
-    </form>
+        </div>
     <a href="/netflix/<%= Netflix._id %>">Back</a>
 
 <%- include('../partials/footer.ejs') %>

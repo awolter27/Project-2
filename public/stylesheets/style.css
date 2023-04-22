@@ -1,3 +1,6 @@
+
+/* globals */
+
 body {
     margin: 0;
     background-color: antiquewhite;
@@ -7,9 +10,21 @@ body {
     color: lightgoldenrodyellow;
 }
 
-h1 {
+.sansSerif {
     font-family: sans-serif;
 }
+
+img {
+    width: 50vh;
+    height: auto;
+}
+
+.genre {
+    background-color: rgb(77, 77, 79);
+    text-transform: capitalize;
+}
+
+/* home page */
 
 .carouselContainer {
     overflow: hidden;
@@ -33,24 +48,6 @@ h1 {
     list-style: none;
 }
 
-img {
-    width: 50vh;
-    height: auto;
-}
-
-.navBar {
-    display: flex;
-    justify-content: space-around;
-    background-color: black;
-    padding: 2vh;
-}
-
-.nav {
-    text-decoration: none;
-    color: white;
-    font-size: 125%;
-}
-
 .homeLogo {
     display: flex;
     justify-content: center;
@@ -69,6 +66,37 @@ img {
     margin: 0;
 }
 
+/* header and footer nav bars */
+
+#welcome-user {
+    color: #fff
+}
+
+.homeLinkPictureContainer {
+    display: flex;
+    justify-content: left;
+    height: 1px;
+    padding: 0;
+}
+
+.homeSpudLink {
+   transform: scale(.35);
+}
+
+.navBar {
+    display: flex;
+    justify-content: space-around;
+    background-color: black;
+    padding: 2vh;
+    text-transform: uppercase;
+}
+
+.nav {
+    text-decoration: none;
+    color: white;
+    font-size: 125%;
+}
+
 .footerLinks {
     display: flex;
     justify-content: center;
@@ -77,6 +105,19 @@ img {
 .footer {
     text-decoration: none;
     color: white;
+    text-transform: uppercase;
+}
+
+
+/* edit, delete */
+
+.showInfo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: lightgray;
+    font-size: 5vh;
 }
 
 .editRoutePage {
@@ -86,7 +127,7 @@ img {
 }
 
 .editHeader {
-    color: dark;
+    color: darkgoldenrod;
     font-size: 40px;
 }
 
@@ -101,14 +142,31 @@ img {
 .editSeasonsForm {
     display: flex;
     flex-direction: column;
+    padding: 7px;
 }
+
+.deleteShowsContainer {
+    display: flex;
+    align-items: center;
+    margin: 50px;
+    padding: 10%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 4px groove grey;
+    color: lightgrey;
+}
+
+.seasonHeader {
+    font-weight: bold;
+    background-color: darkgrey;
+    color: white;
+    font-size: 5vh;
+}
+
+/* index and show */
 
 .seasonInputForm {
     text-align: center;
-}
-
-#welcome-user {
-    color: #fff
 }
 
 .showsContainer {
@@ -164,18 +222,40 @@ a {
     font-family: sans-serif;
 }
 
-.sansSerif {
-    font-family: sans-serif;
-}
 
 .commentForm {
     display: flex;
     justify-content: center;
 }
 
-.genre {
-    background-color: rgb(77, 77, 79);
+/* new show page */
+
+.addAShowContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px;
+    flex-direction: column;   
 }
+.addAShowHeader {
+    font-size: 8vh;
+}
+
+.addForm, label{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+}
+
+#submitBtn {
+    background-color: rgb(55, 32, 55);
+    color: white;
+    height: 8vh;
+    width: auto;
+    margin-top: 6%;
+}
+
+/* login page */
 
 .loginContainer {
     display: flex;
@@ -200,6 +280,8 @@ input {
     width: fit-content;
 }
 
+/* 404 */
+
 .pageNotFound {
     display: flex;
     justify-content: center;
@@ -219,13 +301,14 @@ input {
     background-color: black;
 }
 
+/* new account page */
+
 .newAccountContainer {
     display: flex;
     justify-content: center;
     text-align: center;
     flex-direction: column;
 }
-
 
 .newAccountTitle {
     font-size: 75px;
