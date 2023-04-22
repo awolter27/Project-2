@@ -1,6 +1,6 @@
 <%- include('../partials/header.ejs') %>
 
-< <div id="spudPic">
+<div id="spudPic">
     <img src="images/croppedSpud.png" alt="spud">
 </div>
 <div class="newAccountContainer">
@@ -13,10 +13,22 @@
         <input type="text" name="username" id="username">
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required>
-        <label for="passwordConfirm">Confirm Your Password:</label>
-        <input type="password" name="passwordConfirm" id="passwordConfirm" required>
+        <span id="toggle-btn"></span>
         <input type="submit" value="Create an account">
     </form>
 </div>
-
+<script>
+const password = document.getElementById('password');
+const toggleBtn = document.getElementById('toggle-btn');
+// Show/hide password
+toggleBtn.onclick = function() {
+    if(password.type === 'password') {
+        password.setAttribute('type', 'text');
+        toggleBtn.classList.add('hide');
+    } else {
+        password.setAttribute('type', 'password')
+        toggleBtn.classList.remove('hide');
+    }
+};
+</script>
 <%- include('../partials/footer.ejs') %>

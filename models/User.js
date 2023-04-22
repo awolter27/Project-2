@@ -12,10 +12,6 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Who told you that you don\'t need a password?'],
         minLength: [6, 'A minimum 6 characters password is required']
     },
-    passwordConfirm: {
-        type: String,
-        required: [true, 'Please confirm your password']
-    },
     username: {
         type: String,
         required: [true, 'Please enter your username'],

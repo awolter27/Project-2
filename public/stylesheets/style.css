@@ -199,64 +199,6 @@ a {
     background-color: rgb(77, 77, 79);
 }
 
-/* STYLING FOR COMMENT SECTION */
-/* .rating {
-display: flex;
-margin-top: -10px;
-flex-direction: row-reverse;
-margin-left: -4px;
-float: left
-}
-
-.rating>input {
-display: none
-}
-
-.rating>label {
-position: relative;
-width: 19px;
-font-size: 25px;
-color: #ffee00;
-cursor: pointer
-}
-
-.rating>label::before {
-content: "\2605";
-position: absolute;
-opacity: 0
-}
-
-.rating>label:hover:before,
-.rating>label:hover~label:before {
-opacity: 1 !important
-}
-
-.rating>input:checked~label:before {
-opacity: 1
-}
-
-.rating:hover>input:checked~label:before {
-opacity: 0.4
-}
-
-.comment-box {
-    left: 0;
-    padding: 5px
-}
-
-.comment-area textarea {
-resize: none;
-border: 1px solid #ad9f9f
-}
-
-form-control:focus {
-color: #495057;
-background-color: #fff;
-border-color: #ffffff;
-outline: 0;
-box-shadow: 0 0 0 1px rgb(255, 0, 0) !important
-} */
-
 .loginContainer {
     display: flex;
     align-items: center;
@@ -320,4 +262,22 @@ input {
 .createAccountForm,
 input {
     width: fit-content;
+}
+
+/* STYLING FOR COMMENT, SIGNUP AND LOGIN SECTION */
+#toggle-btn {
+    cursor: pointer;
+    color: #fff;
+    background-color: rgb(120, 118, 116, 0.5);
+    border-radius: 50%;
+    padding: 5px;
+}
+
+#toggle-btn::before {
+    content: '\f06e';
+    font-family: fontAwesome;
+}
+
+#toggle-btn.hide::before {
+    content: '\f070';
 }
